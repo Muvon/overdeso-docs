@@ -85,7 +85,7 @@ curl --data '[{"method":"account.get", "params": {"username":"donhardman"}}]' ht
 {% endtab %}
 {% endtabs %}
 
-### account.seeders
+### account.seed.list
 
 Get list of seeders for the account.
 
@@ -125,6 +125,108 @@ curl -s --data '[{"method":"account.seeders", "params": {"username":"diamondhand
                 }
             ],
             "value": 50000000
+        }
+    ]
+]
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
+### account.connection.list
+
+Get connections for account pubkey or username.
+
+#### Request params
+
+
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be sender or receiver. Default: receiver.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start default is 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch for the request. Default is 10.</td></tr></tbody></table>
+
+#### Response
+
+TODO
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"account.connection.list", "params": {"username":"diamondhands", "type": "receiver", "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 100,
+            "list": [
+                {
+                    "count": 113,
+                    "pubkey": "BC1YLiwCtwj9py5ekJFeXaxLmC8Z78qrBPiegZVqH9fRXh5hv7HFQpz",
+                    "username": "ChingonETH",
+                    "value": 19925096312304
+                },
+                {
+                    "count": 20,
+                    "pubkey": "BC1YLgScTfP6yTo8PcWW2uyxZBtTESbxonLBsDK9TTZ2e47YFmWn52d",
+                    "username": "Stonehead",
+                    "value": 9891141446768
+                },
+                {
+                    "count": 30,
+                    "pubkey": "BC1YLgT36phrdWaCLHV5mm65c1UgJJuHFcYcPEz1tK5mrtDmLBUf8ak",
+                    "username": "Peps",
+                    "value": 6370777170857
+                },
+                {
+                    "count": 37,
+                    "pubkey": "BC1YLhtAPCwD2wUawVc5n5miWuGo8159qrs5G9VE6FVc2ZPFryc2Vq4",
+                    "username": "ArtofWar",
+                    "value": 4232698819910
+                },
+                {
+                    "count": 6,
+                    "pubkey": "BC1YLgUU57aMVyfmrprFZicifoaH5QD8WdBWxtw5PWusD4Spe3CjwoS",
+                    "username": null,
+                    "value": 3434754199929
+                },
+                {
+                    "count": 23,
+                    "pubkey": "BC1YLiWhFc7jgCAiaY39Uer7kpTdDMSyPH9zQma9N4hKXyXeWX5cmh1",
+                    "username": "GalaMar",
+                    "value": 2964212949677
+                },
+                {
+                    "count": 27,
+                    "pubkey": "BC1YLiRgvtCW3vwhy8jYahJoi5XmbrxSHrZHVPLBJm3cxWDKQ9vvwE8",
+                    "username": "RajLahoti",
+                    "value": 2958865247508
+                },
+                {
+                    "count": 15,
+                    "pubkey": "BC1YLgLu3J4EUf7xXZ2KmT332tLboPxXZS8cE4wJY7ifx8Ccsc9dPxW",
+                    "username": null,
+                    "value": 2076935212298
+                },
+                {
+                    "count": 10,
+                    "pubkey": "BC1YLgrg6eoEqj76JX6FfW9dYLZ5ZBAkmZy7fMz3r7nfKDpwKHSwJnt",
+                    "username": "MantisToboggan",
+                    "value": 1978669741283
+                },
+                {
+                    "count": 10,
+                    "pubkey": "BC1YLjDphVAw4TYiwv24tgd9PjuKAoiWCSxomraKerbRibCvZAGRoZV",
+                    "username": "moysha_mk",
+                    "value": 1869918071287
+                }
+            ],
+            "value": 0
         }
     ]
 ]

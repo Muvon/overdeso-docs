@@ -13,5 +13,6 @@
 ## Account
 
 * [account.get](social-api.md#account.get)
-* [account.seed](social-api.md#account.seeders)
+* [account.seed.list](social-api.md#account.seed.list)
+* [account.connection.list](social-api.md#account.connection.list)
 
