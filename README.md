@@ -26,11 +26,11 @@ Feeling like an eager beaver? Jump in to the quick start docs and get making you
 [api-concept.md](reference/api-concept.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/blockchain-api.md" %}
-[blockchain-api.md](reference/blockchain-api.md)
+{% content-ref url="reference/block.md" %}
+[block.md](reference/block.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/social-api.md" %}
-[social-api.md](reference/social-api.md)
+{% content-ref url="reference/account.md" %}
+[account.md](reference/account.md)
 {% endcontent-ref %}
 

@@ -1,12 +1,8 @@
 ---
-description: >-
-  This page describes social API methods: fetch accounts, posts, likes and so
-  on.
+description: Account related API methods.
 ---
 
-# Social API
-
-## Account
+# Account
 
 ### account.get
 
@@ -238,5 +234,5 @@ curl -s --data '[{"method":"account.connection.list", "params": {"username":"dia
 {% endtab %}
 {% endtabs %}
 
-## Post
+
 

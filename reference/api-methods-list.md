@@ -2,17 +2,17 @@
 
 ## Block
 
-* [block.tip](blockchain-api.md#block.tip)
-* [block.get](blockchain-api.md#block.get)
+* [block.tip](block.md#block.tip)
+* [block.get](block.md#block.get)
 
 ## Transaction
 
-* [transaction.get](blockchain-api.md#transaction.get)
-* [transaction.list](blockchain-api.md#transaction.list)
+* [transaction.get](block.md#transaction.get)
+* [transaction.list](block.md#transaction.list)
 
 ## Account
 
-* [account.get](social-api.md#account.get)
-* [account.seed.list](social-api.md#account.seed.list)
-* [account.connection.list](social-api.md#account.connection.list)
+* [account.get](account.md#account.get)
+* [account.seed.list](account.md#account.seed.list)
+* [account.connection.list](account.md#account.connection.list)
 
