@@ -22,12 +22,14 @@ The method returns structure with 2 fields: **block** and **tx**.&#x20;
 
 **tx** field contains parsed data of requested transation.
 
+**info** field contains extra information for this transaction.
+
 #### Examples
 
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl --data '[{"method":"transaction.get", "params": {"id":"3JuETkEpP92uwnvTDYvhB5uSyAXqG8fDBaUA9UasAijChf3ZAkUPDT"}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6MsiYn4h8JZnK1cWmrDzHwMQBj4QqEY9tL4YJ"}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -36,32 +38,63 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETkEpP92uwnvTDYvh
         null,
         {
             "block": {
-                "height": 1,
-                "merkle_hash": "fd8e08af2ae7f62cdc9676ca3d9d6df9fa801c2263c494503ded47b4164bb88c",
-                "nonce": 88348,
-                "prev_hash": "5567c45b7b83b604f9ff5cb5e88dfc9ad7d5a1dd5818dd19e6d02466f47cbd62",
-                "raw": "000000005567c45b7b83b604f9ff5cb5e88dfc9ad7d5a1dd5818dd19e6d02466f47cbd62fd8e08af2ae7f62cdc9676ca3d9d6df9fa801c2263c494503ded47b4164bb88c59d03c60010000001c590100",
-                "timestamp": 1614598233,
+                "height": 8999,
+                "merkle_hash": "9c4c22c5236e34b0c42ef4c5416a591c854ca3187de39d73a32ff79f0b35a9e8",
+                "nonce": 1401535402,
+                "prev_hash": "000000000048653497ebd41ed653454e6d6dcb1fbb624995db35902eeeb65a18",
+                "raw": "00000000000000000048653497ebd41ed653454e6d6dcb1fbb624995db35902eeeb65a189c4c22c5236e34b0c42ef4c5416a591c854ca3187de39d73a32ff79f0b35a9e8b82c596027230000aabb8953",
+                "timestamp": 1616456888,
                 "version": 0
+            },
+            "info": {
+                "burned": 67768,
+                "created_at": 1638721639,
+                "fee": 235,
+                "height": 8999,
+                "id": 21919732514159937,
+                "input_count": 1,
+                "input_value": 695488423,
+                "output_count": 2,
+                "output_value": 695488188,
+                "outputs": [
+                    [
+                        "BC1YLiMRq7HomqRApkL3tjCbZhnjEp8qdGeezxf3HVdBA7kBJM8KtzK",
+                        677607246
+                    ]
+                ],
+                "size": 228,
+                "type_id": 11,
+                "updated_at": 1638721639
             },
             "tx": {
                 "extra": [],
-                "id": "3JuETkEpP92uwnvTDYvhB5uSyAXqG8fDBaUA9UasAijChf3ZAkUPDT",
-                "inputs": [],
+                "id": "3JuETVBKjuSk6VzZy6MsiYn4h8JZnK1cWmrDzHwMQBj4QqEY9tL4YJ",
+                "inputs": [
+                    [
+                        "3JuEUMHcdufXRS51gqAcFKaAxWDEaCVxJBphdY4YJ8t3ysUZ4FKNyy",
+                        0
+                    ]
+                ],
                 "meta": {
-                    "extra_data": "97f68498b39985d0b101"
+                    "add": 0,
+                    "coins": 9000000,
+                    "coins_expected": 0,
+                    "operation_id": 1,
+                    "pubkey": "BC1YLgXCHcJ7k4Fkad1o6qhmt9AcCBVX7zsq6hi4T13tBmgbne2873b",
+                    "spend": 0,
+                    "value_expected": 508205434
                 },
                 "outputs": [
                     [
-                        "BC1YLgKZyfgyNntCMXAZYExM8JooYqrYvVsrR8d8XVxorDruYFdq31p",
-                        1000000000
+                        "BC1YLiMRq7HomqRApkL3tjCbZhnjEp8qdGeezxf3HVdBA7kBJM8KtzK",
+                        17880942
                     ]
                 ],
-                "raw": "000102559949a3a9bce770aa526b1006935f3f896645a4622add60f83a256adb557e368094ebdc03010b0a97f68498b39985d0b101000000",
-                "signature": "",
-                "size": 56,
-                "transactor": "8mkU8yaVLs",
-                "type_id": 1
+                "raw": "01d45696865d1e0f80252aed04a8de09e2eec8b9aa18a3f5b9287ed0522a41362d0001036136977d43e271c2cedc137d00e6be7f47c6f5916a2025a7841dace59fb53473eeaec3080b2f21026fff411f5563795aa4df7b112457a7c959b45313c45d8ca9fd64344781f682f80100c0a8a50400fab2aaf2010021036136977d43e271c2cedc137d00e6be7f47c6f5916a2025a7841dace59fb5347300473045022100aa96e0b6d3d390a065326c73a5085988b3250e459fb6f1af86f27c50ff76b3b602207b078fb977a7c0dbf589cc92e780b1ab3b4a81175fa2ebef6a1711a7da1581a4",
+                "signature": "3045022100aa96e0b6d3d390a065326c73a5085988b3250e459fb6f1af86f27c50ff76b3b602207b078fb977a7c0dbf589cc92e780b1ab3b4a81175fa2ebef6a1711a7da1581a4",
+                "size": 228,
+                "transactor": "BC1YLiMRq7HomqRApkL3tjCbZhnjEp8qdGeezxf3HVdBA7kBJM8KtzK",
+                "type_id": 11
             }
         }
     ]
