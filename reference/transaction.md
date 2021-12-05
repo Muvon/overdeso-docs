@@ -16,7 +16,7 @@ Returned transaction data are in hex.
 
 #### Response
 
-The method returns structure with 2 fields: **block** and **tx**.&#x20;
+The method returns structure with 3 fields: **block,** **tx** and **info**.&#x20;
 
 **block** fields contains block header information if transaction is in block or null otherwise.&#x20;
 
@@ -48,10 +48,7 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6Ms
             },
             "info": {
                 "burned": 67768,
-                "created_at": 1638721639,
                 "fee": 235,
-                "height": 8999,
-                "id": 21919732514159937,
                 "input_count": 1,
                 "input_value": 695488423,
                 "output_count": 2,
@@ -63,8 +60,7 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6Ms
                     ]
                 ],
                 "size": 228,
-                "type_id": 11,
-                "updated_at": 1638721639
+                "type_id": 11
             },
             "tx": {
                 "extra": [],
