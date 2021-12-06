@@ -98,6 +98,81 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
 {% endtab %}
 {% endtabs %}
 
+### account.follow.list
+
+Find accounts which the person following or which following that person.
+
+The method requires one of **username** or **pubkey** to be passed in request body.
+
+#### Request params <a href="#request-params" id="request-params"></a>
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be following or follower.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+The method returnes list of follower or following accounts.
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"account.follow.list", "params": {"username":"diamondhands", "type": "following", "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 21,
+            "list": [
+                {
+                    "pubkey": "BC1YLi6LpXTemAG8T9ptyWAkMywrjynwZcKjB5DkDXxrsG5kgAwAqxq",
+                    "username": "maebeam"
+                },
+                {
+                    "pubkey": "BC1YLiU9Wpk8c7pVx7GCu8fae6AQhdUrGYcWc1Wz9V56HbCi7RPr887",
+                    "username": "balajis"
+                },
+                {
+                    "pubkey": "BC1YLi3P5VRwVaABUCrQQHEEUoQGoAUpcS272Rb16MDH1Uy8Kg9q3sX",
+                    "username": "helenowen"
+                },
+                {
+                    "pubkey": "BC1YLhqEhWvNnwW9TBqXURFqwkdpUYKrMVgTHQzopF5rRBDcD1LLSUp",
+                    "username": "artz"
+                },
+                {
+                    "pubkey": "BC1YLj4iUraQabhUBT8kS1gCieXhD1GGXeFCcU3qM3MGgf7GwBJ9Va7",
+                    "username": "craig"
+                },
+                {
+                    "pubkey": "BC1YLgHUYA2phkKYS6LdLLhkfGW7XkKX2D1Ktp5HVT8TpNGcah9KexY",
+                    "username": "dharmann"
+                },
+                {
+                    "pubkey": "BC1YLjERk6o1wsh8NMhKKebBsyzjBVGSMwMy9e45VgZUmwWaTWWZcRT",
+                    "username": "Drseuss"
+                },
+                {
+                    "pubkey": "BC1YLhoXx7AxSDdcz8mhFKmcP5jzA2Z8tXDjUTsttGe7rE7sK3Ures7",
+                    "username": "BennyBlanco"
+                },
+                {
+                    "pubkey": "BC1YLg5xgL7PAToY7dNrxqRmtAarJvBBZKJTkreuv2eLvCppf58Pwn9",
+                    "username": "Doodles"
+                },
+                {
+                    "pubkey": "BC1YLiQqFd4ro1jw3XTZ4zxMjEQka7NXy4aTc8Km1oeDHwjBn2kXrDy",
+                    "username": "rrhoover"
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### account.seed.list
 
 Get list of seeders for the account.

@@ -13,6 +13,7 @@
 ### Account
 
 * [account.get](account.md#account.get)
+* [account.follow.list](account.md#account.follow.list)
 * [account.seed.list](account.md#account.seed.list)
 * [account.connection.list](account.md#account.connection.list)
 
