@@ -29,13 +29,16 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
     [
         null,
         {
-            "coin": {
-                "locked": 13506396730943,
-                "price": 56714384896,
-                "supply": 238147636715,
-                "watermark": 244724729204
+            "account": {
+                "height": 6042,
+                "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
             },
-            "height": 6042,
+            "coin": {
+                "locked": 2612914709137,
+                "price": 18970714790,
+                "supply": 137734120093,
+                "watermark": 255810788786
+            },
             "profile": {
                 "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
                 "description": "\ud83d\udc8e\ud83d\ude4c",
@@ -45,17 +48,16 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
                 "stake_points": 12500,
                 "username": "diamondhands"
             },
-            "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
             "stat": {
-                "coin_buy_count": 6,
-                "coin_buy_value": 2976088833,
+                "coin_buy_count": 53,
+                "coin_buy_value": 409142554569,
                 "coin_sell_count": 2,
                 "coin_sell_value": 60683183,
-                "comment_count": 48,
-                "follower_count": 2439,
-                "following_count": 0,
-                "holder_count": 825,
-                "holding_count": 4,
+                "comment_count": 303,
+                "follower_count": 19062,
+                "following_count": 19,
+                "holder_count": 3418,
+                "holding_count": 2053,
                 "nft_buy_count": 0,
                 "nft_buy_value": 0,
                 "nft_coin": 0,
@@ -66,28 +68,28 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
                 "nft_royalty": 0,
                 "nft_sell_count": 0,
                 "nft_sell_value": 0,
-                "post_count": 11,
-                "quote_count": 0,
-                "receiver_coin_count": 0,
-                "receiver_coin_value": 0,
-                "receiver_connection_count": 8191,
-                "receiver_connection_value": 36962467593218,
-                "receiver_diamond_count": 0,
-                "receiver_diamond_value": 0,
+                "post_count": 46,
+                "quote_count": 5,
+                "receiver_coin_count": 5145,
+                "receiver_coin_value": 158987930475,
+                "receiver_connection_count": 79284,
+                "receiver_connection_value": 103234897238367,
+                "receiver_diamond_count": 5640,
+                "receiver_diamond_value": 98695234232,
                 "receiver_seed_count": 1,
                 "receiver_seed_value": 50000000,
-                "repost_count": 0,
+                "repost_count": 8,
                 "reward_coins": 0,
                 "reward_value": 0,
-                "sender_coin_count": 0,
-                "sender_coin_value": 0,
-                "sender_connection_count": 3,
-                "sender_connection_value": 885750759,
-                "sender_diamond_count": 0,
-                "sender_diamond_value": 0,
-                "sender_seed_count": 1,
-                "sender_seed_value": 123000000,
-                "tx_count": 4566
+                "sender_coin_count": 1087,
+                "sender_coin_value": 49261003492,
+                "sender_connection_count": 54,
+                "sender_connection_value": 1149671398029,
+                "sender_diamond_count": 3369,
+                "sender_diamond_value": 44350818180,
+                "sender_seed_count": 2,
+                "sender_seed_value": 124000000,
+                "tx_count": 38107
             }
         }
     ]
