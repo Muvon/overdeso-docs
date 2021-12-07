@@ -318,5 +318,180 @@ curl -s --data '[{"method":"account.connection.list", "params": {"username":"dia
 {% endtab %}
 {% endtabs %}
 
+### account.holding.list
+
+Get account creator coins holding or those who hold it.
+
+The method requires one of **username** or **pubkey** to be passed in request body.
+
+#### Request params <a href="#request-params" id="request-params"></a>
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be holding or holder. First one is for fetching holding account and second one for fetching holders of an account.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+The method returns creator coin holdings for account or holder list for creator.
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"account.holding.list", "params": {"username":"diamondhands", "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 4,
+            "list": [
+                {
+                    "account": {
+                        "account": {
+                            "height": 5929,
+                            "pubkey": "BC1YLhrtptZUpJDgXJrdQdojctfTE2GdATqjW2259p7oFN45YFbH3Zp"
+                        },
+                        "coin": {
+                            "locked": 1019099654107,
+                            "price": 10126933450,
+                            "supply": 100632601086,
+                            "watermark": 117818600424
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/8wURLVXw1P",
+                            "description": "Sell at your own risk. Founder at TH3RD BRAIN. Head of Activation at Community. Happy Google finally stopped saying I was the founder of this thing \ud83d\ude02 @diamondhands for President",
+                            "height": 6180,
+                            "is_hidden": 0,
+                            "reward_points": 1000,
+                            "stake_points": 12500,
+                            "username": "jakeudell"
+                        }
+                    },
+                    "holding": {
+                        "coins": 147428805,
+                        "has_purchased": 1,
+                        "spend": 2077322200
+                    }
+                },
+                {
+                    "account": {
+                        "account": {
+                            "height": 0,
+                            "pubkey": "BC1YLiWhFc7jgCAiaY39Uer7kpTdDMSyPH9zQma9N4hKXyXeWX5cmh1"
+                        },
+                        "coin": {
+                            "locked": 865848244213,
+                            "price": 9084367703,
+                            "supply": 95311888778,
+                            "watermark": 103782359872
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/9MehwovZoi",
+                            "description": "Seeding early adopters to build a vibrant creator community, by the people for the people. Buying myself back.",
+                            "height": 6061,
+                            "is_hidden": 0,
+                            "reward_points": 0,
+                            "stake_points": 12500,
+                            "username": "GalaMar"
+                        }
+                    },
+                    "holding": {
+                        "coins": 24480942,
+                        "has_purchased": 1,
+                        "spend": 755208922
+                    }
+                },
+                {
+                    "account": {
+                        "account": {
+                            "height": 2,
+                            "pubkey": "BC1YLiFNARSWF6qtXM5acrS7q8VWPeeS2gycVBtqLALkE4c1V3kx4US"
+                        },
+                        "coin": {
+                            "locked": 79695133404558,
+                            "price": 185191671630,
+                            "supply": 430338646998,
+                            "watermark": 453559032340
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/AGRjTR2Rb2",
+                            "description": "",
+                            "height": 2,
+                            "is_hidden": 0,
+                            "reward_points": 0,
+                            "stake_points": 12500,
+                            "username": "elonmusk"
+                        }
+                    },
+                    "holding": {
+                        "coins": 141915,
+                        "has_purchased": 1,
+                        "spend": 75320550
+                    }
+                },
+                {
+                    "account": {
+                        "account": {
+                            "height": 1495,
+                            "pubkey": "BC1YLiVuAdFkfRz7XdEuf9tPSmNt7FXGSLFNvtjRA3HCtuCGEKijaZH"
+                        },
+                        "coin": {
+                            "locked": 212265714,
+                            "price": 362847374358974,
+                            "supply": 585,
+                            "watermark": 8015147004
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/8J9F64MHZE",
+                            "description": "salomon",
+                            "height": 1495,
+                            "is_hidden": 0,
+                            "reward_points": 0,
+                            "stake_points": 12500,
+                            "username": "salomon"
+                        }
+                    },
+                    "holding": {
+                        "coins": 7,
+                        "has_purchased": 1,
+                        "spend": 7541837
+                    }
+                },
+                {
+                    "account": {
+                        "account": {
+                            "height": 6042,
+                            "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                        },
+                        "coin": {
+                            "locked": 13017215927159,
+                            "price": 55336577735,
+                            "supply": 235237097411,
+                            "watermark": 244724729204
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/A7cKMcdG1K",
+                            "description": "\ud83d\udc8e\ud83d\ude4c",
+                            "height": 6044,
+                            "is_hidden": 0,
+                            "reward_points": 0,
+                            "stake_points": 12500,
+                            "username": "diamondhands"
+                        }
+                    },
+                    "holding": {
+                        "coins": 0,
+                        "has_purchased": 1,
+                        "spend": 0
+                    }
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 
 
