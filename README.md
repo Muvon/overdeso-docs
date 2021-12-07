@@ -32,3 +32,7 @@ Feeling like an eager beaver? Jump in to the quick start docs and get making you
 [method-list.md](reference/method-list.md)
 {% endcontent-ref %}
 
+{% hint style="info" %}
+To help developers adapt code while we run early beta stage we added special page that describes all API changes before we lock the version – [latest changes](reference/latest-changes.md).
+{% endhint %}
+

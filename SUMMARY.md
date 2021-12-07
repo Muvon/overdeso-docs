@@ -6,6 +6,7 @@
 
 * [API concept](reference/api-concept.md)
 * [Method list](reference/method-list.md)
+* [Latest changes](reference/latest-changes.md)
 * [Block](reference/block.md)
 * [Transaction](reference/transaction.md)
 * [Account](reference/account.md)
