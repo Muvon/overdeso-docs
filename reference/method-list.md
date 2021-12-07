@@ -21,6 +21,7 @@
 
 * [post.get](post.md#post.get)
 * [post.list](post.md#post.list)
+* [post.like.list](post.md#post.like.list)
 
 ### Diamond
 
