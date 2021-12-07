@@ -392,3 +392,378 @@ curl -s --data '[{"method":"post.list", "params": {"hash":"75f16239b57de0531f957
 ```
 {% endtab %}
 {% endtabs %}
+
+### post.like.list
+
+Get post likes or likes of posts for account.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Account public key</td></tr><tr><td>username</td><td></td><td>true</td><td>Account username</td></tr></tbody></table>
+
+#### Response
+
+The method returned likes in chronological order for post or for account.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.like.list", "params": {"hash":"75f16239b57de0531f9579f3817beb0a67515e4999947f293c112fb0260178e4", "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "account": {
+                    "account": {
+                        "height": 5876,
+                        "pubkey": "BC1YLhrqTukBnBZ6pU4v4cwbNrsXp8VLdZ3wNw8r9SBhQieAnX6VtWW"
+                    },
+                    "coin": null,
+                    "profile": null
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 4819,
+                        "pubkey": "BC1YLhbeXFZYNh22ktvNJqSbpfTkV7aq5gBLbkG6h9AnD1XxEPvpuoa"
+                    },
+                    "coin": {
+                        "locked": 3627958770,
+                        "price": 236106712,
+                        "supply": 15365758716,
+                        "watermark": 28434180030
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/VX7zZ8PY4f9",
+                        "description": "",
+                        "height": 6059,
+                        "is_hidden": 0,
+                        "reward_points": 1000,
+                        "stake_points": 12500,
+                        "username": "btcpepe"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 4323,
+                        "pubkey": "BC1YLitP6QBiJ8TAPGDH3ZdGBavRuXterrL3cYwVgu1FqqmQz6d71Ga"
+                    },
+                    "coin": {
+                        "locked": 28401911,
+                        "price": 9308901,
+                        "supply": 3051048758,
+                        "watermark": 3140592217
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/TgNPvpcj14T",
+                        "description": "",
+                        "height": 7659,
+                        "is_hidden": 0,
+                        "reward_points": 1500,
+                        "stake_points": 12500,
+                        "username": "tienne_e"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 3918,
+                        "pubkey": "BC1YLjVVDGqjkAg7ZrzonH8tBk1LHKSfaUtpxbSUVa9ttToM8JRJzmy"
+                    },
+                    "coin": {
+                        "locked": 5131608172,
+                        "price": 297510595,
+                        "supply": 17248488820,
+                        "watermark": 36938030418
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/UBjoE4rG32X",
+                        "description": "Frontier Technology investor. Care deeply about free speech and evolving the internet beyond ad based revenue models. Work hard, be kind. ",
+                        "height": 7652,
+                        "is_hidden": 0,
+                        "reward_points": 500,
+                        "stake_points": 12500,
+                        "username": "Atticus"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 0,
+                        "pubkey": "BC1YLh6hhf2koahaMb5nydvB5EHzEAP6MZPSsQM8Ka4Ko4gjbeXjQjB"
+                    },
+                    "coin": {
+                        "locked": 33460153752,
+                        "price": 1038369903,
+                        "supply": 32223732256,
+                        "watermark": 63928860658
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/QLRLYNDP8f1",
+                        "description": "Decentralize",
+                        "height": 7663,
+                        "is_hidden": 0,
+                        "reward_points": 1000,
+                        "stake_points": 12500,
+                        "username": "ayo"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 4646,
+                        "pubkey": "BC1YLinotRvfP6fzs5a3HPDABsMYhTVv17c22g81FHAkoeytJBxfXT7"
+                    },
+                    "coin": {
+                        "locked": 948872645,
+                        "price": 96561803,
+                        "supply": 9826583677,
+                        "watermark": 13302771075
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/fZA9kDCGzbh",
+                        "description": "Sapere aude \n\nwww.wrapbook.com",
+                        "height": 7652,
+                        "is_hidden": 0,
+                        "reward_points": 1000,
+                        "stake_points": 12500,
+                        "username": "cameronwoodward"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 2497,
+                        "pubkey": "BC1YLi6LpXTemAG8T9ptyWAkMywrjynwZcKjB5DkDXxrsG5kgAwAqxq"
+                    },
+                    "coin": {
+                        "locked": 1179056963140,
+                        "price": 11160664430,
+                        "supply": 105643975808,
+                        "watermark": 192232015512
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/QLa8TR7Mxby",
+                        "description": "buidling bitclout",
+                        "height": 2498,
+                        "is_hidden": 0,
+                        "reward_points": 200,
+                        "stake_points": 12500,
+                        "username": "maebeam"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 5553,
+                        "pubkey": "BC1YLidMuCokb3d2e8D725J22J7puc5vN38aDLntjaww1JT7jZGKaGF"
+                    },
+                    "coin": {
+                        "locked": 34890658666,
+                        "price": 1067758201,
+                        "supply": 32676554116,
+                        "watermark": 68227071880
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/ciPWWVNfeeK",
+                        "description": "Entrepreneur, Woman, Co-Founder Bancor, Decentralist, New Economist, Plant Lover",
+                        "height": 6381,
+                        "is_hidden": 0,
+                        "reward_points": 1000,
+                        "stake_points": 12500,
+                        "username": "GaliaB"
+                    }
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 6047,
+                        "pubkey": "BC1YLieN6iiss8hC7mo8y9gtr2bbW1336SkHEUTuWnVgaqrq64Sf3rz"
+                    },
+                    "coin": null,
+                    "profile": null
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            },
+            {
+                "account": {
+                    "account": {
+                        "height": 0,
+                        "pubkey": "BC1YLi7qauajrATCFtftpb2SvRBaBeMwBJLGszf49ns31ErWTbUhtNY"
+                    },
+                    "coin": null,
+                    "profile": null
+                },
+                "post": {
+                    "depth": 0,
+                    "has_image": false,
+                    "has_media": false,
+                    "has_video": false,
+                    "is_hidden": false,
+                    "is_nft": true,
+                    "is_quoted": false,
+                    "lang": "en",
+                    "media": {
+                        "image_urls": []
+                    },
+                    "submitted_at": 1615575232,
+                    "text": "In retrospect, it was inevitable"
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+###
