@@ -12,6 +12,10 @@ The **URL** to send requests is – **https://api.overdeso.com/v1/**
 
 Where is **v1** is version of API. While we are still in development and early access mode its always v1.
 
+{% hint style="info" %}
+The API is fully open to public now but in future releases you need to pass your personal token in header **X-API-Token**, but we will update docs later.
+{% endhint %}
+
 **JSON** data is a simple list with methods to process and params for each method. That means if you want to query for one method just simply send one request in list. Lets look on example.
 
 ```json

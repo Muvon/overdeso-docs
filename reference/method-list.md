@@ -1,3 +1,7 @@
+---
+description: Full method list groupped by namespaces.
+---
+
 # Method list
 
 ### Block

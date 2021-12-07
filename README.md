@@ -16,7 +16,9 @@ We scale it for you and offer simple API to use. You just open your favourite co
 Disclaimer: we are in early beta test mode and API methods can be changed. All data can be modified and fixed. Please use on your own risk. We will publish once we are production ready.&#x20;
 {% endhint %}
 
-
+{% hint style="warning" %}
+All data provided is fixed to block height **84319** of blockchain. We are going to enable syncing before December 10. Just keep in mind we are not running updater now.
+{% endhint %}
 
 ## Want to jump right in?
 
@@ -26,11 +28,7 @@ Feeling like an eager beaver? Jump in to the quick start docs and get making you
 [api-concept.md](reference/api-concept.md)
 {% endcontent-ref %}
 
-{% content-ref url="reference/block.md" %}
-[block.md](reference/block.md)
-{% endcontent-ref %}
-
-{% content-ref url="reference/account.md" %}
-[account.md](reference/account.md)
+{% content-ref url="reference/method-list.md" %}
+[method-list.md](reference/method-list.md)
 {% endcontent-ref %}
 
