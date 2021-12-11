@@ -4,6 +4,10 @@ description: Full method list groupped by namespaces.
 
 # Method list
 
+### Chain
+
+* [chain.state](chain.md#chain.state)
+
 ### Block
 
 * [block.tip](block.md#block.tip)
@@ -17,17 +21,25 @@ description: Full method list groupped by namespaces.
 ### Account
 
 * [account.get](account.md#account.get)
+* [account.utxo.list](account.md#account.utxo.list)
 * [account.follow.list](account.md#account.follow.list)
 * [account.seed.list](account.md#account.seed.list)
 * [account.connection.list](account.md#account.connection.list)
 * [account.holding.list](account.md#account.holding.list)
+* [account.trade.list](account.md#account.trade.list)
+* [account.stat.list](account.md#account.stat.list)
 
 ### Post
 
 * [post.get](post.md#post.get)
 * [post.list](post.md#post.list)
 * [post.like.list](post.md#post.like.list)
+* [post.diamond.list](post.md#post.diamond.list)
+* [post.stat.list](post.md#post.stat.list)
 
-### Diamond
+### Hashtag
 
-* [diamond.list](diamond.md#diamond.list)
+* [hashtag.get](hashtag.md#hashtag.get)
+* [hashtag.list](hashtag.md#hashtag.list)
+* [hashtag.stat.list](hashtag.md#hashtag.stat.list)
+

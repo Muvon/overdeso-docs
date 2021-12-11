@@ -12,7 +12,7 @@ Returned transaction data are in hex.
 
 #### Request
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td></td><td>true</td><td>Height of block to fetch. </td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td></td><td>true</td><td>Base58Check transaction id starting with 3J…</td></tr></tbody></table>
 
 #### Response
 
@@ -97,10 +97,6 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6Ms
 ]
 ```
 {% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
 {% endtabs %}
 
 ### transaction.list
@@ -152,3 +148,6 @@ curl -s --data '[{"method":"transaction.list", "params": {"username":"diamondhan
 {% endtab %}
 {% endtabs %}
 
+### transaction.submit
+
+Submit signed transaction to blockchain. TODO: implementation in progresss

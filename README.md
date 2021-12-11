@@ -17,7 +17,7 @@ Disclaimer: we are in early beta test mode and API methods can be changed. All d
 {% endhint %}
 
 {% hint style="warning" %}
-All data provided is fixed to block height **84319** of blockchain. We are going to enable syncing before December 10. Just keep in mind we are not running updater now.
+All data provide are synced with blocks only for now. We did not include mempool but working on it.
 {% endhint %}
 
 ## Want to jump right in?

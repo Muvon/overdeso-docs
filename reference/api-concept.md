@@ -12,6 +12,20 @@ The **URL** to send requests is – **https://api.overdeso.com/v1/**
 
 Where is **v1** is version of API. While we are still in development and early access mode its always v1.
 
+{% hint style="danger" %}
+**Attention!**  While we are in active development we offer 2 API endpoints: **api1** and **api2**. So basically it means that there are 2 URLs: **https://api1.overdeso.com/v1/** and **https://api2.overdeso.com/v1/.**
+
+We use it one by one on each update. For example, we deployed new version on api1. It becomes active. Next we work and prepare update with new docs and breaking changing and deploy to api2. So devs have time even in active development stage to update their apps and move to another endpoint without breaking things.&#x20;
+
+<mark style="color:orange;">**👉 Current doc version API: api2**</mark>&#x20;
+
+**P.S.** **api.overdeso.com** points to latest released update
+
+**P.P.S.** we deploy updates weekly on **Mondays**
+{% endhint %}
+
+
+
 {% hint style="info" %}
 The API is fully open to public now but in future releases you need to pass your personal token in header **X-API-Token**, but we will update docs later.
 {% endhint %}

@@ -39,66 +39,24 @@ The method returns post information and related comments to it if requested
         {
             "author": {
                 "account": {
+                    "balance": 26676665293,
                     "height": 6042,
                     "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
                 },
                 "coin": {
-                    "locked": 2613326382595,
-                    "price": 18972707337,
-                    "supply": 137741353205,
+                    "locked": 5710186658419,
+                    "price": 31947270018,
+                    "supply": 178737859453,
                     "watermark": 255810788786
                 },
                 "profile": {
-                    "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                    "avatar_url": "https://overdeso.com/media/avatar/Xs8Q5JRbC7m",
                     "description": "\ud83d\udc8e\ud83d\ude4c",
                     "height": 6044,
                     "is_hidden": 0,
                     "reward_points": 0,
                     "stake_points": 12500,
                     "username": "diamondhands"
-                },
-                "stat": {
-                    "coin_buy_count": 53,
-                    "coin_buy_value": 409142554569,
-                    "coin_sell_count": 2,
-                    "coin_sell_value": 60683183,
-                    "comment_count": 303,
-                    "follower_count": 19036,
-                    "following_count": 19,
-                    "holder_count": 3417,
-                    "holding_count": 2046,
-                    "nft_buy_count": 0,
-                    "nft_buy_value": 0,
-                    "nft_coin": 0,
-                    "nft_count": 0,
-                    "nft_gain": 0,
-                    "nft_mint_count": 0,
-                    "nft_mint_value": 0,
-                    "nft_royalty": 0,
-                    "nft_sell_count": 0,
-                    "nft_sell_value": 0,
-                    "post_count": 46,
-                    "quote_count": 5,
-                    "receiver_coin_count": 5129,
-                    "receiver_coin_value": 158981947116,
-                    "receiver_connection_count": 79153,
-                    "receiver_connection_value": 103233401212682,
-                    "receiver_diamond_count": 5623,
-                    "receiver_diamond_value": 98689250873,
-                    "receiver_seed_count": 1,
-                    "receiver_seed_value": 50000000,
-                    "repost_count": 7,
-                    "reward_coins": 0,
-                    "reward_value": 0,
-                    "sender_coin_count": 1080,
-                    "sender_coin_value": 48421160508,
-                    "sender_connection_count": 53,
-                    "sender_connection_value": 1144624215800,
-                    "sender_diamond_count": 3340,
-                    "sender_diamond_value": 43510975196,
-                    "sender_seed_count": 2,
-                    "sender_seed_value": 124000000,
-                    "tx_count": 38047
                 }
             },
             "parent": null,
@@ -109,6 +67,7 @@ The method returns post information and related comments to it if requested
                 "has_video": false,
                 "hash": "75f16239b57de0531f9579f3817beb0a67515e4999947f293c112fb0260178e4",
                 "is_hidden": false,
+                "is_nft": false,
                 "is_quoted": false,
                 "lang": "en",
                 "media": {
@@ -116,12 +75,12 @@ The method returns post information and related comments to it if requested
                 },
                 "nft": null,
                 "stat": {
-                    "comment_count": 61,
-                    "diamond_count": 29,
-                    "diamond_value": 10389204155,
-                    "like_count": 210,
-                    "quote_count": 11,
-                    "repost_count": 18
+                    "comment_count": 49,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 190,
+                    "quote_count": 7,
+                    "repost_count": 13
                 },
                 "submitted_at": 1615575232,
                 "text": "In retrospect, it was inevitable"
@@ -766,4 +725,471 @@ curl -s --data '[{"method":"post.like.list", "params": {"hash":"75f16239b57de053
 {% endtab %}
 {% endtabs %}
 
-###
+### post.diamond.list
+
+Fetch diamond list for post hash or account as receiver or sender.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch. It has priority if its passed so we ignore account related fields then.</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>username</td><td></td><td>true</td><td>Username to fetch account for</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+
+#### Response
+
+Returns structure as list each on with keys:
+
+* **diamond** – contains level only of diamond;
+* **post** – related post information;
+* **sender** – information about sender account;
+* **receiver** – information about receiver account.
+
+If no diamonds found returned empty array list there was no error.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.diamond.list", "params": {"username": "diamondhands"}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "diamond": {
+                    "level": 6,
+                    "value": 5000000000
+                },
+                "post": {
+                    "account": {
+                        "height": 6055,
+                        "pubkey": "BC1YLiRgvtCW3vwhy8jYahJoi5XmbrxSHrZHVPLBJm3cxWDKQ9vvwE8"
+                    },
+                    "coin": {
+                        "locked": 2459499208919,
+                        "price": 18220683927,
+                        "supply": 134983912720,
+                        "watermark": 166627229450
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/ZsYUFsRZEjH",
+                        "description": "The Community Builder \ud83d\udc4f\n\n@GiftClout\ud83d\udc9d\n@VerifiedProfile\u2705\n\ud83d\ude4f JUST HODL @frbuyback & @socialtrustfund \ud83d\ude4f \n\nDay 21 of 60 \ud83d\ude80 to the \ud83c\udf1d",
+                        "height": 6062,
+                        "is_hidden": 0,
+                        "reward_points": 1111,
+                        "stake_points": 12500,
+                        "username": "RajLahoti"
+                    }
+                },
+                "receiver": {
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                    },
+                    "coin": {
+                        "locked": 2612356540128,
+                        "price": 18968013019,
+                        "supply": 137724311839,
+                        "watermark": 255810788786
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                        "description": "\ud83d\udc8e\ud83d\ude4c",
+                        "height": 6044,
+                        "is_hidden": 0,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "username": "diamondhands"
+                    }
+                },
+                "sender": {
+                    "account": {
+                        "height": 6055,
+                        "pubkey": "BC1YLiRgvtCW3vwhy8jYahJoi5XmbrxSHrZHVPLBJm3cxWDKQ9vvwE8"
+                    },
+                    "coin": {
+                        "locked": 2459499208919,
+                        "price": 18220683927,
+                        "supply": 134983912720,
+                        "watermark": 166627229450
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/ZsYUFsRZEjH",
+                        "description": "The Community Builder \ud83d\udc4f\n\n@GiftClout\ud83d\udc9d\n@VerifiedProfile\u2705\n\ud83d\ude4f JUST HODL @frbuyback & @socialtrustfund \ud83d\ude4f \n\nDay 21 of 60 \ud83d\ude80 to the \ud83c\udf1d",
+                        "height": 6062,
+                        "is_hidden": 0,
+                        "reward_points": 1111,
+                        "stake_points": 12500,
+                        "username": "RajLahoti"
+                    }
+                }
+            },
+            {
+                "diamond": {
+                    "level": 6,
+                    "value": 5000000000
+                },
+                "post": {
+                    "account": {
+                        "height": 9768,
+                        "pubkey": "BC1YLhKYCXfy2tguomfrydUAEFcf5ANqkaQELWgTHWVVNPB3UHibxth"
+                    },
+                    "coin": {
+                        "locked": 77812301643,
+                        "price": 1822632011,
+                        "supply": 42692272026,
+                        "watermark": 66920220515
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Rg4vBr8mzKZ",
+                        "description": "\u2705 Official @GiftClout\ud83d\udc9d | We send new creators \uff0411.11 of \ud83d\udcb2clout to get them started on their journey \ud83d\ude4f\ud83c\udffd\n\n33.33% FR \n> 1/2 supporting new users\n> 1/2 re-invested into our coin",
+                        "height": 9776,
+                        "is_hidden": 0,
+                        "reward_points": 3333,
+                        "stake_points": 12500,
+                        "username": "GiftClout"
+                    }
+                },
+                "receiver": {
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                    },
+                    "coin": {
+                        "locked": 2612356540128,
+                        "price": 18968013019,
+                        "supply": 137724311839,
+                        "watermark": 255810788786
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                        "description": "\ud83d\udc8e\ud83d\ude4c",
+                        "height": 6044,
+                        "is_hidden": 0,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "username": "diamondhands"
+                    }
+                },
+                "sender": {
+                    "account": {
+                        "height": 9768,
+                        "pubkey": "BC1YLhKYCXfy2tguomfrydUAEFcf5ANqkaQELWgTHWVVNPB3UHibxth"
+                    },
+                    "coin": {
+                        "locked": 77812301643,
+                        "price": 1822632011,
+                        "supply": 42692272026,
+                        "watermark": 66920220515
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Rg4vBr8mzKZ",
+                        "description": "\u2705 Official @GiftClout\ud83d\udc9d | We send new creators \uff0411.11 of \ud83d\udcb2clout to get them started on their journey \ud83d\ude4f\ud83c\udffd\n\n33.33% FR \n> 1/2 supporting new users\n> 1/2 re-invested into our coin",
+                        "height": 9776,
+                        "is_hidden": 0,
+                        "reward_points": 3333,
+                        "stake_points": 12500,
+                        "username": "GiftClout"
+                    }
+                }
+            },
+            {
+                "diamond": {
+                    "level": 1,
+                    "value": 50000
+                },
+                "post": {
+                    "account": {
+                        "height": 6557,
+                        "pubkey": "BC1YLiKy1qBAXKCxVk3akggiaU2atz7upTCa1WyW3ViWp4Q46KxfftZ"
+                    },
+                    "coin": {
+                        "locked": 14588009793,
+                        "price": 597031840,
+                        "supply": 24434224128,
+                        "watermark": 38438992674
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/ZsWGqbjBrnb",
+                        "description": "Value BitClout Investor.\nFrom \ud83c\udde8\ud83c\udded\nI will give away a one-way ticket to Antarctica among my subscribers \u2708\ufe0f\np.s. Sorry for my awful english.",
+                        "height": 7655,
+                        "is_hidden": 0,
+                        "reward_points": 1100,
+                        "stake_points": 12500,
+                        "username": "pingu_venture"
+                    }
+                },
+                "receiver": {
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                    },
+                    "coin": {
+                        "locked": 2612356540128,
+                        "price": 18968013019,
+                        "supply": 137724311839,
+                        "watermark": 255810788786
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                        "description": "\ud83d\udc8e\ud83d\ude4c",
+                        "height": 6044,
+                        "is_hidden": 0,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "username": "diamondhands"
+                    }
+                },
+                "sender": {
+                    "account": {
+                        "height": 6557,
+                        "pubkey": "BC1YLiKy1qBAXKCxVk3akggiaU2atz7upTCa1WyW3ViWp4Q46KxfftZ"
+                    },
+                    "coin": {
+                        "locked": 14588009793,
+                        "price": 597031840,
+                        "supply": 24434224128,
+                        "watermark": 38438992674
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/ZsWGqbjBrnb",
+                        "description": "Value BitClout Investor.\nFrom \ud83c\udde8\ud83c\udded\nI will give away a one-way ticket to Antarctica among my subscribers \u2708\ufe0f\np.s. Sorry for my awful english.",
+                        "height": 7655,
+                        "is_hidden": 0,
+                        "reward_points": 1100,
+                        "stake_points": 12500,
+                        "username": "pingu_venture"
+                    }
+                }
+            },
+            {
+                "diamond": {
+                    "level": 1,
+                    "value": 50000
+                },
+                "post": {
+                    "account": {
+                        "height": 9977,
+                        "pubkey": "BC1YLga4HDxYaQbcSUJpg5dNqe5Mv4a9qKSxS3K28kLFT7ERse7yUcq"
+                    },
+                    "coin": {
+                        "locked": 6574120736,
+                        "price": 350933828,
+                        "supply": 18733220353,
+                        "watermark": 24568140092
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/RLfZySCbu1y",
+                        "description": "GMBAds\u269c\ufe0fMarketing \nTorts Law Start-Up\u2696\ufe0f\nDad\ud83d\udc68\u200d\ud83d\udc66\u2693\ufe0f\n\u041e\u0434\u0435\u0441\u0441\u0430 \ud83c\uddfa\ud83c\udde6\ud83d\udccdNew York\ud83d\uddfd\nAds Soho BitClout Art NFT House \ud83d\udc8e\ud83e\udd32\ud83d\udd79\n11%FR\nBit All Day Clout All Night @BitCloutLabs",
+                        "height": 9979,
+                        "is_hidden": 0,
+                        "reward_points": 1111,
+                        "stake_points": 12500,
+                        "username": "GeneGMB"
+                    }
+                },
+                "receiver": {
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                    },
+                    "coin": {
+                        "locked": 2612356540128,
+                        "price": 18968013019,
+                        "supply": 137724311839,
+                        "watermark": 255810788786
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                        "description": "\ud83d\udc8e\ud83d\ude4c",
+                        "height": 6044,
+                        "is_hidden": 0,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "username": "diamondhands"
+                    }
+                },
+                "sender": {
+                    "account": {
+                        "height": 9977,
+                        "pubkey": "BC1YLga4HDxYaQbcSUJpg5dNqe5Mv4a9qKSxS3K28kLFT7ERse7yUcq"
+                    },
+                    "coin": {
+                        "locked": 6574120736,
+                        "price": 350933828,
+                        "supply": 18733220353,
+                        "watermark": 24568140092
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/RLfZySCbu1y",
+                        "description": "GMBAds\u269c\ufe0fMarketing \nTorts Law Start-Up\u2696\ufe0f\nDad\ud83d\udc68\u200d\ud83d\udc66\u2693\ufe0f\n\u041e\u0434\u0435\u0441\u0441\u0430 \ud83c\uddfa\ud83c\udde6\ud83d\udccdNew York\ud83d\uddfd\nAds Soho BitClout Art NFT House \ud83d\udc8e\ud83e\udd32\ud83d\udd79\n11%FR\nBit All Day Clout All Night @BitCloutLabs",
+                        "height": 9979,
+                        "is_hidden": 0,
+                        "reward_points": 1111,
+                        "stake_points": 12500,
+                        "username": "GeneGMB"
+                    }
+                }
+            },
+            {
+                "diamond": {
+                    "level": 1,
+                    "value": 50000
+                },
+                "post": {
+                    "account": {
+                        "height": 10081,
+                        "pubkey": "BC1YLgdWqLHmMH4iuGsdGnC1xXUUSNNqRqwPLpVNC14GxQDQp9DUuyf"
+                    },
+                    "coin": {
+                        "locked": 1068357607,
+                        "price": 104506794,
+                        "supply": 10222853107,
+                        "watermark": 13438450504
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/WgzVxiV14ab",
+                        "description": "Keeping it pure. Asker of good questions. Finder of beautiful and sometimes hilarious things. Examiner of life up close and from unusual angles. 8% founder's fee. \u267e",
+                        "height": 10082,
+                        "is_hidden": 0,
+                        "reward_points": 800,
+                        "stake_points": 12500,
+                        "username": "Fireweed"
+                    }
+                },
+                "receiver": {
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
+                    },
+                    "coin": {
+                        "locked": 2612356540128,
+                        "price": 18968013019,
+                        "supply": 137724311839,
+                        "watermark": 255810788786
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/Xs8Q8SSnZ6F",
+                        "description": "\ud83d\udc8e\ud83d\ude4c",
+                        "height": 6044,
+                        "is_hidden": 0,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "username": "diamondhands"
+                    }
+                },
+                "sender": {
+                    "account": {
+                        "height": 10081,
+                        "pubkey": "BC1YLgdWqLHmMH4iuGsdGnC1xXUUSNNqRqwPLpVNC14GxQDQp9DUuyf"
+                    },
+                    "coin": {
+                        "locked": 1068357607,
+                        "price": 104506794,
+                        "supply": 10222853107,
+                        "watermark": 13438450504
+                    },
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/WgzVxiV14ab",
+                        "description": "Keeping it pure. Asker of good questions. Finder of beautiful and sometimes hilarious things. Examiner of life up close and from unusual angles. 8% founder's fee. \u267e",
+                        "height": 10082,
+                        "is_hidden": 0,
+                        "reward_points": 800,
+                        "stake_points": 12500,
+                        "username": "Fireweed"
+                    }
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+### post.stat.list
+
+Get post historical statistics
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format.</td></tr><tr><td>period</td><td></td><td>false</td><td>Aggregation period. One of: hour, day, month. Default is hour</td></tr><tr><td>start_at</td><td></td><td>false</td><td>Timestamp to start our lookup. Default is 1610948544 that is genesis block timestamp. That means we fetch from first stat record.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+The method returns statistic related data in chronological order (low to high).
+
+**count** – contains current resulting datataset in response not total count of data we have.
+
+**list** – list of stat structures of related entity. The list contains also **ts** key for timestamp.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.stat.list", "params": {"hash":"1b50b5bf8bf7190d60f938443f825de447b01ee865a96b08e1ae5461ad4b5c24", "period": "hour", "start_at": 1618891732, "limit": 5}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 5,
+            "list": [
+                {
+                    "comment_count": "0",
+                    "diamond_count": "0",
+                    "diamond_value": "0",
+                    "like_count": "0",
+                    "quote_count": "0",
+                    "repost_count": "0",
+                    "ts": 1618884000
+                },
+                {
+                    "comment_count": "0",
+                    "diamond_count": "0",
+                    "diamond_value": "0",
+                    "like_count": "0",
+                    "quote_count": "0",
+                    "repost_count": "0",
+                    "ts": 1618887600
+                },
+                {
+                    "comment_count": 15,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 26,
+                    "quote_count": 0,
+                    "repost_count": 3,
+                    "ts": 1618891200
+                },
+                {
+                    "comment_count": 41,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 43,
+                    "quote_count": 1,
+                    "repost_count": 5,
+                    "ts": 1618894800
+                },
+                {
+                    "comment_count": 47,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 45,
+                    "quote_count": 1,
+                    "repost_count": 6,
+                    "ts": 1618898400
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
