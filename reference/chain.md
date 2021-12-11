@@ -16,6 +16,10 @@ This method does not require any params to be passed.
 
 The method returns information of [chain state structure](structures.md#chain-state).
 
+{% hint style="danger" %}
+`usd_rate` is locked for blockchain genesis block time and not reflecting now. We are working on it.
+{% endhint %}
+
 #### Examples
 
 {% tabs %}
