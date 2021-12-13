@@ -4,7 +4,7 @@ description: This page will describe changes that affect structures or any metho
 
 # Latest changes
 
-### December, 13 2021 (api2, upcoming NON breaking changes)
+### December, 13 2021 (api2)
 
 * added [**NFT**](nft.md) related methods;
 * new method [**block.list**](block.md#block.list) to fetch latest list of mined blocks.
