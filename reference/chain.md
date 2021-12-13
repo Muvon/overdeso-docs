@@ -33,9 +33,9 @@ curl -s --data '[{"method":"chain.state"}]' https://api.overdeso.com/v1 | python
     [
         null,
         {
-            "btc_usd_rate": 3524700,
+            "btc_usd_rate": 4846100,
             "create_nft_fee": 10000,
-            "create_profile_fee": 10000000,
+            "create_profile_fee": 1000000,
             "max_nft_copies": 1000,
             "min_fee_per_kb": 1000,
             "usd_rate": 3198

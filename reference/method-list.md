@@ -12,6 +12,7 @@ description: Full method list groupped by namespaces.
 
 * [block.tip](block.md#block.tip)
 * [block.get](block.md#block.get)
+* [block.list](block.md#block.list)
 
 ### Transaction
 
@@ -42,4 +43,10 @@ description: Full method list groupped by namespaces.
 * [hashtag.get](hashtag.md#hashtag.get)
 * [hashtag.list](hashtag.md#hashtag.list)
 * [hashtag.stat.list](hashtag.md#hashtag.stat.list)
+
+### NFT
+
+* [nft.get](nft.md#nft.get)
+* [nft.list](nft.md#nft.list)
+* [nft.bid.list](nft.md#nft.bid.list)
 

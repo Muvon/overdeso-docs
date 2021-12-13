@@ -4,7 +4,12 @@ description: This page will describe changes that affect structures or any metho
 
 # Latest changes
 
-### December, 11 2020 (api2)
+### December, 13 2021 (api2, upcoming NON breaking changes)
+
+* added [**NFT**](nft.md) related methods;
+* new method [**block.list**](block.md#block.list) to fetch latest list of mined blocks.
+
+### December, 11 2021 (api2)
 
 * added **balance** and **utxo\_count** fields to [account](account.md) stat structure;
 * added **info** field to [block](block.md) structure that contains various statistic for block (same as for transaction);
@@ -19,6 +24,6 @@ description: This page will describe changes that affect structures or any metho
 * new method [**chain.state**](chain.md#chain.state) to fetch current blockchain state info;
 * all data are in sync with new blocks now (but not mempool yet).
 
-### December, 7 2020 (api1)
+### December, 7 2021 (api1)
 
 Initial version of early beta access is here. And we will describe all breaking changes in API since now. 🚀
