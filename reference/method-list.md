@@ -49,4 +49,5 @@ description: Full method list groupped by namespaces.
 * [nft.get](nft.md#nft.get)
 * [nft.list](nft.md#nft.list)
 * [nft.bid.list](nft.md#nft.bid.list)
+* [nft.trade.list](nft.md#nft.trade.list)
 

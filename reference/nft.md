@@ -411,3 +411,121 @@ curl -s --data '[{"method":"nft.bid.list", "params": {"hash": "d66a0aedaaf51bd99
 ```
 {% endtab %}
 {% endtabs %}
+
+### nft.trade.list
+
+Get trades for NFT.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format where NFT was minted</td></tr><tr><td>serial</td><td></td><td>false</td><td>Serial of NFT to get bids for. If omitted we get bids for all serials</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+Returns list of trades for NFT with serial or for all nfts for post.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"nft.trade.list", "params": {"hash": "d66a0aedaaf51bd992262f53c682e2608acbdafeb52bb4f0c1f4dfe85e8c440c", "limit": 5}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 1,
+            "list": [
+                {
+                    "account": {
+                        "account": {
+                            "balance": 311870132553,
+                            "height": 14973,
+                            "pubkey": "BC1YLgzcfyi5GZoMb9xoVzDCMy9KEzzvTqoJzRrVDfhWE2FfFubxaVm"
+                        },
+                        "coin": {
+                            "locked": 200060662614,
+                            "price": 3564639567,
+                            "supply": 56123672201,
+                            "watermark": 70852721372
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/ahu3VsCGbJU",
+                            "description": "\ud83d\udc3e NFT Projects:\u00a0@cloutpups,\u00a0@Rebel5,\u00a0@cloutagotchi, & @soookies\n\ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb Product Designer in Fintech",
+                            "height": 14973,
+                            "is_hidden": 0,
+                            "reward_points": 1000,
+                            "stake_points": 12500,
+                            "username": "clayoglesby"
+                        }
+                    },
+                    "buyer": {
+                        "account": {
+                            "balance": 6849641375,
+                            "height": 8385,
+                            "pubkey": "BC1YLi3oWGPgn85Aq4FJCjoxS2gjG3d5jQUXmhceiCRiDd6byJ53Qhg"
+                        },
+                        "coin": {
+                            "locked": 165424315449,
+                            "price": 3013863640,
+                            "supply": 54887790290,
+                            "watermark": 74340771499
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/biFsRBz33Rn",
+                            "description": "BitClout Ideator | Putting 100% into everything I do. \n\ud83d\udcaf Community Moderator @DeSo\n\n@spookies 212 | @pixelpirates 006\n",
+                            "height": 8386,
+                            "is_hidden": 0,
+                            "reward_points": 1000,
+                            "stake_points": 12500,
+                            "username": "100"
+                        }
+                    },
+                    "nft": {
+                        "is_burned": false,
+                        "is_pending": false,
+                        "is_selling": true,
+                        "last_accepted_bid": 1261000000,
+                        "min_bid": 3000000000,
+                        "serial": 1
+                    },
+                    "seller": {
+                        "account": {
+                            "balance": 311870132553,
+                            "height": 14973,
+                            "pubkey": "BC1YLgzcfyi5GZoMb9xoVzDCMy9KEzzvTqoJzRrVDfhWE2FfFubxaVm"
+                        },
+                        "coin": {
+                            "locked": 200060662614,
+                            "price": 3564639567,
+                            "supply": 56123672201,
+                            "watermark": 70852721372
+                        },
+                        "profile": {
+                            "avatar_url": "https://overdeso.com/media/avatar/ahu3VsCGbJU",
+                            "description": "\ud83d\udc3e NFT Projects:\u00a0@cloutpups,\u00a0@Rebel5,\u00a0@cloutagotchi, & @soookies\n\ud83e\uddd1\ud83c\udffb\u200d\ud83d\udcbb Product Designer in Fintech",
+                            "height": 14973,
+                            "is_hidden": 0,
+                            "reward_points": 1000,
+                            "stake_points": 12500,
+                            "username": "clayoglesby"
+                        }
+                    },
+                    "trade": {
+                        "buyer_value": 1261000000,
+                        "coin_value": 126100000,
+                        "creator_value": 126100000,
+                        "gain": 1008800000,
+                        "seller_value": 1008800000
+                    }
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
