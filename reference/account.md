@@ -2,7 +2,7 @@
 description: Account related API methods.
 ---
 
-# Account
+# 👤 Account
 
 ### account.get
 
@@ -29,69 +29,237 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
     [
         null,
         {
-            "account": {
-                "balance": 3902664802,
-                "height": 6042,
-                "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
-            },
+            "balance": 1202499588544,
             "coin": {
-                "locked": 7764625089832,
-                "price": 39211538296,
-                "supply": 198018884929,
+                "locked": 4634807406285,
+                "price": 28109253787,
+                "supply": 164885465878,
                 "watermark": 255810788786
             },
+            "height": 6042,
             "profile": {
-                "avatar_url": "https://overdeso.com/media/avatar/Xs8Q5JRbC7m",
+                "avatar_url": "https://overdeso.com/media/avatar/Xs8Q75nrKj5",
                 "description": "\ud83d\udc8e\ud83d\ude4c",
                 "height": 6044,
-                "is_hidden": 0,
+                "is_hidden": false,
                 "reward_points": 0,
                 "stake_points": 12500,
+                "timestamp": 1615574830,
                 "username": "diamondhands"
             },
+            "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
             "stat": {
-                "coin_buy_count": 9,
-                "coin_buy_value": 9913206286,
+                "coin_buy_count": 81,
+                "coin_buy_value": 8611846815339,
                 "coin_sell_count": 2,
                 "coin_sell_value": 60683183,
-                "comment_count": 127,
-                "follower_count": 11914,
-                "following_count": 0,
-                "holder_count": 2701,
-                "holding_count": 6,
-                "nft_buy_count": 0,
-                "nft_buy_value": 0,
-                "nft_coin": 0,
-                "nft_count": 0,
-                "nft_gain": 0,
-                "nft_mint_count": 0,
-                "nft_mint_value": 0,
+                "comment_count": 565,
+                "follower_count": 23795,
+                "following_count": 31,
+                "holder_count": 3700,
+                "holding_count": 2659,
+                "nft_buy_count": 12,
+                "nft_buy_value": 51738588404,
+                "nft_coin": 117500000000,
+                "nft_count": 3,
+                "nft_gain": 467500000000,
+                "nft_mint_count": 2,
+                "nft_mint_value": 467500000000,
                 "nft_royalty": 0,
                 "nft_sell_count": 0,
                 "nft_sell_value": 0,
-                "post_count": 21,
-                "quote_count": 0,
-                "receiver_coin_count": 0,
-                "receiver_coin_value": 0,
-                "receiver_connection_count": 35514,
-                "receiver_connection_value": 83835109641084,
-                "receiver_diamond_count": 0,
-                "receiver_diamond_value": 0,
+                "post_count": 89,
+                "quote_count": 34,
+                "receiver_coin_count": 9259,
+                "receiver_coin_value": 619817135916,
+                "receiver_connection_count": 133398,
+                "receiver_connection_value": 139102999315321,
+                "receiver_diamond_count": 29126,
+                "receiver_diamond_value": 155657369222,
                 "receiver_seed_count": 1,
                 "receiver_seed_value": 50000000,
-                "repost_count": 2,
+                "repost_count": 8,
                 "reward_coins": 0,
                 "reward_value": 0,
-                "sender_coin_count": 0,
-                "sender_coin_value": 0,
-                "sender_connection_count": 11,
-                "sender_connection_value": 7183605556,
-                "sender_diamond_count": 0,
-                "sender_diamond_value": 0,
-                "sender_seed_count": 1,
-                "sender_seed_value": 123000000,
-                "tx_count": 20192
-            }
+                "sender_coin_count": 1644,
+                "sender_coin_value": 835936498462,
+                "sender_connection_count": 362,
+                "sender_connection_value": 3509377349917,
+                "sender_diamond_count": 6463,
+                "sender_diamond_value": 101771508175,
+                "sender_seed_count": 3,
+                "sender_seed_value": 1124000000,
+                "tx_count": 71641,
+                "utxo_count": 5147
+            },
+            "timestamp": 1615574505
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+### account.list
+
+Get list of account sorted by wanted field in descending way (hight to low).
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>is_hidden</td><td></td><td>false</td><td>Default is false</td></tr><tr><td>sorting</td><td></td><td>false</td><td>Can be one of: locked, profile_ts, balance. Default is locked.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+The method returns list of [account structures](structures.md#account).
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"account.list", "params": {"limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 102343,
+            "list": [
+                {
+                    "balance": 1446756063,
+                    "coin": {
+                        "locked": 33061863037214,
+                        "price": 103011361141,
+                        "supply": 320953559596,
+                        "watermark": 453559032340
+                    },
+                    "height": 2,
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/hu6AQwwyneq",
+                        "description": "",
+                        "height": 2,
+                        "is_hidden": false,
+                        "reward_points": 0,
+                        "stake_points": 12500,
+                        "timestamp": 1614598233,
+                        "username": "elonmusk"
+                    },
+                    "pubkey": "BC1YLiFNARSWF6qtXM5acrS7q8VWPeeS2gycVBtqLALkE4c1V3kx4US",
+                    "stat": {
+                        "coin_buy_count": 2,
+                        "coin_buy_value": 79595351183,
+                        "coin_sell_count": 0,
+                        "coin_sell_value": 0,
+                        "comment_count": 0,
+                        "follower_count": 20277,
+                        "following_count": 0,
+                        "holder_count": 8590,
+                        "holding_count": 66,
+                        "nft_buy_count": 0,
+                        "nft_buy_value": 0,
+                        "nft_coin": 0,
+                        "nft_count": 0,
+                        "nft_gain": 0,
+                        "nft_mint_count": 0,
+                        "nft_mint_value": 0,
+                        "nft_royalty": 0,
+                        "nft_sell_count": 0,
+                        "nft_sell_value": 0,
+                        "post_count": 0,
+                        "quote_count": 0,
+                        "receiver_coin_count": 84,
+                        "receiver_coin_value": 15732622134,
+                        "receiver_connection_count": 42552,
+                        "receiver_connection_value": 326182002560736,
+                        "receiver_diamond_count": 0,
+                        "receiver_diamond_value": 0,
+                        "receiver_seed_count": 1,
+                        "receiver_seed_value": 20000,
+                        "repost_count": 0,
+                        "reward_coins": 0,
+                        "reward_value": 0,
+                        "sender_coin_count": 0,
+                        "sender_coin_value": 0,
+                        "sender_connection_count": 0,
+                        "sender_connection_value": 0,
+                        "sender_diamond_count": 0,
+                        "sender_diamond_value": 0,
+                        "sender_seed_count": 0,
+                        "sender_seed_value": 0,
+                        "tx_count": 42642,
+                        "utxo_count": 36
+                    },
+                    "timestamp": 1614598233
+                },
+                {
+                    "balance": 17779739570,
+                    "coin": {
+                        "locked": 18226560161314,
+                        "price": 69258014669,
+                        "supply": 263168966771,
+                        "watermark": 353048906645
+                    },
+                    "height": 5769,
+                    "profile": {
+                        "avatar_url": "https://overdeso.com/media/avatar/bNpKqDCBDRf",
+                        "description": "",
+                        "height": 5840,
+                        "is_hidden": false,
+                        "reward_points": 1000,
+                        "stake_points": 12500,
+                        "timestamp": 1615529337,
+                        "username": "naval"
+                    },
+                    "pubkey": "BC1YLgVNKrgTYt1QaeTCW46KMRfCNEAEKrgWdEDUKSQsd42JfQMNncs",
+                    "stat": {
+                        "coin_buy_count": 1,
+                        "coin_buy_value": 95145650200,
+                        "coin_sell_count": 0,
+                        "coin_sell_value": 0,
+                        "comment_count": 0,
+                        "follower_count": 6812,
+                        "following_count": 0,
+                        "holder_count": 1237,
+                        "holding_count": 23,
+                        "nft_buy_count": 0,
+                        "nft_buy_value": 0,
+                        "nft_coin": 0,
+                        "nft_count": 0,
+                        "nft_gain": 0,
+                        "nft_mint_count": 0,
+                        "nft_mint_value": 0,
+                        "nft_royalty": 0,
+                        "nft_sell_count": 0,
+                        "nft_sell_value": 0,
+                        "post_count": 0,
+                        "quote_count": 0,
+                        "receiver_coin_count": 24,
+                        "receiver_coin_value": 26346340418,
+                        "receiver_connection_count": 10843,
+                        "receiver_connection_value": 86309332434857,
+                        "receiver_diamond_count": 0,
+                        "receiver_diamond_value": 0,
+                        "receiver_seed_count": 1,
+                        "receiver_seed_value": 94822628903,
+                        "repost_count": 0,
+                        "reward_coins": 30793004148,
+                        "reward_value": 5688338959697,
+                        "sender_coin_count": 0,
+                        "sender_coin_value": 0,
+                        "sender_connection_count": 1,
+                        "sender_connection_value": 100000000,
+                        "sender_diamond_count": 0,
+                        "sender_diamond_value": 0,
+                        "sender_seed_count": 0,
+                        "sender_seed_value": 0,
+                        "tx_count": 10871,
+                        "utxo_count": 238
+                    },
+                    "timestamp": 1615511001
+                }
+            ]
         }
     ]
 ]
@@ -104,8 +272,6 @@ curl --data '[{"method":"account.get", "params": {"username":"diamondhands"}}]' 
 Find utxo list for account by public key or username
 
 #### Request params
-
-
 
 <table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
@@ -152,7 +318,7 @@ The method requires one of **username** or **pubkey** to be passed in request bo
 
 #### Request params <a href="#request-params" id="request-params"></a>
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be following or follower.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be following or follower.</td></tr><tr><td>expand</td><td></td><td>false</td><td>If set to true we expand account info instead of just pubkey and username returned in item. Default is false.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -285,7 +451,7 @@ TODO
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"account.connection.list", "params": {"username":"diamondhands", "type": "receiver", "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"account.connection.list", "params": {"username":"diamondhands", "type": "receiver", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -293,67 +459,19 @@ curl -s --data '[{"method":"account.connection.list", "params": {"username":"dia
     [
         null,
         {
-            "count": 100,
+            "count": 133398,
             "list": [
                 {
-                    "count": 113,
+                    "count": 118,
                     "pubkey": "BC1YLiwCtwj9py5ekJFeXaxLmC8Z78qrBPiegZVqH9fRXh5hv7HFQpz",
-                    "username": "ChingonETH",
+                    "username": "WhaleSharkIsSCAMMER",
                     "value": 19925096312304
                 },
                 {
-                    "count": 20,
-                    "pubkey": "BC1YLgScTfP6yTo8PcWW2uyxZBtTESbxonLBsDK9TTZ2e47YFmWn52d",
-                    "username": "Stonehead",
-                    "value": 9891141446768
-                },
-                {
-                    "count": 30,
-                    "pubkey": "BC1YLgT36phrdWaCLHV5mm65c1UgJJuHFcYcPEz1tK5mrtDmLBUf8ak",
-                    "username": "Peps",
-                    "value": 6370777170857
-                },
-                {
-                    "count": 37,
-                    "pubkey": "BC1YLhtAPCwD2wUawVc5n5miWuGo8159qrs5G9VE6FVc2ZPFryc2Vq4",
-                    "username": "ArtofWar",
-                    "value": 4232698819910
-                },
-                {
-                    "count": 6,
-                    "pubkey": "BC1YLgUU57aMVyfmrprFZicifoaH5QD8WdBWxtw5PWusD4Spe3CjwoS",
-                    "username": null,
-                    "value": 3434754199929
-                },
-                {
-                    "count": 23,
-                    "pubkey": "BC1YLiWhFc7jgCAiaY39Uer7kpTdDMSyPH9zQma9N4hKXyXeWX5cmh1",
-                    "username": "GalaMar",
-                    "value": 2964212949677
-                },
-                {
-                    "count": 27,
-                    "pubkey": "BC1YLiRgvtCW3vwhy8jYahJoi5XmbrxSHrZHVPLBJm3cxWDKQ9vvwE8",
-                    "username": "RajLahoti",
-                    "value": 2958865247508
-                },
-                {
-                    "count": 15,
-                    "pubkey": "BC1YLgLu3J4EUf7xXZ2KmT332tLboPxXZS8cE4wJY7ifx8Ccsc9dPxW",
-                    "username": null,
-                    "value": 2076935212298
-                },
-                {
-                    "count": 10,
-                    "pubkey": "BC1YLgrg6eoEqj76JX6FfW9dYLZ5ZBAkmZy7fMz3r7nfKDpwKHSwJnt",
-                    "username": "MantisToboggan",
-                    "value": 1978669741283
-                },
-                {
-                    "count": 10,
-                    "pubkey": "BC1YLjDphVAw4TYiwv24tgd9PjuKAoiWCSxomraKerbRibCvZAGRoZV",
-                    "username": "moysha_mk",
-                    "value": 1869918071287
+                    "count": 31,
+                    "pubkey": "BC1YLfmgKvbo5fmZzXV4hcmBsWGbKHU3rvSvGkpvjZTuktF9XhEgc6n",
+                    "username": "whoami",
+                    "value": 12134445221924
                 }
             ],
             "value": 0
@@ -851,7 +969,7 @@ Get account historical stats for username or public key.
 
 The method returns statistic related data in chronological order (low to high).
 
-**count** – contains current resulting datataset in response not total count of data we have.
+**count** – how many rows total in your request.
 
 **list** – list of stat structures of related entity. The list contains also **ts** key for timestamp.
 

@@ -2,7 +2,33 @@
 description: This page will describe changes that affect structures or any methods of API
 ---
 
-# Latest changes
+# 📅 Latest changes
+
+### Upcoming
+
+Mempool processing, extended readerstate, notifications.&#x20;
+
+### December, 20 2021 (api1)
+
+* added statistic for [**posts**](post.md#post.stat.list)/[**hashtags**](hashtag.md#hashtag.stat.list)/[**accounts**](account.md#account.stat.list) for daily/monthly periods;
+* fixed data issue with hour period for statistics;
+* new method [**chain.stat.get**](chain.md#chain.stat.get) for current chain stat (not aggregated yet, data is coming on next update);
+* ****[**nft.bid.list**](nft.md#nft.bid.list) now accepts sorting;
+* new method [**account.list**](account.md#account.list) to fetch accounts sorted by locked, balance or profile creation time;
+* added possibility to filter [**account transactions**](transaction.md#transaction.list) by type;
+* added possibility to get [**list of block transactions**](transaction.md#transaction.list) and filter them by type;
+* calculate count in proper way for posts/hashtags/accounts stat list methods;
+* fix issue with incorrect offset behavior in list endpoints;
+* min limit is set to `1` instead of `5`, error returned in case you pass wrong offset/limit in list endpoints;
+* improved stability of blockchain syncing;
+* added `timestamp` field to account response (profile and account), showing timestamp of creation account/profile;
+* ****[**account structure**](structures.md#account) response is modified, take a look this breaking change;
+* new param `expand` in [**account.follow.list**](account.md#account.follow.list) method to return expanded account info;
+* you can pass `X-Account-Pubkey` or `X-Account-Username` in header for fetching reader state;
+* new `state` field in [**account.follow.list**](account.md#account.follow.list), [**account.get**](account.md#account.get), [**post.get**](post.md#post.get), [**post.list**](post.md#post.list) that reflects reader state;
+* updated [**structures**](structures.md) docs;
+* new method [**message.list**](message.md#message.list) to fetch latest messages for account as recipient or sender;
+* added filter flags `has_image`, `has_video`, `has_media` to [**post.list**](post.md#post.list) method.
 
 ### December, 13 2021 (api2)
 

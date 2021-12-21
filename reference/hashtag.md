@@ -2,7 +2,7 @@
 description: Hashtag related methods.
 ---
 
-# Hashtag
+# #⃣ Hashtag
 
 ### hashtag.get
 
@@ -148,7 +148,7 @@ Get hasthags historical usage statistic.
 
 The method returns statistic related data in chronological order (low to high).
 
-**count** – contains current resulting datataset in response not total count of data we have.
+**count** – how many rows total in your request.
 
 **list** – list of stat structures of related entity. The list contains also **ts** key for timestamp.
 

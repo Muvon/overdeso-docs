@@ -2,11 +2,13 @@
 description: Response structures documentantion
 ---
 
-# Structures
+# 🈁 Structures
 
 There are 2 types of structures: item and list.
 
-API methods that returns list always return it in the way with next fields included: **count** and **list**. Count is for how many items total for request and list contains limited items that you requested by passing parameters **offset** and **limit** in your request. By default **limit** is limited to be in range of **\[5, 100]**. If you pass limit outside of allowed it will be set to minimum.
+API methods that returns list always return it in the way with next fields included: **count** and **list**. Count is for how many items total for request and list contains limited items that you requested by passing parameters **offset** and **limit** in your request. By default **limit** is limited to be in range of **\[1, 100]**. If you pass limit outside of allowed it will be set to minimum.
+
+Default limit is set to 10 and offset to 0.
 
 {% hint style="info" %}
 All values in **DESO** and **Creator Coins** are in **NANOS**. That means to get real human readable value you need to divide the number on **2 ^ 9**. For example, **1 DESO = 1,000,000,000 NANOS.**
@@ -65,12 +67,160 @@ Coming soon.
 
 ### Account
 
-Coming soon.
+| Parameter                                                  | Description                                                                                      |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `balance`                                                  | Current balance of account                                                                       |
+| `height`                                                   | Block height of account first seen (first transaction on it)                                     |
+| `pubkey`                                                   | Public key of account (BC1...)                                                                   |
+| `timestamp`                                                | Timestamp of account creation                                                                    |
+| ``[**`coin`**](structures.md#undefined)**``**              | Creator coin information for account if have                                                     |
+| **``**[**`profile`**](structures.md#account-profile)**``** | Profile information if account has profile created                                               |
+| **``**[**`stat`**](structures.md#undefined)**``**          | Current counters for account                                                                     |
+| **``**[**`state`**](structures.md#undefined)**``**         | Current reader state. It's presented only in case passing account pubkey or username in a header |
+
+### Account: coin
+
+| Parameter   | Description                                                |
+| ----------- | ---------------------------------------------------------- |
+| `locked`    | How much of DESO are locked into profile in nanos          |
+| `price`     | Current profile price in nanos                             |
+| `supply`    | Total circulation of creator coins in nanos                |
+| `watermark` | Maximum circulation of creator coins in nanos for all time |
+
+### Account: profile
+
+| Parameter       | Description                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| `avatar_url`    | Link to avatar of the proflle                                                                        |
+| `description`   | Profile description                                                                                  |
+| `height`        | Block height when profile was created                                                                |
+| `is_hidden`     | Flag that shows if profile is hidden or not                                                          |
+| `reward_points` | Founder reward in points (x100)                                                                      |
+| `stake_points`  | Stake points (x100)                                                                                  |
+| `timestamp`     | Timestamp of account creation (approximated for old transations based on time period between blocks) |
+| `username`      | Username for profile                                                                                 |
+
+### Account: stat
+
+| Parameter                   | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| `coin_buy_count`            | How many buy coins made by account                                           |
+| `coin_buy_value`            | Total value of spend on buying creator coins                                 |
+| `coin_sell_count`           | Same for sell                                                                |
+| `coin_sell_value`           | Same for sell                                                                |
+| `comment_count`             | How many comments this account posted                                        |
+| `stake_points`              | Stake points (x100)                                                          |
+| `follower_count`            | Follower count for this account                                              |
+| `following_count`           | How many profiles this account follow                                        |
+| `holder_count`              | Total holders for creator coin of this profile                               |
+| `holding_count`             | How many coins this account holds                                            |
+| `nft_buy_count`             | Total buy count of NFTs for all time                                         |
+| `nft_buy_value`             | Total value spend on buying NFTs                                             |
+| `nft_coin`                  | The value that went to its locked amount of creator coin on NFT sells before |
+| `nft_count`                 | How many NFTs are minted by account                                          |
+| `nft_gain`                  | How much the account made in gains for trading NFTs                          |
+| `nft_mint_count`            | Total NFTs minted by account for all time                                    |
+| `nft_mint_value`            | The value of minted NFTs by account                                          |
+| `nft_royalty`               | NFT royaty received by creator                                               |
+| `nft_sell_count`            | Total sell count of NFTs for all time                                        |
+| `nft_sell_value`            | Total value received from selling NFTs                                       |
+| `post_count`                | Total posts made by account                                                  |
+| `quote_count`               | Total quotes made by account                                                 |
+| `receiver_coin_count`       | How many times account received creator coins                                |
+| `receiver_coin_value`       | Received value in DESO nanos on coin transfers                               |
+| `receiver_connection_count` | Total incoming connections                                                   |
+| `receiver_connection_value` | The total value of incoming connections in nanos                             |
+| `receiver_diamond_count`    | How many diamonds received (counted in sum of levels)                        |
+| `receiver_diamond_value`    | Total value received in diamonds                                             |
+| `receiver_seed_count`       | How many different accounts seeded the profile                               |
+| `receiver_seed_value`       | Total seeding value before account created pofile                            |
+| `repost_count`              | Total reposts made by account                                                |
+| `reward_coins`              | How many coins earned on rewards when selling it                             |
+| `reward_value`              | How many DESO are made as reward in nanos                                    |
+| `sender_coin_count`         | How many times account sent creator coins                                    |
+| `sender_coin_value`         | Sent value in DESO nanos on coin transfers                                   |
+| `sender_connection_count`   | Total outgoing connections                                                   |
+| `sender_connection_value`   | Total value of outgoing connections                                          |
+| `sender_diamond_count`      | How many diamonds send (counted in sum of levels)                            |
+| `sender_diamond_value`      | Total value send in diamonds                                                 |
+| `sender_seed_count`         | How many accounts are seeded by this account                                 |
+| `sender_seed_value`         | The value of seeded accounts                                                 |
+| `tx_count`                  | Total count of transactios made by the account                               |
+| `utxo_count`                | How many unspend outputs this account has                                    |
+
+### Account: state
+
+| Parameter      | Description                                        |
+| -------------- | -------------------------------------------------- |
+| `is_following` | If the reader account following requested one      |
+| `is_follower`  | If the reader account is followed by requested one |
 
 ### Post
 
-Coming soon.
+| Parameter                                           | Description                                                 |
+| --------------------------------------------------- | ----------------------------------------------------------- |
+| **``**[**`author`**](structures.md#account)**``**   | Account structure for author of this post                   |
+| **``**[**`parent`**](structures.md#undefined)**``** | Post structure for parent post if have                      |
+| **``**[**`root`**](structures.md#undefined)**``**   | Post structure for root post if have                        |
+| **``**[**`post`**](structures.md#undefined)**``**   | Request post structure                                      |
+| **``**[**`stat`**](structures.md#post-stat)**``**   | Statistic structure                                         |
+| **``**[**`state`**](structures.md#undefined)**``**  | Current reader state if reader public key passed to request |
+
+### Post: post
+
+| Parameter                                        | Description                                                                         |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `depth`                                          | How deep this post is in comments flow                                              |
+| `has_image`                                      | If the post has any images uploaded                                                 |
+| `has_media`                                      | If the post has any media attached                                                  |
+| `has_video`                                      | If the post has any video attached                                                  |
+| `hash`                                           | Post hash in hex of transaction                                                     |
+| `is_hidden`                                      | If the post is hidden or not                                                        |
+| `is_nft`                                         | If the post represents NFT                                                          |
+| `is_quoted`                                      | If this is a quoted post with comment                                               |
+| `lang`                                           | Detected language for post text                                                     |
+| `media`                                          |                                                                                     |
+| **``**[**`nft`**](structures.md#undefined)**``** | Information about NFT parameters if this post is NFT                                |
+| `submitted_at`                                   | Timestamp of post submission (based on transction field so do not trust much on it) |
+| `text`                                           | Text of the post                                                                    |
+
+### Post: nft
+
+| Parameter          | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `is_selling`       | If there any NFT for selling now                               |
+| `has_unlockable`   | If the post had unlockable text                                |
+| `nft_count`        | How many NFTs this post minted                                 |
+| `nft_burned_count` | Burned NFTs count                                              |
+| `creator_royalty`  | Creator royalty for related NFTs to this post in points (x100) |
+| `coin_royalty`     | Coin royalty to related NFTs to this post in points (x100)     |
+
+### Post: stat
+
+| Parameter       | Description                                        |
+| --------------- | -------------------------------------------------- |
+| `comment_count` | If the reader account following requested one      |
+| `diamond_count` | If the reader account is followed by requested one |
+| `diamond_value` | The value in DESO given in diamonds to this post   |
+| `like_count`    | Total likes for this post                          |
+| `quote_count`   | How many times its was quoted by people            |
+| `repost_count`  | How many times its reposted by others              |
+
+### Post: state
+
+| Parameter       | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| `is_liked`      | If the reader liked the post                               |
+| `diamond_level` | Level of diamonds given to this post. No diamonds means 0. |
 
 ### Hashtag
+
+| Parameter | Description                                      |
+| --------- | ------------------------------------------------ |
+| `count`   | How many times the hashtag was used for all time |
+| `hashtag` | Requested hashtag in lowercase                   |
+| `last_ts` | Last timestamp that this hashed was used         |
+
+### NFT
 
 Coming soon.

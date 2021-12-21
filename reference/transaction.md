@@ -2,7 +2,7 @@
 description: Transaction related methods of API.
 ---
 
-# Transaction
+# 💸 Transaction
 
 ### transaction.get
 
@@ -101,11 +101,11 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6Ms
 
 ### transaction.list
 
-Get list of transactions related to account by username or public key.
+Get list of transactions related to account by username or public key sorted in chronological way (new to old).
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start default is 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch for the request. Default is 10.</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>BLock hash in hex format</td></tr><tr><td>height</td><td></td><td>true</td><td>Block height as unsigned integer</td></tr><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type_id</td><td></td><td>false</td><td>Get only wanted transaction types. Default is null. We fetch any.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start default is 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch for the request. Default is 10.</td></tr><tr><td></td><td></td><td>false</td><td></td></tr><tr><td></td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 

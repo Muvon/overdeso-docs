@@ -2,7 +2,7 @@
 description: Block related methods of API.
 ---
 
-# Block
+# 🟦 Block
 
 ### block.tip
 
@@ -21,7 +21,7 @@ This method returns information about best block in chain.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"block.tip"}]' http://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"block.tip"}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json

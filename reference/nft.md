@@ -2,7 +2,7 @@
 description: NFT related methods
 ---
 
-# NFT
+# ✨ NFT
 
 ### nft.get
 
@@ -243,11 +243,11 @@ Get bids for NFT with requested post hash or post hash and serial
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format where NFT was minted</td></tr><tr><td>serial</td><td></td><td>false</td><td>Serial of NFT to get bids for. If omitted we get bids for all serials</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format where NFT was minted</td></tr><tr><td>serial</td><td></td><td>false</td><td>Serial of NFT to get bids for. If omitted we get bids for all serials</td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value, created_at. Default is value. Sorting always performs in desc order.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
-The method returns list of NFT bids and bidder information as list sorted by value of bid (high to low).
+The method returns list of NFT bids and bidder information as list sorted by value of bid or created time (high to low).
 
 #### Examples
 

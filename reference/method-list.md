@@ -2,11 +2,12 @@
 description: Full method list groupped by namespaces.
 ---
 
-# Method list
+# 📖 Method list
 
 ### Chain
 
 * [chain.state](chain.md#chain.state)
+* [chain.stat.get](chain.md#chain.stat.get)
 
 ### Block
 
@@ -22,6 +23,7 @@ description: Full method list groupped by namespaces.
 ### Account
 
 * [account.get](account.md#account.get)
+* [account.list](account.md#account.list)
 * [account.utxo.list](account.md#account.utxo.list)
 * [account.follow.list](account.md#account.follow.list)
 * [account.seed.list](account.md#account.seed.list)
@@ -29,6 +31,10 @@ description: Full method list groupped by namespaces.
 * [account.holding.list](account.md#account.holding.list)
 * [account.trade.list](account.md#account.trade.list)
 * [account.stat.list](account.md#account.stat.list)
+
+### Message
+
+* [message.list](message.md#message.list)
 
 ### Post
 

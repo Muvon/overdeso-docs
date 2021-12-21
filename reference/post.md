@@ -2,7 +2,7 @@
 description: Post related API methods.
 ---
 
-# Post
+# 📄 Post
 
 ### post.get
 
@@ -38,26 +38,26 @@ The method returns post information and related comments to it if requested
         null,
         {
             "author": {
-                "account": {
-                    "balance": 26676665293,
-                    "height": 6042,
-                    "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx"
-                },
+                "balance": 311034089466,
                 "coin": {
-                    "locked": 5710186658419,
-                    "price": 31947270018,
-                    "supply": 178737859453,
+                    "locked": 2757428988249,
+                    "price": 19663904886,
+                    "supply": 140227945779,
                     "watermark": 255810788786
                 },
+                "height": 6042,
                 "profile": {
-                    "avatar_url": "https://overdeso.com/media/avatar/Xs8Q5JRbC7m",
+                    "avatar_url": "https://overdeso.com/media/avatar/Xs8Q3wQVXnD",
                     "description": "\ud83d\udc8e\ud83d\ude4c",
                     "height": 6044,
-                    "is_hidden": 0,
+                    "is_hidden": false,
                     "reward_points": 0,
                     "stake_points": 12500,
+                    "timestamp": 1615574830,
                     "username": "diamondhands"
-                }
+                },
+                "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
+                "timestamp": 1615574505
             },
             "parent": null,
             "post": {
@@ -75,14 +75,14 @@ The method returns post information and related comments to it if requested
                 },
                 "nft": null,
                 "stat": {
-                    "comment_count": 49,
-                    "diamond_count": 0,
-                    "diamond_value": 0,
-                    "like_count": 190,
-                    "quote_count": 7,
-                    "repost_count": 13
+                    "comment_count": 70,
+                    "diamond_count": 46,
+                    "diamond_value": 10390516139,
+                    "like_count": 232,
+                    "quote_count": 15,
+                    "repost_count": 24
                 },
-                "submitted_at": 1615575232,
+                "submitted_at": 1615574830,
                 "text": "In retrospect, it was inevitable"
             },
             "root": null
@@ -101,7 +101,7 @@ The method requires to pass ONE of required params.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch. It has priority if its passed so we ignore account related fields then.</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>username</td><td></td><td>true</td><td>Username to fetch account for</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>depth</td><td></td><td>false</td><td>Max depth to fetch. Default is null</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch. It has priority if its passed so we ignore account related fields then.</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>username</td><td></td><td>true</td><td>Username to fetch account for</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>depth</td><td></td><td>false</td><td>Max depth to fetch. Default is null</td></tr><tr><td>has_media</td><td></td><td>false</td><td>Fetch posts that have media only</td></tr><tr><td>has_video</td><td></td><td>false</td><td>Fetch posts that have video only</td></tr><tr><td>has_image</td><td></td><td>false</td><td>Fetch posts that have image only attached to it</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -1121,7 +1121,7 @@ Get post historical statistics
 
 The method returns statistic related data in chronological order (low to high).
 
-**count** – contains current resulting datataset in response not total count of data we have.
+**count** – how many rows total in your request.
 
 **list** – list of stat structures of related entity. The list contains also **ts** key for timestamp.
 
