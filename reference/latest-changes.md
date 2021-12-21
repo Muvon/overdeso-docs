@@ -28,7 +28,8 @@ Mempool processing, extended readerstate, notifications.&#x20;
 * new `state` field in [**account.follow.list**](account.md#account.follow.list), [**account.get**](account.md#account.get), [**post.get**](post.md#post.get), [**post.list**](post.md#post.list) that reflects reader state;
 * updated [**structures**](structures.md) docs;
 * new method [**message.list**](message.md#message.list) to fetch latest messages for account as recipient or sender;
-* added filter flags `has_image`, `has_video`, `has_media` to [**post.list**](post.md#post.list) method.
+* added filter flags `has_image`, `has_video`, `has_media` to [**post.list**](post.md#post.list) method;
+* added [**account.upload.url**](account.md#account.upload.url) to get upload url for media content
 
 ### December, 13 2021 (api2)
 

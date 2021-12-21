@@ -4,6 +4,8 @@ description: Account related API methods.
 
 # 👤 Account
 
+###
+
 ### account.get
 
 The method allows to get profile by username or account by public key in base58 check format.
@@ -1214,6 +1216,49 @@ curl -s --data '[{"method":"account.stat.list", "params": {"username":"diamondha
                     "utxo_count": 0
                 }
             ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+### account.upload.url
+
+Get temporarely upload url for media content for account. This method REQUIRES reader state passed in header.
+
+Limitations:&#x20;
+
+1. Max video duration – 20 minutes.
+2. The provided URL works for 10 minutes to use it.
+
+Cloudflare docs for video uploading: [https://developers.cloudflare.com/stream/uploading-videos/direct-creator-uploads#direct-creator-upload-request-from-end-users](https://developers.cloudflare.com/stream/uploading-videos/direct-creator-uploads#direct-creator-upload-request-from-end-users)
+
+Cloudflare docs for image uploading: [https://developers.cloudflare.com/images/cloudflare-images/upload-images/direct-creator-upload](https://developers.cloudflare.com/images/cloudflare-images/upload-images/direct-creator-upload)
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>One of: image or video</td></tr></tbody></table>
+
+#### Response
+
+Return structre with expire\_at and url
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -H 'X-Account-Username: donhardman' --data '[{"method":"account.upload.url", "params": {"type":"image"}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "expire_at": 1640110749,
+            "url": "https://upload.imagedelivery.net/fe0cee9f-6860-46a5-b362-69474e18868e"
         }
     ]
 ]

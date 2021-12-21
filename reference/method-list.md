@@ -31,6 +31,7 @@ description: Full method list groupped by namespaces.
 * [account.holding.list](account.md#account.holding.list)
 * [account.trade.list](account.md#account.trade.list)
 * [account.stat.list](account.md#account.stat.list)
+* [account.upload.url](account.md#account.upload.url)
 
 ### Message
 
