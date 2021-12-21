@@ -1130,7 +1130,7 @@ The method returns statistic related data in chronological order (low to high).
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"post.stat.list", "params": {"hash":"1b50b5bf8bf7190d60f938443f825de447b01ee865a96b08e1ae5461ad4b5c24", "period": "hour", "start_at": 1618891732, "limit": 5}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"post.stat.list", "params": {"hash":"1b50b5bf8bf7190d60f938443f825de447b01ee865a96b08e1ae5461ad4b5c24", "period": "hour", "start_at": 1618895843, "limit": 5}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -1138,24 +1138,15 @@ curl -s --data '[{"method":"post.stat.list", "params": {"hash":"1b50b5bf8bf7190d
     [
         null,
         {
-            "count": 5,
+            "count": 5891,
             "list": [
                 {
-                    "comment_count": "0",
-                    "diamond_count": "0",
-                    "diamond_value": "0",
-                    "like_count": "0",
-                    "quote_count": "0",
-                    "repost_count": "0",
-                    "ts": 1618884000
-                },
-                {
-                    "comment_count": "0",
-                    "diamond_count": "0",
-                    "diamond_value": "0",
-                    "like_count": "0",
-                    "quote_count": "0",
-                    "repost_count": "0",
+                    "comment_count": 0,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 0,
+                    "quote_count": 0,
+                    "repost_count": 0,
                     "ts": 1618887600
                 },
                 {
@@ -1184,6 +1175,15 @@ curl -s --data '[{"method":"post.stat.list", "params": {"hash":"1b50b5bf8bf7190d
                     "quote_count": 1,
                     "repost_count": 6,
                     "ts": 1618898400
+                },
+                {
+                    "comment_count": 60,
+                    "diamond_count": 0,
+                    "diamond_value": 0,
+                    "like_count": 54,
+                    "quote_count": 1,
+                    "repost_count": 10,
+                    "ts": 1618902000
                 }
             ]
         }
