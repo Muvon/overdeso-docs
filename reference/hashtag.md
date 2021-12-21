@@ -49,10 +49,6 @@ Get most used hashtags for all time sorted by its usage and using last timestamp
 
 #### Request params
 
-{% hint style="danger" %}
-**last\_ts** is not used now. We are working on it to make it useful for the next update.
-{% endhint %}
-
 <table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>last_ts</td><td></td><td>false</td><td>Fetch hashtags that was last used only since this timestamp</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
@@ -79,54 +75,54 @@ curl -s --data '[{"method":"hashtag.list", "params": {}}]' https://api.overdeso.
             "count": 10,
             "list": [
                 {
-                    "count": 10371,
-                    "hashtag": "bitclout",
-                    "last_ts": 0
+                    "count": 71172,
+                    "hashtag": "0",
+                    "last_ts": 1640014944
                 },
                 {
-                    "count": 4020,
+                    "count": 15491,
                     "hashtag": "1",
-                    "last_ts": 0
+                    "last_ts": 1640112078
                 },
                 {
-                    "count": 3496,
+                    "count": 14964,
+                    "hashtag": "bitclout",
+                    "last_ts": 1640109339
+                },
+                {
+                    "count": 10904,
                     "hashtag": "nft",
-                    "last_ts": 0
+                    "last_ts": 1640112315
                 },
                 {
-                    "count": 3019,
-                    "hashtag": "bitcoin",
-                    "last_ts": 0
-                },
-                {
-                    "count": 1905,
+                    "count": 5433,
                     "hashtag": "2",
-                    "last_ts": 0
+                    "last_ts": 1640112315
                 },
                 {
-                    "count": 1400,
-                    "hashtag": "rideordie",
-                    "last_ts": 0
+                    "count": 4857,
+                    "hashtag": "bitcoin",
+                    "last_ts": 1640107760
                 },
                 {
-                    "count": 1398,
-                    "hashtag": "crypto",
-                    "last_ts": 0
+                    "count": 4184,
+                    "hashtag": "deso",
+                    "last_ts": 1640111497
                 },
                 {
-                    "count": 1295,
+                    "count": 3714,
                     "hashtag": "3",
-                    "last_ts": 0
+                    "last_ts": 1640112938
                 },
                 {
-                    "count": 1222,
-                    "hashtag": "cloutclub",
-                    "last_ts": 0
+                    "count": 3363,
+                    "hashtag": "cloutnft",
+                    "last_ts": 1640098526
                 },
                 {
-                    "count": 1130,
-                    "hashtag": "cloutted",
-                    "last_ts": 0
+                    "count": 3338,
+                    "hashtag": "crypto",
+                    "last_ts": 1640112315
                 }
             ]
         }
