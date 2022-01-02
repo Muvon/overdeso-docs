@@ -23,27 +23,37 @@ description: Full method list groupped by namespaces.
 ### Account
 
 * [account.get](account.md#account.get)
+* [account.me](account.md#account.me)
 * [account.list](account.md#account.list)
 * [account.utxo.list](account.md#account.utxo.list)
+* [account.follow.get](account.md#account.follow.get)
 * [account.follow.list](account.md#account.follow.list)
 * [account.seed.list](account.md#account.seed.list)
 * [account.connection.list](account.md#account.connection.list)
+* [account.holding.get](account.md#account.holding.get)
 * [account.holding.list](account.md#account.holding.list)
 * [account.trade.list](account.md#account.trade.list)
+* [account.search](account.md#account.search)
 * [account.stat.list](account.md#account.stat.list)
+* [account.rank.list](account.md#account.rank.list)
 * [account.upload.url](account.md#account.upload.url)
+
+
 
 ### Message
 
+* [message.conversation.list](message.md#message.conversation.list)
 * [message.list](message.md#message.list)
 
 ### Post
 
 * [post.get](post.md#post.get)
 * [post.list](post.md#post.list)
+* [post.comment.list](post.md#post.comment.list)
 * [post.like.list](post.md#post.like.list)
 * [post.diamond.list](post.md#post.diamond.list)
 * [post.stat.list](post.md#post.stat.list)
+* [post.rank.list](post.md#post.rank.list)
 
 ### Hashtag
 

@@ -4,9 +4,29 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### Upcoming
+### January, 02 2022 (api2)
 
-Mempool processing, extended readerstate, notifications.&#x20;
+* better performance of indexing the blockchain and reduced latency of responses;
+* mempool indexing is deployed and going to be activated ASAP;
+* new method [**transaction.submit**](transaction.md#transaction.submit) to broadcast signed raw transaction hex to the blockchain;
+* we started to add [**Overdeso protocol**](overdeso-protocol.md) description in docs step by step;
+* new method [**account.search**](account.md#account.search) mainly to lookup accounts by username prefix;
+* new [**message.conversation.list**](message.md#message.conversation.list) method to get latest conversations for account;
+* updated structure of request/response for method [**message.list**](message.md#message.list);
+* new method [**account.holding.get**](account.md#account.holding.get) for fast fetch of information for exact creator coin holding;
+* new method [**account.follow.get**](account.md#account.follow.get) for fast fetch of information account follows another one;
+* we count transactions for account by its time, you can find counters in **stat** field response;
+* new fields in stat of [**account structure**](structures.md#account-stat) response;
+* updated method [**account.list**](account.md#account.list) with different request params;
+* new method [**account.rank.list**](account.md#account.rank.list) to fetch all time rankings for accounts;
+* method [**chain.stat.get**](chain.md#chain.stat.get) works now;
+* we collect total `fee`, `burned` and `transactor_tx_count` stats for each [**account**](account.md#account.get) now;
+* method [**hashtag.list**](hashtag.md#hashtag.list) returns most hashtags in most recent usage order;
+* new method [**account.me**](account.md#account.me) to get current reader account related info (now works same as account.get but will be extended for reader state data);
+* extracted [**post.comment.list**](post.md#post.comment.list) method to fetch comments for related post or for account;
+* updated method [**post.list**](post.md#post.list) now returns global recent posts if no params passed;
+* new method [**post.rank.list**](post.md#post.rank.list) for fetching ranked post list;
+*
 
 ### December, 20 2021 (api1)
 

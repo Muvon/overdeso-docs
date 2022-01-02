@@ -33,12 +33,12 @@ curl -s --data '[{"method":"chain.state"}]' https://api.overdeso.com/v1 | python
     [
         null,
         {
-            "btc_usd_rate": 4846100,
-            "create_nft_fee": 10000,
-            "create_profile_fee": 1000000,
-            "max_nft_copies": 1000,
             "min_fee_per_kb": 1000,
-            "usd_rate": 3198
+            "create_profile_fee": 1000000,
+            "usd_rate": 3198,
+            "create_nft_fee": 10000,
+            "max_nft_copies": 1000,
+            "btc_usd_rate": 4846100
         }
     ]
 ]
@@ -48,7 +48,7 @@ curl -s --data '[{"method":"chain.state"}]' https://api.overdeso.com/v1 | python
 
 ### chain.stat.get
 
-Get global chain statistic
+Get blockchain accumulated statistic informationin whole network.
 
 #### Request params
 
@@ -71,58 +71,40 @@ curl -s --data '[{"method":"chain.stat.get", "params": {"type": "account"}}]' ht
     [
         null,
         {
-            "balance": 0,
-            "coin_buy_count": 0,
-            "coin_buy_value": 0,
-            "coin_gain": 0,
-            "coin_sell_count": 0,
-            "coin_sell_value": 0,
-            "comment_count": 0,
-            "follower_count": 0,
-            "following_count": 0,
-            "holder_count": 0,
-            "holding_count": 0,
-            "locked": 0,
-            "nft_buy_count": 0,
-            "nft_buy_value": 0,
-            "nft_coin": 0,
+            "following_count": 12421984,
+            "holding_count": 1440004,
+            "locked": 693308634568853,
+            "tx_count": 90955433,
+            "balance": 9877740202137228,
+            "utxo_count": 1075952,
+            "fee": 4693401417279,
+            "burned": 2537686237060,
+            "coin_buy_count": 2643594,
+            "coin_buy_value": 5462082013499304,
+            "coin_sell_count": 1882997,
+            "coin_sell_value": 4227853799997282,
+            "coin_gain": -266346112069366,
+            "sender_coin_count": 3021906,
+            "sender_coin_value": 304352236778259,
+            "reward_value": 668373714535131,
+            "sender_diamond_count": 3911440,
+            "sender_diamond_value": 12211184013124,
+            "sender_post_like_count": 18427841,
+            "post_count": 2305625,
+            "repost_count": 1039695,
+            "quote_count": 399595,
+            "comment_count": 3628409,
             "nft_count": 0,
-            "nft_gain": 0,
-            "nft_mint_count": 0,
-            "nft_mint_value": 0,
-            "nft_royalty": 0,
-            "nft_sell_count": 0,
-            "nft_sell_value": 0,
-            "post_count": 0,
-            "price": 0,
-            "quote_count": 0,
-            "receiver_coin_count": 0,
-            "receiver_coin_value": 0,
-            "receiver_connection_count": 0,
-            "receiver_connection_value": 0,
-            "receiver_diamond_count": 0,
-            "receiver_diamond_value": 0,
-            "receiver_nft_bid_count": 0,
-            "receiver_post_like_count": 0,
-            "receiver_seed_count": 0,
-            "receiver_seed_value": 0,
-            "repost_count": 0,
-            "reward_coins": 0,
-            "reward_value": 0,
-            "sender_coin_count": 0,
-            "sender_coin_value": 0,
-            "sender_connection_count": 0,
-            "sender_connection_value": 0,
-            "sender_diamond_count": 0,
-            "sender_diamond_value": 0,
-            "sender_nft_bid_count": 0,
-            "sender_post_like_count": 0,
-            "sender_seed_count": 0,
-            "sender_seed_value": 0,
-            "supply": 0,
-            "tx_count": 0,
-            "utxo_count": 0,
-            "watermark": 0
+            "nft_royalty": 2005619952120,
+            "nft_coin": 2763915367710,
+            "nft_mint_count": 46926,
+            "nft_mint_value": 17602470932088,
+            "nft_buy_count": 47880,
+            "nft_buy_value": 24639096438291,
+            "nft_sell_count": 954,
+            "nft_sell_value": 2238766017758,
+            "nft_gain": 17941948291453,
+            "sender_nft_bid_count": 4252
         }
     ]
 ]

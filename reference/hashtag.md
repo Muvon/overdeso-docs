@@ -25,7 +25,7 @@ Returns short information about wanted hashtag.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"bitclout"}}]' http://api.overdeso.lo/v1 | python -m json.tool
+curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"deso"}}]' http://api.overdeso.lo/v1 | python -m json.tool
 ```
 
 ```json
@@ -33,9 +33,9 @@ curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"bitclout"}}]' ht
     [
         null,
         {
-            "hashtag": "bitclout",
-            "count": 10003,
-            "last_ts": 1639143932
+            "hashtag": "deso",
+            "count": 4776,
+            "last_ts": 1641136105
         }
     ]
 ]
@@ -45,7 +45,7 @@ curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"bitclout"}}]' ht
 
 ### hashtag.list
 
-Get most used hashtags for all time sorted by its usage and using last timestamp appeared
+Get recent used hashtags filtered by min time when it was last time used since
 
 #### Request params
 
@@ -53,7 +53,7 @@ Get most used hashtags for all time sorted by its usage and using last timestamp
 
 #### Response
 
-The method returns most popular hashtags sorted by total usage time.
+The method returns most recent hashtags sorted by recent usage time.
 
 **count** – for now just calculated size of current returned list.
 
@@ -64,7 +64,7 @@ The method returns most popular hashtags sorted by total usage time.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"hashtag.list", "params": {}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"hashtag.list"}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -72,57 +72,57 @@ curl -s --data '[{"method":"hashtag.list", "params": {}}]' https://api.overdeso.
     [
         null,
         {
-            "count": 10,
+            "count": 140563,
             "list": [
                 {
-                    "count": 71172,
                     "hashtag": "0",
-                    "last_ts": 1640014944
+                    "count": 74961,
+                    "last_ts": 1641134229
                 },
                 {
-                    "count": 15491,
                     "hashtag": "1",
-                    "last_ts": 1640112078
+                    "count": 15735,
+                    "last_ts": 1641134543
                 },
                 {
-                    "count": 14964,
                     "hashtag": "bitclout",
-                    "last_ts": 1640109339
+                    "count": 15046,
+                    "last_ts": 1641114754
                 },
                 {
-                    "count": 10904,
                     "hashtag": "nft",
-                    "last_ts": 1640112315
+                    "count": 11269,
+                    "last_ts": 1641136105
                 },
                 {
-                    "count": 5433,
                     "hashtag": "2",
-                    "last_ts": 1640112315
+                    "count": 5577,
+                    "last_ts": 1641134543
                 },
                 {
-                    "count": 4857,
                     "hashtag": "bitcoin",
-                    "last_ts": 1640107760
+                    "count": 4982,
+                    "last_ts": 1641134229
                 },
                 {
-                    "count": 4184,
                     "hashtag": "deso",
-                    "last_ts": 1640111497
+                    "count": 4776,
+                    "last_ts": 1641136105
                 },
                 {
-                    "count": 3714,
                     "hashtag": "3",
-                    "last_ts": 1640112938
+                    "count": 3843,
+                    "last_ts": 1641121390
                 },
                 {
-                    "count": 3363,
-                    "hashtag": "cloutnft",
-                    "last_ts": 1640098526
-                },
-                {
-                    "count": 3338,
                     "hashtag": "crypto",
-                    "last_ts": 1640112315
+                    "count": 3545,
+                    "last_ts": 1641124417
+                },
+                {
+                    "hashtag": "cloutnft",
+                    "count": 3396,
+                    "last_ts": 1641079411
                 }
             ]
         }
@@ -144,7 +144,7 @@ Get hasthags historical usage statistic.
 
 The method returns statistic related data in chronological order (low to high).
 
-**count** – how many rows total in your request.
+**count** – total hashtags returned by your request.
 
 **list** – list of stat structures of related entity. The list contains also **ts** key for timestamp.
 
@@ -153,7 +153,7 @@ The method returns statistic related data in chronological order (low to high).
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"hashtag.stat.list", "params": {"hashtag":"bitclout", "period": "hour", "start_at": 1616174306, "limit": 10}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"hashtag.stat.list", "params": {"hashtag":"bitclout", "period": "hour", "start_at": 1616174306, "limit": 3}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -161,47 +161,19 @@ curl -s --data '[{"method":"hashtag.stat.list", "params": {"hashtag":"bitclout",
     [
         null,
         {
-            "count": 10,
+            "count": 6936,
             "list": [
                 {
-                    "count": 0,
-                    "ts": 1616173200
+                    "ts": 1616173200,
+                    "count": 0
                 },
                 {
-                    "count": 0,
-                    "ts": 1616176800
+                    "ts": 1616176800,
+                    "count": 0
                 },
                 {
-                    "count": 50,
-                    "ts": 1616180400
-                },
-                {
-                    "count": 65,
-                    "ts": 1616184000
-                },
-                {
-                    "count": 65,
-                    "ts": 1616187600
-                },
-                {
-                    "count": 76,
-                    "ts": 1616191200
-                },
-                {
-                    "count": 77,
-                    "ts": 1616194800
-                },
-                {
-                    "count": 89,
-                    "ts": 1616198400
-                },
-                {
-                    "count": 94,
-                    "ts": 1616202000
-                },
-                {
-                    "count": 103,
-                    "ts": 1616205600
+                    "ts": 1616180400,
+                    "count": 49
                 }
             ]
         }

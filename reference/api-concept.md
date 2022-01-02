@@ -17,7 +17,7 @@ Where is **v1** is version of API. While we are still in development and early a
 
 We use it one by one on each update. For example, we deployed new version on api1. It becomes active. Next we work and prepare update with new docs and breaking changing and deploy to api2. So devs have time even in active development stage to update their apps and move to another endpoint without breaking things.&#x20;
 
-<mark style="color:orange;">**👉 Current doc version API: api1**</mark>&#x20;
+<mark style="color:orange;">**👉 Current doc version API: api2**</mark>&#x20;
 
 **P.S.** **api.overdeso.com** points to latest released update
 
