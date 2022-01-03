@@ -1172,7 +1172,7 @@ Get account rankings sorted in high to low order by requested type stat key.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>locked</code>. Allowed values: <code>locked</code>, <code>balance</code>, <code>reward_value</code>, <code>coin_gain</code>, <code>follower_count</code>, <code>tx_count</code>, <code>nft_coin</code>, <code>nft_royalty</code>, <code>nft_gain</code>, <code>sender_diamond_value</code>, <code>receiver_diamond_value</code>, <code>post_count</code>, <code>comment_count</code></td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>locked</code>. Allowed values: <code>locked</code>, <code>balance</code>, <code>reward_value</code>, <code>coin_gain</code>, <code>follower_count</code>, <code>tx_count</code>, <code>nft_coin</code>, <code>nft_royalty</code>, <code>nft_gain</code>, <code>sender_diamond_value</code>, <code>receiver_diamond_value</code>, <code>post_count</code>, <code>comment_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -1191,7 +1191,7 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
     [
         null,
         {
-            "count": 278240,
+            "count": 278265,
             "list": [
                 {
                     "height": 2,
@@ -1209,27 +1209,27 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
                         "stake_points": 12500
                     },
                     "coin": {
-                        "supply": 303851986273,
-                        "locked": 28053494789925,
+                        "supply": 303850285701,
+                        "locked": 28053023771200,
                         "watermark": 453559032340,
-                        "price": 92326185304
+                        "price": 92325151863
                     },
                     "stat": {
-                        "last_stat_ts": 1641130826,
+                        "last_stat_ts": 1641218186,
                         "utxo_count": 44,
-                        "holder_count": 9540,
+                        "holder_count": 9538,
                         "holding_count": 108,
-                        "follower_count": 24138,
+                        "follower_count": 24171,
                         "following_count": 0,
                         "coin_buy_count": 2,
                         "coin_buy_value": 79595351183,
                         "coin_sell_count": 0,
                         "coin_sell_value": 0,
                         "coin_gain": 0,
-                        "sender_connection_count": 0,
-                        "sender_connection_value": 0,
-                        "receiver_connection_count": 44487,
-                        "receiver_connection_value": 337682032907765,
+                        "sender_connection_count": 11,
+                        "sender_connection_value": 20000,
+                        "receiver_connection_count": 54180,
+                        "receiver_connection_value": 389288119986612,
                         "sender_seed_count": 0,
                         "sender_seed_value": 0,
                         "receiver_seed_count": 0,
@@ -1273,15 +1273,18 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
                         "time_to_first_post": 0,
                         "fee": 3708,
                         "burned": 8959536,
-                        "tx_count": 54163,
+                        "tx_count": 54227,
                         "transactor_tx_count": 3
                     },
-                    "rank": 1
+                    "rank": {
+                        "position": 1,
+                        "change": 0
+                    }
                 },
                 {
                     "height": 5769,
                     "pubkey": "BC1YLgVNKrgTYt1QaeTCW46KMRfCNEAEKrgWdEDUKSQsd42JfQMNncs",
-                    "balance": 35611633112,
+                    "balance": 35611736354,
                     "timestamp": 1615511001,
                     "profile": {
                         "timestamp": 1615529337,
@@ -1294,37 +1297,37 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
                         "stake_points": 12500
                     },
                     "coin": {
-                        "supply": 255679707187,
-                        "locked": 16714348968216,
+                        "supply": 255655972940,
+                        "locked": 16709694719061,
                         "watermark": 353048906645,
-                        "price": 65372215699
+                        "price": 65360079511
                     },
                     "stat": {
-                        "last_stat_ts": 1641132349,
-                        "utxo_count": 637,
-                        "holder_count": 1387,
+                        "last_stat_ts": 1641218186,
+                        "utxo_count": 638,
+                        "holder_count": 1386,
                         "holding_count": 33,
-                        "follower_count": 8280,
+                        "follower_count": 8290,
                         "following_count": 0,
                         "coin_buy_count": 1,
                         "coin_buy_value": 95145650200,
                         "coin_sell_count": 0,
                         "coin_sell_value": 0,
                         "coin_gain": 0,
-                        "sender_connection_count": 2,
-                        "sender_connection_value": 200000000,
-                        "receiver_connection_count": 12307,
-                        "receiver_connection_value": 150376645293371,
+                        "sender_connection_count": 3,
+                        "sender_connection_value": 100000000,
+                        "receiver_connection_count": 13412,
+                        "receiver_connection_value": 88165065194882,
                         "sender_seed_count": 0,
                         "sender_seed_value": 0,
-                        "receiver_seed_count": 2,
-                        "receiver_seed_value": 189645257806,
+                        "receiver_seed_count": 1,
+                        "receiver_seed_value": 94822628903,
                         "sender_coin_count": 0,
                         "sender_coin_value": 0,
                         "receiver_coin_count": 35,
                         "receiver_coin_value": 26613315925,
                         "reward_coins": 30793004148,
-                        "reward_value": 5706170853239,
+                        "reward_value": 5706170956481,
                         "sender_diamond_count": 0,
                         "sender_diamond_value": 0,
                         "receiver_diamond_count": 0,
@@ -1358,10 +1361,13 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
                         "time_to_first_post": 0,
                         "fee": 3807,
                         "burned": 10514566,
-                        "tx_count": 13436,
+                        "tx_count": 13453,
                         "transactor_tx_count": 3
                     },
-                    "rank": 2
+                    "rank": {
+                        "position": 2,
+                        "change": 0
+                    }
                 }
             ]
         }

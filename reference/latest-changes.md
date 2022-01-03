@@ -4,6 +4,12 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 03 2022 (api2)
+
+* changed response structure of [**account.rank.list**](account.md#account.rank.list) and [**post.rank.list**](post.md#post.rank.list);
+* ****[**account.rank.list**](account.md#account.rank.list) and [**post.rank.list**](post.md#post.rank.list) now can return rankings based on daily changes of value;
+* new method [**hashtag.rank.list**](hashtag.md#hashtag.rank.list) to get rankings for hashtag.
+
 ### January, 02 2022 (api2)
 
 * better performance of indexing the blockchain and reduced latency of responses;
@@ -25,8 +31,9 @@ description: This page will describe changes that affect structures or any metho
 * new method [**account.me**](account.md#account.me) to get current reader account related info (now works same as account.get but will be extended for reader state data);
 * extracted [**post.comment.list**](post.md#post.comment.list) method to fetch comments for related post or for account;
 * updated method [**post.list**](post.md#post.list) now returns global recent posts if no params passed;
-* new method [**post.rank.list**](post.md#post.rank.list) for fetching ranked post list;
-*
+* new method [**post.rank.list**](post.md#post.rank.list) for fetching ranked post list.
+
+
 
 ### December, 20 2021 (api1)
 

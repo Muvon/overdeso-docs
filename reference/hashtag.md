@@ -182,3 +182,56 @@ curl -s --data '[{"method":"hashtag.stat.list", "params": {"hashtag":"bitclout",
 ```
 {% endtab %}
 {% endtabs %}
+
+### hashtag.rank.list
+
+Get ranked list of hashtags
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by count for all time.<br><code>change</code> – we sort by daily change on request count rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+Returns list of hashtags ranked count of usage
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"hashtag.rank.list", "params": {"offset": 0, "limit": 2}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 140563,
+            "list": [
+                {
+                    "hashtag": "0",
+                    "count": 74961,
+                    "last_ts": 1641134229,
+                    "rank": {
+                        "position": 1,
+                        "change": 0
+                    }
+                },
+                {
+                    "hashtag": "1",
+                    "count": 15735,
+                    "last_ts": 1641134543,
+                    "rank": {
+                        "position": 2,
+                        "change": 0
+                    }
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}

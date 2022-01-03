@@ -789,7 +789,7 @@ Ranked post list
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>diamond_value</code>. Allowed values: <code>diamond_value</code>, <code>like_count</code>, <code>comment_count</code></td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>diamond_value</code>. Allowed values: <code>diamond_value</code>, <code>like_count</code>, <code>comment_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -808,7 +808,7 @@ curl -s --data '[{"method":"post.rank.list", "params": {"type":"like_count", "of
     [
         null,
         {
-            "count": 3867234,
+            "count": 3874120,
             "list": [
                 {
                     "depth": 0,
@@ -837,7 +837,10 @@ curl -s --data '[{"method":"post.rank.list", "params": {"type":"like_count", "of
                         "nft_trade_count": 0,
                         "nft_burned_count": 0
                     },
-                    "rank": 1
+                    "rank": {
+                        "position": 1,
+                        "change": 0
+                    }
                 },
                 {
                     "depth": 0,
@@ -866,7 +869,10 @@ curl -s --data '[{"method":"post.rank.list", "params": {"type":"like_count", "of
                         "nft_trade_count": 0,
                         "nft_burned_count": 0
                     },
-                    "rank": 2
+                    "rank": {
+                        "position": 2,
+                        "change": 0
+                    }
                 }
             ]
         }
