@@ -4,6 +4,13 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 04 2022 (api2)
+
+* new method [**hashtag.post.list**](hashtag.md#hashtag.post.list) to get posts for requested hashtag;
+* added [**account structure**](structures.md#account) to all post list response (like to repost/root/parent.
+
+
+
 ### January, 03 2022 (api2)
 
 * changed response structure of [**account.rank.list**](account.md#account.rank.list) and [**post.rank.list**](post.md#post.rank.list);

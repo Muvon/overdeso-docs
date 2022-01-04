@@ -183,6 +183,99 @@ curl -s --data '[{"method":"hashtag.stat.list", "params": {"hashtag":"bitclout",
 {% endtab %}
 {% endtabs %}
 
+### hashtag.post.list
+
+Fetch posts for some hashtag in chronological order
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hashtag</td><td></td><td>false</td><td>Wanted hashtag as text</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+Returns list of post structures for requested hashtag.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"hashtag.post.list", "params": {"hashtag":"deso", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 4778,
+            "list": [
+                {
+                    "depth": 0,
+                    "is_quoted": false,
+                    "text": "Dazlin #DeSo Diamonds 💎 Power of 10 x 4 forced matrix Pay It Forward Strategy 🤑💵🤑🇹🇭💖🇨🇦😎✌️💎🙏💎",
+                    "lang": "en",
+                    "has_media": true,
+                    "has_image": false,
+                    "has_video": true,
+                    "media": {
+                        "embed_video_url": "https://www.youtube.com/embed/0fKBhvDjuy0"
+                    },
+                    "is_hidden": false,
+                    "is_nft": false,
+                    "submitted_at": 1641224941,
+                    "nft": null,
+                    "stat": {
+                        "last_stat_ts": 0,
+                        "like_count": 0,
+                        "diamond_count": 0,
+                        "diamond_value": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "comment_count": 0,
+                        "nft_bid_count": 0,
+                        "nft_trade_count": 0,
+                        "nft_burned_count": 0
+                    },
+                    "hash": "3e2f3c00329bb1e049935a38203a51bf22a576b581d5c396a7c96a506ac9997d",
+                    "account": {
+                        "height": 63871,
+                        "pubkey": "BC1YLjCZCNGu1h8tmvGqk8rnVFJamMZFyWncWtPvqMT2H2YCt5kk6xp",
+                        "balance": 193289271,
+                        "timestamp": 1632666513,
+                        "profile": {
+                            "timestamp": 1632714520,
+                            "is_hidden": false,
+                            "height": 64003,
+                            "username": "Billythai1",
+                            "description": "Paying It Forward 💎\n✅ @verifiedprofile ➡ \nbit.ly/3vFvNKY\nDazlin $DeSo Diamonds \nhttps://instantrecall.app.link/?referral_Code=WILLE11\nIG: @BillyArtLove\nTwitter: @BillyWarhol2\n",
+                            "avatar_url": "https://overdeso.com/media/avatar/Sr8R4T3WsGD",
+                            "reward_points": 1000,
+                            "stake_points": 12500
+                        },
+                        "coin": {
+                            "supply": 6081913639,
+                            "locked": 224968112,
+                            "watermark": 9536126426,
+                            "price": 36989691
+                        }
+                    },
+                    "repost": null,
+                    "root": null,
+                    "parent": null,
+                    "state": {
+                        "is_liked": false,
+                        "diamond_level": 0
+                    }
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### hashtag.rank.list
 
 Get ranked list of hashtags

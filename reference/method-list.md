@@ -59,6 +59,7 @@ description: Full method list groupped by namespaces.
 
 * [hashtag.get](hashtag.md#hashtag.get)
 * [hashtag.list](hashtag.md#hashtag.list)
+* [hashtag.post.list](hashtag.md#hashtag.post.list)
 * [hashtag.stat.list](hashtag.md#hashtag.stat.list)
 * [hashtag.rank.list](hashtag.md#hashtag.rank.list)
 
