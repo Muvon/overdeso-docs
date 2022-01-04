@@ -58,10 +58,10 @@ The method returns post information and related comments to it if requested
                 "coin_royalty": 1500
             },
             "stat": {
-                "last_stat_ts": 1641130025,
+                "last_stat_ts": 1641223938,
                 "like_count": 311,
-                "diamond_count": 16702,
-                "diamond_value": 20643526649,
+                "diamond_count": 16721,
+                "diamond_value": 20644876649,
                 "repost_count": 36,
                 "quote_count": 29,
                 "comment_count": 87,
@@ -76,7 +76,7 @@ The method returns post information and related comments to it if requested
             "account": {
                 "height": 6042,
                 "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                "balance": 1202557738544,
+                "balance": 1202813160669,
                 "timestamp": 1615574505,
                 "profile": {
                     "timestamp": 1615574830,
@@ -89,10 +89,10 @@ The method returns post information and related comments to it if requested
                     "stake_points": 12500
                 },
                 "coin": {
-                    "supply": 164217523869,
-                    "locked": 4578709213058,
+                    "supply": 164216917444,
+                    "locked": 4578658488257,
                     "watermark": 255810788786,
-                    "price": 27881976936
+                    "price": 27881771010
                 }
             }
         }
@@ -127,20 +127,24 @@ curl -s --data '[{"method":"post.list", "params": {"lang": "en", "offset": 0, "l
     [
         null,
         {
-            "count": 2305625,
+            "count": 2310116,
             "list": [
                 {
                     "depth": 0,
                     "is_quoted": false,
-                    "text": "@klesh \n\nThank you so so so much and truly appreciated. 🙏🏻🙏🏻🙏🏻\nThank you for the 💗,💎 and supports.\n🙏🏻🙏🏻🙏🏻💖💖💖😊😊😊",
+                    "text": "🔥 13 years ago Satoshi Nakamoto created the genesis block of bitcoin\n\nIn block 0, Satoshi indicated the text from the headline of The Times: \"The Times 03 / Jan / 2009 Chancellor on brink of second bailout for banks\".\n\nThe first block generated 50 BTC. Then their price was $ 0.00. On July 17, 2010, there was a demand for cue ball and the price rose to $ 0.09.\n\nSince then, BTC has grown by 52.2 million percent 🚀\n",
                     "lang": "en",
-                    "has_media": false,
-                    "has_image": false,
+                    "has_media": true,
+                    "has_image": true,
                     "has_video": false,
-                    "media": null,
+                    "media": {
+                        "image_urls": [
+                            "https://images.deso.org/912d229bdb37432b326b175b5606d0d5d60f9935db86f73e841dcae34798b7fd.webp"
+                        ]
+                    },
                     "is_hidden": false,
                     "is_nft": false,
-                    "submitted_at": 1641136831,
+                    "submitted_at": 1641225316,
                     "nft": null,
                     "stat": {
                         "last_stat_ts": 0,
@@ -154,28 +158,28 @@ curl -s --data '[{"method":"post.list", "params": {"lang": "en", "offset": 0, "l
                         "nft_trade_count": 0,
                         "nft_burned_count": 0
                     },
-                    "hash": "ab61cb75c4eff584ce2fafcca4c9d9cb4a24a0889ca58d97cea6027f85205413",
+                    "hash": "e1494f2839b98effa5c74c739ce2a630a41d58f1d5886bb4feafff63ec63d524",
                     "repost": null,
                     "account": {
-                        "height": 51427,
-                        "pubkey": "BC1YLjMUEKaXe7qnPv8FuQVftotbwdWMrJjENgz8mhewuVMbm5smPKc",
-                        "balance": 1343654569,
-                        "timestamp": 1628948817,
+                        "height": 44467,
+                        "pubkey": "BC1YLfovdgWCbAdkRMX7W5igjhuirVrY1zRvmd5zPVjCn5DuvcmgSQh",
+                        "balance": 5799801180,
+                        "timestamp": 1626850074,
                         "profile": {
-                            "timestamp": 1629638719,
+                            "timestamp": 1629826298,
                             "is_hidden": false,
-                            "height": 53785,
-                            "username": "MoonGalaxy",
-                            "description": "I am well versed and have sound knowledge in Quality Management. I am interested to learn and explore the mysterious of the Universal, Astrology & Metaphysics.",
-                            "avatar_url": "https://overdeso.com/media/avatar/d3iTbkCsULh",
+                            "height": 54404,
+                            "username": "90Degree",
+                            "description": "Your daily update on \nCrypto and NFT News",
+                            "avatar_url": "https://overdeso.com/media/avatar/Vh1etMK6oXw",
                             "reward_points": 1000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 9568744365,
-                            "locked": 876123104,
-                            "watermark": 11288889474,
-                            "price": 91560926
+                            "supply": 16809167440,
+                            "locked": 4749402584,
+                            "watermark": 19317114377,
+                            "price": 282548353
                         }
                     },
                     "state": {
@@ -186,19 +190,19 @@ curl -s --data '[{"method":"post.list", "params": {"lang": "en", "offset": 0, "l
                 {
                     "depth": 0,
                     "is_quoted": false,
-                    "text": "Listening to Joe Rogan alone gives you 20+ IQ points.\n\nListening to Robert Malone alone gives you 20+ IQ points.\n\nListening to Robert Malone together with Joe Rogan literally makes you Albert Einstein. ",
+                    "text": "some NYC #streetphotography for the @PhotographersCorner contest\n\nPosted via @cloutfeed",
                     "lang": "en",
                     "has_media": true,
                     "has_image": true,
                     "has_video": false,
                     "media": {
                         "image_urls": [
-                            "https://images.deso.org/c77fc508c1ebb19464f330a9090eb68619c2151967df84d455fb5a5c2683ae60.gif"
+                            "https://images.deso.org/b1cb798da53da0ec567b47eb422e31171f1eef10100efa9ddb10eee075c0efc0.webp"
                         ]
                     },
                     "is_hidden": false,
                     "is_nft": false,
-                    "submitted_at": 1641136831,
+                    "submitted_at": 1641225316,
                     "nft": null,
                     "stat": {
                         "last_stat_ts": 0,
@@ -212,28 +216,28 @@ curl -s --data '[{"method":"post.list", "params": {"lang": "en", "offset": 0, "l
                         "nft_trade_count": 0,
                         "nft_burned_count": 0
                     },
-                    "hash": "922c68a58d14119fab1ef245817f7293493eb5693ddd4429d9cf3347e0775256",
+                    "hash": "6429bb0305462db28dba147bb3048add539abcba091aca95b35b5bbfd62b4446",
                     "repost": null,
                     "account": {
-                        "height": 9131,
-                        "pubkey": "BC1YLhYyAF3RrEc8Ta6CzSpgHi9N4zj1LeyZZXHL8pmTzrbKEhkJu9M",
-                        "balance": 39975191,
-                        "timestamp": 1616511000,
+                        "height": 41364,
+                        "pubkey": "BC1YLhbYNnu9wxmPuT4xmdi3sCshgU3cS1ZqzjRv8P5kpqtKBZxBnzR",
+                        "balance": 323874398,
+                        "timestamp": 1625921846,
                         "profile": {
-                            "timestamp": 1616511000,
+                            "timestamp": 1625921846,
                             "is_hidden": false,
-                            "height": 9130,
-                            "username": "Bobnificent",
-                            "description": "Personal Thoughts · Crypto & Stonks Trader · Memes · lol\n\nCurrently working on @Buckmall",
-                            "avatar_url": "https://overdeso.com/media/avatar/hQ4YPuL6wEZ",
-                            "reward_points": 1000,
+                            "height": 41363,
+                            "username": "almostgreat",
+                            "description": "home after picking up cigarettes and milk. now sharing and selling some of my old photos. \n\ncommunity at ardrive.io\n\n🛒 almostgreatco.etsy.com",
+                            "avatar_url": "https://overdeso.com/media/avatar/UMB5qyP9WVP",
+                            "reward_points": 2000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 12138888531,
-                            "locked": 1816640544,
-                            "watermark": 13332428324,
-                            "price": 149654603
+                            "supply": 9279501171,
+                            "locked": 799050340,
+                            "watermark": 9323560621,
+                            "price": 86109191
                         }
                     },
                     "state": {
@@ -266,7 +270,7 @@ Returns list of comments in chronological order that represent post structure.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondhands", "lang": "en", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1   | python -m json.tool
+curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondhands", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1   | python -m json.tool
 ```
 
 ```json
@@ -311,7 +315,30 @@ curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondh
                     "media": null,
                     "is_hidden": false,
                     "is_nft": false,
-                    "submitted_at": 1635356303
+                    "submitted_at": 1635356303,
+                    "hash": "696c39c9023838460fa562c888381328665d3ed9c0da1ab07b8866339328783c",
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
+                        "balance": 1202813160669,
+                        "timestamp": 1615574505,
+                        "profile": {
+                            "timestamp": 1615574830,
+                            "is_hidden": false,
+                            "height": 6043,
+                            "username": "diamondhands",
+                            "description": "💎🙌",
+                            "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
+                            "reward_points": 0,
+                            "stake_points": 12500
+                        },
+                        "coin": {
+                            "supply": 164216917444,
+                            "locked": 4578658488257,
+                            "watermark": 255810788786,
+                            "price": 27881771010
+                        }
+                    }
                 },
                 "parent": {
                     "depth": 0,
@@ -324,12 +351,35 @@ curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondh
                     "media": null,
                     "is_hidden": false,
                     "is_nft": false,
-                    "submitted_at": 1635356303
+                    "submitted_at": 1635356303,
+                    "hash": "696c39c9023838460fa562c888381328665d3ed9c0da1ab07b8866339328783c",
+                    "account": {
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
+                        "balance": 1202813160669,
+                        "timestamp": 1615574505,
+                        "profile": {
+                            "timestamp": 1615574830,
+                            "is_hidden": false,
+                            "height": 6043,
+                            "username": "diamondhands",
+                            "description": "💎🙌",
+                            "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
+                            "reward_points": 0,
+                            "stake_points": 12500
+                        },
+                        "coin": {
+                            "supply": 164216917444,
+                            "locked": 4578658488257,
+                            "watermark": 255810788786,
+                            "price": 27881771010
+                        }
+                    }
                 },
                 "account": {
                     "height": 6042,
                     "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                    "balance": 1202557738544,
+                    "balance": 1202813160669,
                     "timestamp": 1615574505,
                     "profile": {
                         "timestamp": 1615574830,
@@ -342,10 +392,10 @@ curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondh
                         "stake_points": 12500
                     },
                     "coin": {
-                        "supply": 164217523869,
-                        "locked": 4578709213058,
+                        "supply": 164216917444,
+                        "locked": 4578658488257,
                         "watermark": 255810788786,
-                        "price": 27881976936
+                        "price": 27881771010
                     }
                 },
                 "state": {
@@ -354,69 +404,37 @@ curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondh
                 }
             },
             {
-                "depth": 1,
-                "is_quoted": false,
-                "text": "Y'ar ye had me shakin' in me boots for a moment there...",
-                "lang": "en",
+                "depth": 0,
+                "is_quoted": true,
+                "text": "BEHOLD MATIES!",
+                "lang": "ku",
                 "has_media": false,
                 "has_image": false,
                 "has_video": false,
                 "media": null,
                 "is_hidden": false,
                 "is_nft": false,
-                "submitted_at": 1634413056,
+                "submitted_at": 1635356303,
                 "nft": null,
                 "stat": {
-                    "last_stat_ts": 1635017757,
-                    "like_count": 27,
-                    "diamond_count": 7,
-                    "diamond_value": 5200000,
-                    "repost_count": 1,
-                    "quote_count": 1,
-                    "comment_count": 1,
+                    "last_stat_ts": 1641159951,
+                    "like_count": 273,
+                    "diamond_count": 45,
+                    "diamond_value": 111950000,
+                    "repost_count": 2,
+                    "quote_count": 3,
+                    "comment_count": 30,
                     "nft_bid_count": 0,
                     "nft_trade_count": 0,
                     "nft_burned_count": 0
                 },
-                "hash": "ea4ca4e82e8d6b992a96ac73f2e9993e7ccd91c7b86f8511393ce0dea2b6bb49",
-                "root": {
-                    "depth": 0,
-                    "is_quoted": false,
-                    "text": "Whitelist III\n\nThe final whitelist slips 'ave been penned. Our guv'nor's hand be as sore as a kiss from a sea monster. He left t' go 'n sink a few barrels o' grog to celebrate all of the new cap'ns.\n\nYe will hear about the pre-sale mintin' release date here first. Ye will also hear o' the public sale release here too.\n\nCheck the comments fer the winners...",
-                    "lang": "en",
-                    "has_media": true,
-                    "has_image": true,
-                    "has_video": false,
-                    "media": {
-                        "image_urls": [
-                            "https://images.bitclout.com/6039c3544e0da9072b3e2227e6e6cccd96acd8d867096dc9c4de60e02e4dac07.webp"
-                        ]
-                    },
-                    "is_hidden": false,
-                    "is_nft": false,
-                    "submitted_at": 1634407858
-                },
-                "parent": {
-                    "depth": 0,
-                    "is_quoted": false,
-                    "text": "Whitelist III\n\nThe final whitelist slips 'ave been penned. Our guv'nor's hand be as sore as a kiss from a sea monster. He left t' go 'n sink a few barrels o' grog to celebrate all of the new cap'ns.\n\nYe will hear about the pre-sale mintin' release date here first. Ye will also hear o' the public sale release here too.\n\nCheck the comments fer the winners...",
-                    "lang": "en",
-                    "has_media": true,
-                    "has_image": true,
-                    "has_video": false,
-                    "media": {
-                        "image_urls": [
-                            "https://images.bitclout.com/6039c3544e0da9072b3e2227e6e6cccd96acd8d867096dc9c4de60e02e4dac07.webp"
-                        ]
-                    },
-                    "is_hidden": false,
-                    "is_nft": false,
-                    "submitted_at": 1634407858
-                },
+                "hash": "696c39c9023838460fa562c888381328665d3ed9c0da1ab07b8866339328783c",
+                "root": null,
+                "parent": null,
                 "account": {
                     "height": 6042,
                     "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                    "balance": 1202557738544,
+                    "balance": 1202813160669,
                     "timestamp": 1615574505,
                     "profile": {
                         "timestamp": 1615574830,
@@ -429,10 +447,10 @@ curl -s --data '[{"method":"post.comment.list", "params": {"username": "diamondh
                         "stake_points": 12500
                     },
                     "coin": {
-                        "supply": 164217523869,
-                        "locked": 4578709213058,
+                        "supply": 164216917444,
+                        "locked": 4578658488257,
                         "watermark": 255810788786,
-                        "price": 27881976936
+                        "price": 27881771010
                     }
                 },
                 "state": {
