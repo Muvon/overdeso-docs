@@ -7,7 +7,7 @@ description: This page will describe changes that affect structures or any metho
 ### January, 04 2022 (api2)
 
 * new method [**hashtag.post.list**](hashtag.md#hashtag.post.list) to get posts for requested hashtag;
-* added [**account structure**](structures.md#account) to all post list response (like to repost/root/parent.
+* added [**account structure**](structures.md#account) to all post list response (like to repost/root/parent).
 
 
 
