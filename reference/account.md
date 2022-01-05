@@ -124,13 +124,15 @@ This method is almost similiar to account.get but used to get current reader sta
 
 #### Request params
 
-You ha pass account pubkey or username using reader state in headers.
+You can pass account pubkey or username using reader state in headers.
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td></td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>fetch</td><td></td><td>true</td><td>Should contains data that you want include in response. Available: <code>utxos</code>. Default is empty list array.</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit lists to this value. Default is 50</td></tr></tbody></table>
 
 #### Response
 
 Return [account structure](structures.md#account) but with extra fields in it related to current reader state.
+
+If `fetch` param passed with non empty array response also includes lists responses of requested structures in same key.
 
 #### Examples
 

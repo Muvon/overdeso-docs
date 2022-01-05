@@ -4,12 +4,17 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### Upcoming (api2)
+
+* added `fetch` param to [**account.me**](account.md#account.me) method for fetching in one request extra data for reader account;
+* add support of `comment_count` for [**post rankings**](post.md#post.rank.list);
+* `burned` and `fee` are calculated in separated way now to display in [**account stat structure**](structures.md#account-stat);
+*
+
 ### January, 04 2022 (api2)
 
 * new method [**hashtag.post.list**](hashtag.md#hashtag.post.list) to get posts for requested hashtag;
 * added [**account structure**](structures.md#account) to all post list response (like to repost/root/parent).
-
-
 
 ### January, 03 2022 (api2)
 
