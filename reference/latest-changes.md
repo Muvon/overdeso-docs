@@ -13,6 +13,7 @@ description: This page will describe changes that affect structures or any metho
 * `tx_count` ranking is deprecated in [**account.rank.list**](account.md#account.rank.list);
 * fixed `tx_count` aggregation in global [**chain statistic**](chain.md#chain.stat.get);
 * adjusted coin holding response structures, please check examples on [**j**](account.md#account.holding.list) page;
+* `usd_rate` is showing current rate in [**chain.state**](chain.md#chain.state) method;
 *
 
 ### January, 04 2022 (api2)
