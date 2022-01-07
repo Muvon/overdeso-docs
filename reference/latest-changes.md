@@ -4,7 +4,7 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### Upcoming (api2)
+### January, 07 2022 (api2)
 
 * added `fetch` param to [**account.me**](account.md#account.me) method for fetching in one request extra data for reader account;
 * add support of `comment_count` for [**post rankings**](post.md#post.rank.list);
@@ -14,7 +14,7 @@ description: This page will describe changes that affect structures or any metho
 * fixed `tx_count` aggregation in global [**chain statistic**](chain.md#chain.stat.get);
 * adjusted coin holding response structures, please check examples on [**account.holding.list**](account.md#account.holding.list) page;
 * `usd_rate` is showing current rate in [**chain.state**](chain.md#chain.state) method;
-*
+* new `level_points` stat for account that represents aggregated activity (more info soon).
 
 ### January, 04 2022 (api2)
 
