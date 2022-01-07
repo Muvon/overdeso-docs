@@ -52,7 +52,7 @@ Get blockchain accumulated statistic informationin whole network.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>false</td><td>One of: account, post, hashtag.</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>false</td><td>One of: account, post, hashtag, transaction.</td></tr></tbody></table>
 
 #### Response
 
@@ -74,11 +74,8 @@ curl -s --data '[{"method":"chain.stat.get", "params": {"type": "account"}}]' ht
             "following_count": 12421984,
             "holding_count": 1440004,
             "locked": 693308634568853,
-            "tx_count": 90955433,
             "balance": 9877740202137228,
             "utxo_count": 1075952,
-            "fee": 4693401417279,
-            "burned": 2537686237060,
             "coin_buy_count": 2643594,
             "coin_buy_value": 5462082013499304,
             "coin_sell_count": 1882997,

@@ -126,7 +126,7 @@ This method is almost similiar to account.get but used to get current reader sta
 
 You can pass account pubkey or username using reader state in headers.
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>fetch</td><td></td><td>true</td><td>Should contains data that you want include in response. Available: <code>utxos</code>. Default is empty list array.</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit lists to this value. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>fetch</td><td></td><td>true</td><td>Should contains data that you want include in response. Available: <code>utxos</code>, <code>conversations</code>, <code>hodings</code>.Default is empty list array.</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit lists to this value. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -848,64 +848,60 @@ curl -s --data '[{"method":"account.holding.list", "params": {"username":"diamon
     [
         null,
         {
-            "count": 2663,
+            "count": 1472,
             "list": [
                 {
+                    "coins": 3990047612,
+                    "spend": 5710975084,
+                    "has_purchased": true,
                     "account": {
-                        "height": 6042,
-                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                        "balance": 1202557738544,
-                        "timestamp": 1615574505,
+                        "height": 6078,
+                        "pubkey": "BC1YLiheqL6jdqs9WK3ctBDxMR6bXv4q6ybFhFnmJnbX7K6vnT8BHBA",
+                        "balance": 32082956160,
+                        "timestamp": 1615599324,
                         "profile": {
-                            "timestamp": 1615574830,
+                            "timestamp": 1617326847,
                             "is_hidden": false,
-                            "height": 6043,
-                            "username": "diamondhands",
-                            "description": "💎🙌",
-                            "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
-                            "reward_points": 0,
+                            "height": 11787,
+                            "username": "derekdolin",
+                            "description": "Director of Strategy & 1st US Employee @threesixzero|\nFmr. Entrepreneur-in-Residence @ Peter Diamandis | Angel Investor | Passionate about helping early-stage companies grow.",
+                            "avatar_url": "http://media.overdeso.lo/avatar/NfbbnjuCwK3",
+                            "reward_points": 1000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 164217523869,
-                            "locked": 4578709213058,
-                            "watermark": 255810788786,
-                            "price": 27881976936
+                            "supply": 21991409789,
+                            "locked": 10635540757,
+                            "watermark": 38252878990,
+                            "price": 483622508
                         }
-                    },
-                    "holding": {
-                        "coins": 39126519404,
-                        "spend": 3350000000000,
-                        "has_purchased": true
                     }
                 },
                 {
+                    "coins": 2421634842,
+                    "spend": 0,
+                    "has_purchased": false,
                     "account": {
-                        "height": 12614,
-                        "pubkey": "BC1YLiJg3zmjxXJVxnmMXMDbJdWQwUstAWukeHcukv2ybUCxPVk1CEm",
-                        "balance": 566194948989,
-                        "timestamp": 1617565278,
+                        "height": 12530,
+                        "pubkey": "BC1YLgQvYpr3vamYDGiJMHA47DMi54Hx5kVeRRm3Dd4ZZHKcr8wEArk",
+                        "balance": 106365,
+                        "timestamp": 1617536193,
                         "profile": {
-                            "timestamp": 1617565278,
+                            "timestamp": 1617537719,
                             "is_hidden": false,
-                            "height": 12613,
-                            "username": "illuMEMEnati",
-                            "description": "Just a guy trying to retire off of memes, art, and crypto in order to spend some time with my family. Oh, and the world is run by lizard people. 🦎 \nRowdy Reptilians Discord: https://discord.gg/NDus2kqMam\nProjects: @rowdyreptilians, @kryptokitties",
-                            "avatar_url": "https://overdeso.com/media/avatar/NfV1Fjcp4G9",
-                            "reward_points": 1069,
+                            "height": 12534,
+                            "username": "BitYourSocialMedia",
+                            "description": "☑ If you want to understand the universe,think in terms of energy,frequency and vibration\n3-bitclout 6-plan to action 9-manifest it\n@p2p \n@diamondhands\ntwitter.com/fatjonshaha\n\n",
+                            "avatar_url": "http://media.overdeso.lo/avatar/QW81Qbdgcys",
+                            "reward_points": 3600,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 71392345359,
-                            "locked": 444023410647,
-                            "watermark": 93983996766,
-                            "price": 6219482052
+                            "supply": 7066495751,
+                            "locked": 352868218,
+                            "watermark": 11800022927,
+                            "price": 49935389
                         }
-                    },
-                    "holding": {
-                        "coins": 31995335111,
-                        "spend": 466722673387,
-                        "has_purchased": true
                     }
                 }
             ]
@@ -941,67 +937,69 @@ curl -s --data '[{"method":"account.trade.list", "params": {"username":"diamondh
     [
         null,
         {
-            "count": 83,
+            "count": 37,
             "list": [
                 {
-                    "id": "3JuEUMyKVE62s2saZQzrTVNpPKZWDmjSyNre4FWrw7t2rR7GCg2Xxd",
+                    "operation": "transfer",
+                    "gain": -52429,
+                    "value": 52429,
+                    "coins": 630,
+                    "id": "3JuEUW6YLkHTd5skecgvonQCxkwktSgd5FTsJoy7bxT61qNQdsYj9J",
                     "account": {
-                        "height": 29330,
-                        "pubkey": "BC1YLjFYcyrfzZBxaQAAtuKnHTE9t8ozbX6VqvN3Ryza8z2cnUAPR7J",
-                        "balance": 30340379103,
-                        "timestamp": 1622313858,
+                        "height": 6042,
+                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
+                        "balance": 23264863206,
+                        "timestamp": 1615574505,
                         "profile": {
-                            "timestamp": 1622313858,
+                            "timestamp": 1615574830,
                             "is_hidden": false,
-                            "height": 29329,
-                            "username": "gem",
-                            "description": "Founder reward is 100%.\n\nSomething big is coming here... stay tuned!\n\nBrought to you by @happy_penguin and @fede.",
-                            "avatar_url": "https://overdeso.com/media/avatar/eDhZkYEa1ER",
-                            "reward_points": 10000,
+                            "height": 6043,
+                            "username": "diamondhands",
+                            "description": "💎🙌",
+                            "avatar_url": "http://media.overdeso.lo/avatar/Xs8Q7X2MDLy",
+                            "reward_points": 0,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 128728207130,
-                            "locked": 2133151752493,
-                            "watermark": 128728587288,
-                            "price": 16570973837
+                            "supply": 166563551584,
+                            "locked": 4621048828164,
+                            "watermark": 255810788786,
+                            "price": 27743457582
                         }
                     },
                     "receiver": {
-                        "height": 29330,
-                        "pubkey": "BC1YLjFYcyrfzZBxaQAAtuKnHTE9t8ozbX6VqvN3Ryza8z2cnUAPR7J",
-                        "balance": 30340379103,
-                        "timestamp": 1622313858,
+                        "height": 25784,
+                        "pubkey": "BC1YLgJErwUC6xUmCy3vcPhp3E8DAjR9WqMpDYqBqPxoNQs88huJJEp",
+                        "balance": 9237697739,
+                        "timestamp": 1621410619,
                         "profile": {
-                            "timestamp": 1622313858,
+                            "timestamp": 1621410619,
                             "is_hidden": false,
-                            "height": 29329,
-                            "username": "gem",
-                            "description": "Founder reward is 100%.\n\nSomething big is coming here... stay tuned!\n\nBrought to you by @happy_penguin and @fede.",
-                            "avatar_url": "https://overdeso.com/media/avatar/eDhZkYEa1ER",
+                            "height": 25783,
+                            "username": "virenderkhanna",
+                            "description": "Curiosity got me here ! ",
+                            "avatar_url": "http://media.overdeso.lo/avatar/Qfu5d95rfkh",
                             "reward_points": 10000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 128728207130,
-                            "locked": 2133151752493,
-                            "watermark": 128728587288,
-                            "price": 16570973837
+                            "supply": 500000000,
+                            "locked": 125000,
+                            "watermark": 11767956861,
+                            "price": 250000
                         }
-                    },
-                    "coin": {
-                        "operation": "transfer",
-                        "gain": -272482215298,
-                        "value": 272482215298,
-                        "coins": 5733181880
                     }
                 },
                 {
-                    "id": "3JuESqHjBVBPBQWB2y28mXPmXxMPKxjJRCzSXHpZusaW4MLgAQxmaU",
+                    "operation": "transfer",
+                    "gain": -5249395,
+                    "value": 5249395,
+                    "coins": 63077,
+                    "id": "3JuETgXBHeRwkfYBRLQKxi4qjKZ4j7oJ36pgnEMNKDHVgvJpuX1CuB",
                     "account": {
                         "height": 6042,
                         "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                        "balance": 1202557738544,
+                        "balance": 23264863206,
                         "timestamp": 1615574505,
                         "profile": {
                             "timestamp": 1615574830,
@@ -1009,44 +1007,38 @@ curl -s --data '[{"method":"account.trade.list", "params": {"username":"diamondh
                             "height": 6043,
                             "username": "diamondhands",
                             "description": "💎🙌",
-                            "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
+                            "avatar_url": "http://media.overdeso.lo/avatar/Xs8Q7X2MDLy",
                             "reward_points": 0,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 164217523869,
-                            "locked": 4578709213058,
+                            "supply": 166563551584,
+                            "locked": 4621048828164,
                             "watermark": 255810788786,
-                            "price": 27881976936
+                            "price": 27743457582
                         }
                     },
                     "receiver": {
-                        "height": 6042,
-                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                        "balance": 1202557738544,
-                        "timestamp": 1615574505,
+                        "height": 20769,
+                        "pubkey": "BC1YLgvhbxCR181wxuEAzm8rR8uVfdYnuBQXtTchJSzJmZGG2mGigJL",
+                        "balance": 20978227,
+                        "timestamp": 1620034162,
                         "profile": {
-                            "timestamp": 1615574830,
+                            "timestamp": 1620036256,
                             "is_hidden": false,
-                            "height": 6043,
-                            "username": "diamondhands",
-                            "description": "💎🙌",
-                            "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
-                            "reward_points": 0,
+                            "height": 20778,
+                            "username": "AndrewVanDuivenbode",
+                            "description": "Scottish Software Developer\nCreative Transmissions & TransitQuote Founder \nDoing: JavaScript/Database Development, PHP/ Laravel/WordPress\nInterests: Virtual Worlds, Space, Tech\n\n",
+                            "avatar_url": "http://media.overdeso.lo/avatar/XXef96doQV3",
+                            "reward_points": 1000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 164217523869,
-                            "locked": 4578709213058,
-                            "watermark": 255810788786,
-                            "price": 27881976936
+                            "supply": 4100319729,
+                            "locked": 68937208,
+                            "watermark": 5086152504,
+                            "price": 16812642
                         }
-                    },
-                    "coin": {
-                        "operation": "buy",
-                        "gain": 0,
-                        "value": 3350000000000,
-                        "coins": 38926848164
                     }
                 }
             ]
@@ -1174,7 +1166,7 @@ Get account rankings sorted in high to low order by requested type stat key.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>locked</code>. Allowed values: <code>locked</code>, <code>balance</code>, <code>reward_value</code>, <code>coin_gain</code>, <code>follower_count</code>, <code>tx_count</code>, <code>nft_coin</code>, <code>nft_royalty</code>, <code>nft_gain</code>, <code>sender_diamond_value</code>, <code>receiver_diamond_value</code>, <code>post_count</code>, <code>comment_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>locked</code>. Allowed values: <code>locked</code>, <code>balance</code>, <code>reward_value</code>, <code>coin_gain</code>, <code>follower_count</code>, <code>nft_coin</code>, <code>nft_royalty</code>, <code>nft_gain</code>, <code>sender_diamond_value</code>, <code>receiver_diamond_value</code>, <code>post_count</code>, <code>comment_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 

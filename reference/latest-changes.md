@@ -9,6 +9,10 @@ description: This page will describe changes that affect structures or any metho
 * added `fetch` param to [**account.me**](account.md#account.me) method for fetching in one request extra data for reader account;
 * add support of `comment_count` for [**post rankings**](post.md#post.rank.list);
 * `burned` and `fee` are calculated in separated way now to display in [**account stat structure**](structures.md#account-stat);
+* added `transaction` type to global [**chain.stat.get**](chain.md#chain.stat.get);
+* `tx_count` ranking is deprecated in [**account.rank.list**](account.md#account.rank.list);
+* fixed `tx_count` aggregation in global [**chain statistic**](chain.md#chain.stat.get);
+* adjusted coin holding response structures, please check examples on [**j**](account.md#account.holding.list) page;
 *
 
 ### January, 04 2022 (api2)
