@@ -105,3 +105,4 @@ curl -s --data '[{"method":"chain.stat.get", "params": {"type": "account"}}]' ht
 {% endtab %}
 {% endtabs %}
 
+### &#x20;<a href="#block.tip" id="block.tip"></a>

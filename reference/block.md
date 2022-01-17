@@ -46,7 +46,7 @@ Method requires to pass height or hash in hex format of requested block.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>height</td><td></td><td>true</td><td>Height of block to fetch. </td></tr><tr><td>hash</td><td></td><td>true</td><td>Block hash in hex format.</td></tr><tr><td>expand</td><td></td><td>false</td><td>By default we return all block transaction ids. But if we pass expand – we decode transactions in json objects and also limit output by using offset/limit params</td></tr><tr><td>offset</td><td></td><td>false</td><td>Starting offset to fetch list. Default is 0.</td></tr><tr><td>limit</td><td></td><td>false</td><td>How many transactions to fetch for request. Default is 10.</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select" data-multiple>Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>block</td><td></td><td>true</td><td>Block height as integer or block hash in hex format as string</td></tr><tr><td>expand</td><td></td><td>false</td><td>By default we return all block transaction ids. But if we pass expand – we decode transactions in json objects and also limit output by using offset/limit params</td></tr><tr><td>offset</td><td></td><td>false</td><td>Starting offset to fetch list. Default is 0.</td></tr><tr><td>limit</td><td></td><td>false</td><td>How many transactions to fetch for request. Default is 10.</td></tr></tbody></table>
 
 #### Response
 
@@ -67,7 +67,7 @@ The method returns parsed block information.&#x20;
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -H 'Accept: application/json' --data '[{"method":"block.get", "params": {"height":1}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -H 'Accept: application/json' --data '[{"method":"block.get", "params": {"block":1}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json

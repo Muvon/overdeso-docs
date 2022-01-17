@@ -100,11 +100,13 @@ curl --data '[{"method":"transaction.get", "params": {"id":"3JuETVBKjuSk6VzZy6Ms
 
 ### transaction.list
 
-Get list of transactions related to account by username or public key sorted in chronological way (new to old).
+Get list of transactions related to account by username or public key, block or mempool sorted in chronological way (new to old).
+
+If user or block related request params are not present we return mempool transactions.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>BLock hash in hex format</td></tr><tr><td>height</td><td></td><td>true</td><td>Block height as unsigned integer</td></tr><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type_id</td><td></td><td>false</td><td>Get only wanted transaction types. Default is null. We fetch any.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start default is 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch for the request. Default is 10.</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select" data-multiple>Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>block</td><td></td><td>false</td><td>Block hash in hex format or block height</td></tr><tr><td>account</td><td></td><td>false</td><td>Account username or public key</td></tr><tr><td>type_id</td><td></td><td>false</td><td>Get only wanted transaction types. Default is null. We fetch any.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start default is 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit to fetch for the request. Default is 10.</td></tr></tbody></table>
 
 #### Response
 
@@ -119,7 +121,7 @@ Reposponse contains 2 keys: **count** and **list**.&#x20;
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"transaction.list", "params": {"username":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"transaction.list", "params": {"account":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json

@@ -4,6 +4,25 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 17 2022 (api1)
+
+* added transaction signature check in [**transaction.submit**](transaction.md#transaction.submit) method;
+* experimental version of mempool is live;
+* adjusted `level_points` in [**account stat**](structures.md#account-stat) structure to reflect user activity;
+* added ranking using `level_points` for [**account.rank.list**](account.md#account.rank.list);
+* new method [**account.notification.list**](account.md#account.notification.list) to get account related notifications (now supports follow/like/transfer/diamond);
+* added `notifications` fetch param to [**account.me**](account.md#account.me) method to fetch latest new notifications;
+* fixed issue with incorrect count when requesting transactions for account with `type_id` using [**transaction.list**](transaction.md#transaction.list) method;
+* added `price` to [**coin holding**](structures.md#coin-holding) structure;
+* added `is_reader` flag to message structure in [**message.conversation.list**](message.md#message.conversation.list) method;
+* added `version` to [**message structure**](structures.md#message) that contains encryption version;
+* added possibility to get list of mempool transaction by using [**transaction.list**](transaction.md#transaction.list) method;
+* account related request params `pubkey` / `username` replaced with one`account` that is autodetected if its username or pubkey;
+* block related request params `height` / `hash` replaced with one `block` that is autodetected if its block hash or height;
+* reader state header for viewing account changed to `X-Reader-Account` and can be pubkey or username.
+
+
+
 ### January, 07 2022 (api2)
 
 * added `fetch` param to [**account.me**](account.md#account.me) method for fetching in one request extra data for reader account;

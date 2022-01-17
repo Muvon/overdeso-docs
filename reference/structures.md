@@ -147,6 +147,7 @@ Coming soon.
 | `sender_seed_value`         | The value of seeded accounts                                                 |
 | `tx_count`                  | Total count of transactios made by the account                               |
 | `utxo_count`                | How many unspend outputs this account has                                    |
+| `level_points`              | Activity points for account aggregated by custom logic                       |
 
 ### Account: state
 
@@ -154,6 +155,15 @@ Coming soon.
 | -------------- | -------------------------------------------------- |
 | `is_following` | If the reader account following requested one      |
 | `is_follower`  | If the reader account is followed by requested one |
+
+### Message
+
+| Parameter      | Description                                                                         |
+| -------------- | ----------------------------------------------------------------------------------- |
+| `text_hex`     | Encoded hex of message                                                              |
+| `submitted_at` | Timestamp of this message from transaction                                          |
+| `is_reader`    | If the message belongs to reader (account that passed in header)                    |
+| `version`      | Version that used to encode text. 1 = legacy, 2 = those who have V=2 in extra data. |
 
 ### Post
 
@@ -220,6 +230,15 @@ Coming soon.
 | `count`   | How many times the hashtag was used for all time |
 | `hashtag` | Requested hashtag in lowercase                   |
 | `last_ts` | Last timestamp that this hashed was used         |
+
+### Coin holding
+
+| Parameter       | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| `price`         | Average price used to buy coins                              |
+| `coins`         | Total coin that account has                                  |
+| `spend`         | How much DESO (nanos) spent to buy coins                     |
+| `has_purchased` | If coins bought by account or received for free as transfer. |
 
 ### NFT
 

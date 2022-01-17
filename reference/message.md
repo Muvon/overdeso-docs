@@ -10,7 +10,7 @@ Get all conversation sorted in chronological way for wanted user.&#x20;
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key of account starting with BC1…</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -21,7 +21,7 @@ Returns list of conversations sorted in choronological order (last to old) for g
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
- curl -s --data '[{"method":"message.conversation.list", "params": {"username": "diamondhands", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+ curl -s --data '[{"method":"message.conversation.list", "params": {"account": "diamondhands", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -109,7 +109,7 @@ Get list of messages for wanted conversation. This method requires to send reade
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username of another account for getting converstion</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Pubkey of account</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -120,7 +120,7 @@ Returns list of messages sorted in chronological order (last to old)
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
- curl -H 'X-Account-Username: donhardman' -s --data '[{"method":"message.list", "params": {"username": "diamondhands", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+ curl -H 'X-Reader-Account: donhardman' -s --data '[{"method":"message.list", "params": {"account": "diamondhands", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
