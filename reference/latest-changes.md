@@ -4,6 +4,24 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 25 2022 (api2)
+
+* fix some broken API method after mempool implementation;
+* stabilze mempool syncing, still expiremental;
+* adapt system to hard fork;
+* changed [**message stat**](structures.md#message) counters, now it has 2: `member_count` and `message_count`;
+* added `buy_now_price` for [**NFT structure**](structures.md#nft) of post;
+* added `additional_creator_royalty` and `additional_coin_royalty` to **** [**Post structure**](structures.md#post-nft) when it represents NFT;
+* added `is_buy_now`, `buy_now_price`, `min_bid` to [**Post  structure**](structures.md#post-nft) when it represents NFT;
+* added `dao_holder_count` and `dao_holding_count` to [**Account stat**](structures.md#account-stat) structure;
+* added `dao` struture response to [**Account**](structures.md#account-dao);
+* calculate `price` field of `coin` structure in the way same DeSo does;
+* changed `holdings` to `creators` and `daos` in [**account.me**](account.md#account.me) method;
+* deprecated methods: **account.holding.list**, **account.holding.get** and **account.trade.list**;
+* new page with [**coin related methods**](coin.md) that supports DAOs.
+
+
+
 ### January, 17 2022 (api1)
 
 * added transaction signature check in [**transaction.submit**](transaction.md#transaction.submit) method;
@@ -20,8 +38,6 @@ description: This page will describe changes that affect structures or any metho
 * account related request params `pubkey` / `username` replaced with one`account` that is autodetected if its username or pubkey;
 * block related request params `height` / `hash` replaced with one `block` that is autodetected if its block hash or height;
 * reader state header for viewing account changed to `X-Reader-Account` and can be pubkey or username.
-
-
 
 ### January, 07 2022 (api2)
 
@@ -68,8 +84,6 @@ description: This page will describe changes that affect structures or any metho
 * extracted [**post.comment.list**](post.md#post.comment.list) method to fetch comments for related post or for account;
 * updated method [**post.list**](post.md#post.list) now returns global recent posts if no params passed;
 * new method [**post.rank.list**](post.md#post.rank.list) for fetching ranked post list.
-
-
 
 ### December, 20 2021 (api1)
 

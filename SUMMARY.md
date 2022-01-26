@@ -12,6 +12,7 @@
 * [🟦 Block](reference/block.md)
 * [💸 Transaction](reference/transaction.md)
 * [👤 Account](reference/account.md)
+* [🪙 Coin](reference/coin.md)
 * [✉ Message](reference/message.md)
 * [📄 Post](reference/post.md)
 * [#⃣ Hashtag](reference/hashtag.md)
