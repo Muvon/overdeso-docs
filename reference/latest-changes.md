@@ -4,7 +4,7 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### January, 25 2022 (api2)
+### January, 26 2022 (api2)
 
 * fix some broken API method after mempool implementation;
 * stabilze mempool syncing, still expiremental;
@@ -19,8 +19,6 @@ description: This page will describe changes that affect structures or any metho
 * changed `holdings` to `creators` and `daos` in [**account.me**](account.md#account.me) method;
 * deprecated methods: **account.holding.list**, **account.holding.get** and **account.trade.list**;
 * new page with [**coin related methods**](coin.md) that supports DAOs.
-
-
 
 ### January, 17 2022 (api1)
 

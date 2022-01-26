@@ -87,14 +87,6 @@ Coming soon.
 | `supply`    | Total circulation of creator coins in nanos                |
 | `watermark` | Maximum circulation of creator coins in nanos for all time |
 
-### Account: dao
-
-| Parameter     | Description                           |
-| ------------- | ------------------------------------- |
-| `disabled`    | If the dao is disabled by transaction |
-| `restriction` | Restriction status of this dao        |
-| `supply`      | Total supply                          |
-
 ### Account: profile
 
 | Parameter       | Description                                                                                          |
@@ -147,8 +139,6 @@ Coming soon.
 | `reward_value`              | How many DESO are made as reward in nanos                                    |
 | `sender_coin_count`         | How many times account sent creator coins                                    |
 | `sender_coin_value`         | Sent value in DESO nanos on coin transfers                                   |
-| `dao_holder_count`          | How many different DAO coins account holds                                   |
-| `dao_holding_count`         | How many different accounts holding this profile DAO coin                    |
 | `sender_connection_count`   | Total outgoing connections                                                   |
 | `sender_connection_value`   | Total value of outgoing connections                                          |
 | `sender_diamond_count`      | How many diamonds send (counted in sum of levels)                            |
@@ -206,19 +196,14 @@ Coming soon.
 
 ### Post: nft
 
-| Parameter                    | Description                                                                   |
-| ---------------------------- | ----------------------------------------------------------------------------- |
-| `is_selling`                 | If there any NFT for selling now                                              |
-| `has_unlockable`             | If the post had unlockable text                                               |
-| `nft_count`                  | How many NFTs this post minted                                                |
-| `nft_burned_count`           | Burned NFTs count                                                             |
-| `creator_royalty`            | Creator royalty for related NFTs to this post in points (x100)                |
-| `coin_royalty`               | Coin royalty to related NFTs to this post in points (x100)                    |
-| `min_bid`                    | Min bid for NFT in nanos                                                      |
-| `is_buy_now`                 | If this post was minted with buy now price                                    |
-| `buy_now_price`              | Buy now price in nanos                                                        |
-| `additional_creator_royalty` | Map with additional royalties for creator as pair of {pubkey: points}         |
-| `additional_coin_royalty`    | Map with additional royalties to coin of creators as pair of {pubkey: points} |
+| Parameter          | Description                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| `is_selling`       | If there any NFT for selling now                               |
+| `has_unlockable`   | If the post had unlockable text                                |
+| `nft_count`        | How many NFTs this post minted                                 |
+| `nft_burned_count` | Burned NFTs count                                              |
+| `creator_royalty`  | Creator royalty for related NFTs to this post in points (x100) |
+| `coin_royalty`     | Coin royalty to related NFTs to this post in points (x100)     |
 
 ### Post: stat
 

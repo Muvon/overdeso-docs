@@ -29,75 +29,69 @@ Returns list of conversations sorted in choronological order (last to old) for g
     [
         null,
         {
-            "count": 235,
+            "count": 939,
             "list": [
                 {
                     "stat": {
-                        "message_count": 1,
-                        "member_count": 2
+                        "count": 1
                     },
-                    "timestamp": 1617289499,
+                    "timestamp": 1640481174,
                     "message": {
-                        "text_hex": "04c782cce5b85a846ed2ff93f2fbf43eb52cdf64b57ec9e928393ace802496627755cfa4bb80c8e999aecffe989337aa5d38a216511d9904631d91f8dddbd4cc940d3cb567787b91c3648ec970ce4472fab8a47471d8bea149377cbaa2e1dbb5b909c041d385c1ff3fd8069f966b7ab1c390e9df201940518b4b187e40225f5dce4c9c258a8d62226c83eb00152c5058dfe152819472479834875ac4dbe3ec6415d78e623d2a35525b4d4c7ea896ea8985663061d02fbc1808372280892ba2e9e662b9c1b5d800a90d9424828da3387938a23658b0b7ea5b72d316e782a832614161840c28964a535c1f3217634aca5c29e1ffa53d6a61b22941df4809fddb17175b244adb0596bdf4a3c9ce3273ecd33426100b9acab10b0b483dc6c140b1d9dd682463708bab932ba0e4356521dd7353d2afbad11a032c01b54518448fbe36d336c1",
-                        "submitted_at": 1617289499,
-                        "is_reader": false,
-                        "version": 1
+                        "text_hex": "04222fdadf61c7fb28787d91d1392bfcf1ea8eaa4d51608ecc7faf0d8fdff4cc799277b66ba17a97f1c86469c55a4a97d1be6710360d292423d0d8d22510508344070924359c35f516e539f3fc11f42c269bdd4ae0fe61ac5b8834ab98c8116fdf7f8e8d40f03a3b8c7bc4d381f57e37c0e8186af29c57a834ce",
+                        "submitted_at": 1640481174
                     },
                     "account": {
-                        "height": 6042,
-                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                        "balance": 4588895657,
-                        "timestamp": 1615574505,
+                        "height": 80460,
+                        "pubkey": "BC1YLftqfn72zNPBgSm4Fkm3A69GBf6nrYWLnLrNCuscBLdjJYGjiMk",
+                        "balance": 12673162,
+                        "timestamp": 1637658830,
                         "profile": {
-                            "timestamp": 1615574830,
+                            "timestamp": 1637660728,
                             "is_hidden": false,
-                            "height": 6043,
-                            "username": "diamondhands",
-                            "description": "💎🙌",
-                            "avatar_url": "http://media.overdeso.lo/avatar/Xs8QAFT7gy4",
-                            "reward_points": 0,
+                            "height": 80470,
+                            "username": "Mcclain202",
+                            "description": "Tough",
+                            "avatar_url": "https://overdeso.com/media/avatar/dDXj5xjHPoX",
+                            "reward_points": 1000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 251018488621,
-                            "locked": 15816770607695,
-                            "watermark": 255810788786,
-                            "price": 63010381006
+                            "supply": 4887427,
+                            "locked": 1,
+                            "watermark": 2784726509,
+                            "price": 204
                         }
                     }
                 },
                 {
                     "stat": {
-                        "message_count": 13,
-                        "member_count": 2
+                        "count": 2
                     },
-                    "timestamp": 1616889860,
+                    "timestamp": 1639613950,
                     "message": {
-                        "text_hex": "045b25eb8efe7d6af3645a8bb3e77259d4b592564b5c83784d795e016471aaffaefef286d72728826d8262181bf4427f70990383414e75927105c48eae5de782a4cf6c0c6099e4f251e998c15fc40c8fd61488acea252a0cd3bc884c34e3231fa0de23a8398f2ab0cca76141ca509168a3b644561aa78bbab8e3ea2fb542ab71f89a36ef0ff60e078a0baeed3ec4abf0ab6c8277d2dde90b34a99eff2c28e3f2c0ef3eacd1a59aec4a1700c76a049e1dfb9b8ec5154028b5fbdcb25e7ef5f38ef1fb5fa59367529dec1a4e6cf77d3a9bfe45440370abb31c1e58d342bd0263856a6562f8e7b545bfd68367964146b478b409078f1185f33cedddc4c76e372aa3c7edb17b8d35247293d56057eabbed63b834df766fbb1f2367ec997b5cba891f5eea5a595211cd72495a861abe2868c048e87b127b8201d57d71967f978ac6caeec2dc1fe93d5d4b48edf902182098e87a1609018cffd75ed3952d6900008d4cd1a20d2a4e190fe9830f385494b8b41bc76429e6d7689ea91d08d7636554ce8e7cd7ae4e95d6171b6bb054f76c079077db09b75a7240b166277a0be6f986ff6f",
-                        "submitted_at": 1617287440,
-                        "is_reader": false,
-                        "version": 1
+                        "text_hex": "046478e63e78aa196df10be3964f152524059858839ce0f271bab6bc823d2cc95b1c645ae2668aa7fc99273a64b31cfe06ee41e591187297c0620e00f5f166d2ffd5129a3e301e439141d12a9549584d90aaa629fd68da85f7b0dc488b42b7dd1f8ecc6835df36bb920eb174e84447f7460b31d14fa6c0301e7707392b7055ff54edb4c9e98628fe6a197dd50bf3538030ea1cbd94763a2c822a5c321c578fec80a9ecd5ce575693528a7322c714bf87bd4dee8bc5e6e07d5fa08b4ce4b6ba80379021022cd3c4d8ea0e54525855e04701f0",
+                        "submitted_at": 1640362349
                     },
                     "account": {
-                        "height": 6042,
-                        "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
-                        "balance": 4588895657,
-                        "timestamp": 1615574505,
+                        "height": 34786,
+                        "pubkey": "BC1YLgvPruTYF3R66H96g1nCq9jhewpH7k8iwjQr7WoLacby8tNZNan",
+                        "balance": 143439502,
+                        "timestamp": 1623940800,
                         "profile": {
-                            "timestamp": 1615574830,
+                            "timestamp": 1623941286,
                             "is_hidden": false,
-                            "height": 6043,
-                            "username": "diamondhands",
-                            "description": "💎🙌",
-                            "avatar_url": "http://media.overdeso.lo/avatar/Xs8QAFT7gy4",
-                            "reward_points": 0,
+                            "height": 34786,
+                            "username": "BitBadgesHash",
+                            "description": "Public record of all badges issued on @BitBadges. This gives anyone public access to them so anyone can a) prove ownership or b) innovate on top of @BitBadges",
+                            "avatar_url": "https://overdeso.com/media/avatar/QLXvsDPy7aq",
+                            "reward_points": 10000,
                             "stake_points": 12500
                         },
                         "coin": {
-                            "supply": 251018488621,
-                            "locked": 15816770607695,
-                            "watermark": 255810788786,
-                            "price": 63010381006
+                            "supply": 0,
+                            "locked": 0,
+                            "watermark": 0,
+                            "price": 0
                         }
                     }
                 }

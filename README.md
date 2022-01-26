@@ -2,7 +2,7 @@
 description: Build apps on top of DeSo with ease using extended social protocol.
 ---
 
-# 🏁 Overdeso
+# Overdeso
 
 ## What is Overdeso?
 
@@ -14,6 +14,10 @@ We scale it for you and offer simple API to use. You just open your favourite co
 
 {% hint style="danger" %}
 Disclaimer: we are in early beta test mode and API methods can be changed. All data can be modified and fixed. Please use on your own risk. We will publish once we are production ready.&#x20;
+{% endhint %}
+
+{% hint style="warning" %}
+All data provide are synced with blocks only for now. We did not include mempool but working on it.
 {% endhint %}
 
 ## Want to jump right in?
