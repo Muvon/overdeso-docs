@@ -30,15 +30,16 @@ description: Full method list groupped by namespaces.
 * [account.follow.list](account.md#account.follow.list)
 * [account.seed.list](account.md#account.seed.list)
 * [account.connection.list](account.md#account.connection.list)
-* [account.holding.get](account.md#account.holding.get)
-* [account.holding.list](account.md#account.holding.list)
-* [account.trade.list](account.md#account.trade.list)
 * [account.search](account.md#account.search)
 * [account.stat.list](account.md#account.stat.list)
 * [account.rank.list](account.md#account.rank.list)
 * [account.upload.url](account.md#account.upload.url)
 
+### Coin
 
+* [coin.holding.get](coin.md#coin.holding.get)
+* [coin.holding.list](coin.md#coin.holding.list)
+* [coin.operation.list](coin.md#coin.operation.list)
 
 ### Message
 
