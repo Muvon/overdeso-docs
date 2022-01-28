@@ -19,6 +19,7 @@ description: Full method list groupped by namespaces.
 
 * [transaction.get](block.md#transaction.get)
 * [transaction.list](block.md#transaction.list)
+* [transaction.submit](transaction.md#transaction.submit)
 
 ### Account
 
@@ -70,4 +71,8 @@ description: Full method list groupped by namespaces.
 * [nft.list](nft.md#nft.list)
 * [nft.bid.list](nft.md#nft.bid.list)
 * [nft.trade.list](nft.md#nft.trade.list)
+
+### Tool
+
+* [tool.opengraph](tool.md#tool.opengraph)
 

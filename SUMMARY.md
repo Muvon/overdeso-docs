@@ -17,6 +17,7 @@
 * [📄 Post](reference/post.md)
 * [#⃣ Hashtag](reference/hashtag.md)
 * [✨ NFT](reference/nft.md)
+* [🛠 Tool](reference/tool.md)
 * [🚀 Overdeso protocol](reference/overdeso-protocol.md)
 * [🛑 Error codes](reference/error-codes.md)
 * [Roadmap](reference/roadmap.md)

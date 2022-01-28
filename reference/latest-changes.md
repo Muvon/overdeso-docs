@@ -4,6 +4,13 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 28 (api2)
+
+* added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response;
+* added [**Tool**](tool.md) **** category of API with link preview fetching from opengraph for requested URL;
+* added [**post.follow.list**](post.md#post.follow.list) method to get account following feed;
+*
+
 ### January, 26 2022 (api2)
 
 * fix some broken API method after mempool implementation;
@@ -18,8 +25,7 @@ description: This page will describe changes that affect structures or any metho
 * calculate `price` field of `coin` structure in the way same DeSo does;
 * changed `holdings` to `creators` and `daos` in [**account.me**](account.md#account.me) method;
 * deprecated methods: **account.holding.list**, **account.holding.get** and **account.trade.list**;
-* new page with [**coin related methods**](coin.md) that supports DAOs;
-* added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response.
+* new page with [**coin related methods**](coin.md) that supports DAOs.
 
 ### January, 17 2022 (api1)
 
