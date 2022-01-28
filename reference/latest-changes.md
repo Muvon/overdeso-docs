@@ -4,6 +4,12 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 28 (api2)
+
+* added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response;
+* added [**Tool**](tool.md) **** category of API with link preview fetching from opengraph for requested URL;
+* added [**post.follow.list**](post.md#post.follow.list) method to get account following feed.
+
 ### January, 26 2022 (api2)
 
 * fix some broken API method after mempool implementation;
