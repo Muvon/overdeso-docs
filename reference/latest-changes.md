@@ -18,7 +18,8 @@ description: This page will describe changes that affect structures or any metho
 * calculate `price` field of `coin` structure in the way same DeSo does;
 * changed `holdings` to `creators` and `daos` in [**account.me**](account.md#account.me) method;
 * deprecated methods: **account.holding.list**, **account.holding.get** and **account.trade.list**;
-* new page with [**coin related methods**](coin.md) that supports DAOs.
+* new page with [**coin related methods**](coin.md) that supports DAOs;
+* added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response.
 
 ### January, 17 2022 (api1)
 
