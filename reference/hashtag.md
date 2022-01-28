@@ -25,7 +25,7 @@ Returns short information about wanted hashtag.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"deso"}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"hashtag.get", "params": {"hashtag":"deso"}}]' http://api.overdeso.lo/v1 | python -m json.tool
 ```
 
 ```json
