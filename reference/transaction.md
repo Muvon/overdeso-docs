@@ -141,6 +141,69 @@ curl -s --data '[{"method":"transaction.list", "params": {"account":"diamondhand
 {% endtab %}
 {% endtabs %}
 
+### transaction.decode
+
+Decode raw transaction in hex in human view
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>raw</td><td></td><td>true</td><td>The raw transaction in hex to decode</td></tr></tbody></table>
+
+#### Response
+
+Returns decodec structure for requested transaction.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"transaction.decode", "params": {"raw": "02d8dd25b5dd4a75364bc679bef23c63a9666e163e33760bcdfbd9f6cb0fa198e30000476a9cce537e598f5420015ad1aa42374c05ebcd48d4ed64a09c283df542fc000203bd83700e23421e115eb56c760e13cf464dcb4220e48ce61cb20084a398776bd6d08603025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1da4dc02020021025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1d020c4469616d6f6e644c6576656c01020f4469616d6f6e64506f73744861736820a2f0abd7a36206db028f8f8cf845c61aa6415a9698568285c8185e708853c8ea463044022026d31681e4ff4311ada2e14b7ddb5842d39ac2b2337f3f0f80261adacb7a1dd5022064f9abe35de33d957c6edb6d79b3d342a7fe9817526992bd2698d1c60c33ded5"}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "id": "3JuETJasnB4YHgmGsLna5suepgSzpAVRxiQvSbUyN9jcDcddRuLY6R",
+            "transactor": "BC1YLgQ4ZvnF6XswTdQTaxXSZSoUMciEjueUxYfa6JNDS5j4U26jSbg",
+            "type_id": 2,
+            "inputs": [
+                [
+                    "3JuEUPHDVVwwf6HmixVP1kUESV3xgXGvPsNiRz6vEkDm4dExfsh2Cr",
+                    0
+                ],
+                [
+                    "3JuESjtr23tCmqzJ6EDbHmbXy3Rc5DCCMTtr1dAfXaeto46BL5cwxG",
+                    0
+                ]
+            ],
+            "outputs": [
+                [
+                    "BC1YLj45WnxexanwdNZSSpTUgvT7qJfaQrXsSoW9qSvLBnjgL7GG3FC",
+                    50000
+                ],
+                [
+                    "BC1YLgQ4ZvnF6XswTdQTaxXSZSoUMciEjueUxYfa6JNDS5j4U26jSbg",
+                    44580
+                ]
+            ],
+            "signature": "3044022026d31681e4ff4311ada2e14b7ddb5842d39ac2b2337f3f0f80261adacb7a1dd5022064f9abe35de33d957c6edb6d79b3d342a7fe9817526992bd2698d1c60c33ded5",
+            "meta": [],
+            "extra": {
+                "DiamondLevel": 1,
+                "DiamondPostHash": "a2f0abd7a36206db028f8f8cf845c61aa6415a9698568285c8185e708853c8ea"
+            },
+            "size": 312,
+            "raw": "02d8dd25b5dd4a75364bc679bef23c63a9666e163e33760bcdfbd9f6cb0fa198e30000476a9cce537e598f5420015ad1aa42374c05ebcd48d4ed64a09c283df542fc000203bd83700e23421e115eb56c760e13cf464dcb4220e48ce61cb20084a398776bd6d08603025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1da4dc02020021025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1d020c4469616d6f6e644c6576656c01020f4469616d6f6e64506f73744861736820a2f0abd7a36206db028f8f8cf845c61aa6415a9698568285c8185e708853c8ea463044022026d31681e4ff4311ada2e14b7ddb5842d39ac2b2337f3f0f80261adacb7a1dd5022064f9abe35de33d957c6edb6d79b3d342a7fe9817526992bd2698d1c60c33ded5"
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### transaction.submit
 
 Submit signed transaction to blockchain. One of 2 fields required: `raw` or `list` of transaction hexes to be passed.
@@ -149,7 +212,7 @@ Submit signed transaction to blockchain. One of 2 fields required: `raw` or `lis
 
 <table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>raw</td><td></td><td>true</td><td>Signed transaction in hex format to broadcast</td></tr><tr><td>list</td><td></td><td>true</td><td>List of transactions hexes to submit in one bundle</td></tr></tbody></table>
 
-#### Responsex\`
+#### Response
 
 Return 2 keys: `submit` and `skip`.
 
@@ -162,7 +225,7 @@ Return 2 keys: `submit` and `skip`.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"transaction.submit", "params": {"raw": "02d8dd25b5dd4a75364bc679bef23c63a9666e163e33760bcdfbd9f6cb0fa198e30000476a9cce537e598f5420015ad1aa42374c05ebcd48d4ed64a09c283df542fc000203bd83700e23421e115eb56c760e13cf464dcb4220e48ce61cb20084a398776bd6d08603025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1da4dc02020021025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1d020c4469616d6f6e644c6576656c01020f4469616d6f6e64506f73744861736820a2f0abd7a36206db028f8f8cf845c61aa6415a9698568285c8185e708853c8ea463044022026d31681e4ff4311ada2e14b7ddb5842d39ac2b2337f3f0f80261adacb7a1dd5022064f9abe35de33d957c6edb6d79b3d342a7fe9817526992bd2698d1c60c33ded5"}}]' http://api.overdeso.lo/v1 | python -m json.tool
+curl -s --data '[{"method":"transaction.submit", "params": {"raw": "02d8dd25b5dd4a75364bc679bef23c63a9666e163e33760bcdfbd9f6cb0fa198e30000476a9cce537e598f5420015ad1aa42374c05ebcd48d4ed64a09c283df542fc000203bd83700e23421e115eb56c760e13cf464dcb4220e48ce61cb20084a398776bd6d08603025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1da4dc02020021025fccf1467f0d9bfe749bc1d3b3217d16d48d238af28b79d2bd707a2c27e79e1d020c4469616d6f6e644c6576656c01020f4469616d6f6e64506f73744861736820a2f0abd7a36206db028f8f8cf845c61aa6415a9698568285c8185e708853c8ea463044022026d31681e4ff4311ada2e14b7ddb5842d39ac2b2337f3f0f80261adacb7a1dd5022064f9abe35de33d957c6edb6d79b3d342a7fe9817526992bd2698d1c60c33ded5"}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json

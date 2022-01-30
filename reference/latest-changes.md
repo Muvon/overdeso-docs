@@ -4,6 +4,14 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### January, 30 (api2)
+
+* fixed issue when we mark posts to have media in case of someone build incorrect transaction with empty url in it;
+* added `links` to [**post**](post.md) response that contains up to 3 links preview from opengraph meta tags;
+* fixed issue with calculation of additional [**NFT**](nft.md) royalties;
+* ****[**post.list**](post.md#post.list) returns only creators posts now (without reposts);
+* added method [**transaction.decode**](transaction.md#transaction.decode) to decode raw transaction in hex.
+
 ### January, 28 (api2)
 
 * added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response;

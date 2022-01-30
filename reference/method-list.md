@@ -19,6 +19,7 @@ description: Full method list groupped by namespaces.
 
 * [transaction.get](block.md#transaction.get)
 * [transaction.list](block.md#transaction.list)
+* [transaction.decode](transaction.md#transaction.decode)
 * [transaction.submit](transaction.md#transaction.submit)
 
 ### Account
