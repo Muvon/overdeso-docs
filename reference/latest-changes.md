@@ -4,7 +4,20 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### January, 30 (api2)
+### February, 6 2022 (api1)
+
+* changed sorting of comments in [**post.comment.list**](post.md#post.comment.list) method (asc now);
+* added `timestamp` and `emoji` to response of method [**post.like.list**](post.md#post.like.list);
+* fixed incorrect account attached when we fetch likes for post with method [**post.like.list**](post.md#post.like.list);
+* fixed issue with attached account entries for [**post.diamond.list**](post.md#post.diamond.list);
+* added `timestamp` to response of method [**post.diamond.list**](post.md#post.diamond.list);
+* new method [**post.share.list**](post.md#post.share.list) to get all shares for wanted post;
+* new method [**post.hot.list**](post.md#post.hot.list) to fetch hot posts feed;
+* ****[**notifications**](account.md#account.notification.list) support DAO transfers and posts/comments with mentions now;
+* fix issue with calculation of `nft_mint_value`, `nft_mint_count`, `nft_sell_value` and `nft_sell_count` in [**account stat structure**](structures.md#account-stat);
+* fix issue with burning DAO coins that could affect resulting amounts.
+
+### January, 30 2022 (api2)
 
 * fixed issue when we mark posts to have media in case of someone build incorrect transaction with empty url in it;
 * added `links` to [**post**](post.md) response that contains up to 3 links preview from opengraph meta tags;
@@ -12,7 +25,7 @@ description: This page will describe changes that affect structures or any metho
 * ****[**post.list**](post.md#post.list) returns only creators posts now (without reposts);
 * added method [**transaction.decode**](transaction.md#transaction.decode) to decode raw transaction in hex.
 
-### January, 28 (api2)
+### January, 28 2022 (api2)
 
 * added `timestamp` to [**coin.operation.list**](coin.md#coin.operation.list) method response;
 * added [**Tool**](tool.md) **** category of API with link preview fetching from opengraph for requested URL;

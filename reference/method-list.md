@@ -52,8 +52,10 @@ description: Full method list groupped by namespaces.
 
 * [post.get](post.md#post.get)
 * [post.list](post.md#post.list)
+* [post.hot.list](post.md#post.hot.list)
 * [post.follow.list](post.md#post.follow.list)
 * [post.comment.list](post.md#post.comment.list)
+* [post.share.list](post.md#post.share.list)
 * [post.like.list](post.md#post.like.list)
 * [post.diamond.list](post.md#post.diamond.list)
 * [post.stat.list](post.md#post.stat.list)

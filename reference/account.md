@@ -126,7 +126,7 @@ This method is almost similiar to account.get but used to get current reader sta
 
 You can pass account pubkey or username using reader state in headers.
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>fetch</td><td></td><td>true</td><td>Should contains data that you want include in response. Available: <code>utxos</code>, <code>conversations</code>, <code>hodings</code>, <code>notifications</code>. Default is empty list array.</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit lists to this value. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>fetch</td><td></td><td>true</td><td>Should contains data that you want include in response. Available: <code>utxos</code>, <code>conversations</code>, <code>creators</code>,<code>daos</code>, <code>notifications</code>. Default is empty list array.</td></tr><tr><td>limit</td><td></td><td>false</td><td>Limit lists to this value. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -783,131 +783,7 @@ curl -s --data '[{"method":"account.connection.list", "params": {"username":"dia
             ]
         }
     ]
-]
-```
-{% endtab %}
-{% endtabs %}
 
-### account.holding.get
-
-Get exact creator coin holding pair for investor and creator.
-
-#### Request params
-
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>creator_username</td><td></td><td>true</td><td>Username for creator</td></tr><tr><td>creator_pubkey</td><td></td><td>true</td><td>Public key for creator</td></tr></tbody></table>
-
-#### Response
-
-The method returns holding info for request pair of investor and creator;
-
-#### Examples
-
-{% tabs %}
-{% tab title="CURL" %}
-```shell
-curl -s --data '[{"method":"account.holding.get", "params": {"username":"diamondhands", "creator_username":"maebeam"}}]' https://api.overdeso.com/v1 | python -m json.tool
-```
-
-```json
-[
-    [
-        null,
-        {
-            "coins": 508964325,
-            "spend": 5489359087,
-            "has_purchased": true
-        }
-    ]
-]
-```
-{% endtab %}
-{% endtabs %}
-
-### account.holding.list
-
-Get account creator coins holding or those who hold it.
-
-The method requires one of **username** or **pubkey** to be passed in request body.
-
-#### Request params <a href="#request-params" id="request-params"></a>
-
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be holding or holder. First one is for fetching holding account and second one for fetching holders of an account.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
-
-#### Response
-
-The method returns creator coin holdings for account or holder list for creator.
-
-{% tabs %}
-{% tab title="CURL" %}
-```shell
-curl -s --data '[{"method":"account.holding.list", "params": {"account":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
-```
-
-```json
-[
-    [
-        null,
-        {
-            "count": 1472,
-            "list": [
-                {
-                    "coins": 3990047612,
-                    "spend": 5710975084,
-                    "has_purchased": true,
-                    "account": {
-                        "height": 6078,
-                        "pubkey": "BC1YLiheqL6jdqs9WK3ctBDxMR6bXv4q6ybFhFnmJnbX7K6vnT8BHBA",
-                        "balance": 32082956160,
-                        "timestamp": 1615599324,
-                        "profile": {
-                            "timestamp": 1617326847,
-                            "is_hidden": false,
-                            "height": 11787,
-                            "username": "derekdolin",
-                            "description": "Director of Strategy & 1st US Employee @threesixzero|\nFmr. Entrepreneur-in-Residence @ Peter Diamandis | Angel Investor | Passionate about helping early-stage companies grow.",
-                            "avatar_url": "http://media.overdeso.lo/avatar/NfbbnjuCwK3",
-                            "reward_points": 1000,
-                            "stake_points": 12500
-                        },
-                        "coin": {
-                            "supply": 21991409789,
-                            "locked": 10635540757,
-                            "watermark": 38252878990,
-                            "price": 483622508
-                        }
-                    }
-                },
-                {
-                    "coins": 2421634842,
-                    "spend": 0,
-                    "has_purchased": false,
-                    "account": {
-                        "height": 12530,
-                        "pubkey": "BC1YLgQvYpr3vamYDGiJMHA47DMi54Hx5kVeRRm3Dd4ZZHKcr8wEArk",
-                        "balance": 106365,
-                        "timestamp": 1617536193,
-                        "profile": {
-                            "timestamp": 1617537719,
-                            "is_hidden": false,
-                            "height": 12534,
-                            "username": "BitYourSocialMedia",
-                            "description": "☑ If you want to understand the universe,think in terms of energy,frequency and vibration\n3-bitclout 6-plan to action 9-manifest it\n@p2p \n@diamondhands\ntwitter.com/fatjonshaha\n\n",
-                            "avatar_url": "http://media.overdeso.lo/avatar/QW81Qbdgcys",
-                            "reward_points": 3600,
-                            "stake_points": 12500
-                        },
-                        "coin": {
-                            "supply": 7066495751,
-                            "locked": 352868218,
-                            "watermark": 11800022927,
-                            "price": 49935389
-                        }
-                    }
-                }
-            ]
-        }
-    ]
-]
 ```
 {% endtab %}
 {% endtabs %}
@@ -918,7 +794,7 @@ Get information about creator coin for account as investor or as creator.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>pubkey</td><td></td><td>true</td><td>Public key in base 58 check format starting with BC1…</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be investor or creator. First one for fetching information for account as investor and second one as creator.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>type</td><td></td><td>false</td><td>Can be investor or creator. First one for fetching information for account as investor and second one as creator.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -929,7 +805,7 @@ The method returns list of coins and account infos.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"account.trade.list", "params": {"username":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1  | python -m json.tool
+curl -s --data '[{"method":"account.trade.list", "params": {"account":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1  | python -m json.tool
 ```
 
 ```json
@@ -1069,6 +945,7 @@ Get account notifications for username or public key.
 | Diamond  | 5 |
 | Mention  | 6 |
 | Repost   | 7 |
+| DAO      | 8 |
 
 #### Response
 
