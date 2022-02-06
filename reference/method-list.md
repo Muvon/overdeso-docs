@@ -54,6 +54,7 @@ description: Full method list groupped by namespaces.
 * [post.list](post.md#post.list)
 * [post.hot.list](post.md#post.hot.list)
 * [post.follow.list](post.md#post.follow.list)
+* [post.story.list](post.md#post.story.list)
 * [post.comment.list](post.md#post.comment.list)
 * [post.share.list](post.md#post.share.list)
 * [post.like.list](post.md#post.like.list)

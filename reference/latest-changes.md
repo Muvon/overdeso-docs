@@ -15,7 +15,8 @@ description: This page will describe changes that affect structures or any metho
 * new method [**post.hot.list**](post.md#post.hot.list) to fetch hot posts feed;
 * ****[**notifications**](account.md#account.notification.list) support DAO transfers and posts/comments with mentions now;
 * fix issue with calculation of `nft_mint_value`, `nft_mint_count`, `nft_sell_value` and `nft_sell_count` in [**account stat structure**](structures.md#account-stat);
-* fix issue with burning DAO coins that could affect resulting amounts.
+* fix issue with burning DAO coins that could affect resulting amounts;
+* add [**post.story.list**](post.md#post.story.list) endpoint and start parsing story by [**Overdeso**](overdeso-protocol.md#submit\_post) protocol since block height #101830.
 
 ### January, 30 2022 (api2)
 
