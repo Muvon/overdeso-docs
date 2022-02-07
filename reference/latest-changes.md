@@ -4,7 +4,7 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### February, 6 2022 (api1)
+### February, 7 2022 (api1)
 
 * changed sorting of comments in [**post.comment.list**](post.md#post.comment.list) method (asc now);
 * added `timestamp` and `emoji` to response of method [**post.like.list**](post.md#post.like.list);
@@ -16,7 +16,9 @@ description: This page will describe changes that affect structures or any metho
 * ****[**notifications**](account.md#account.notification.list) support DAO transfers and posts/comments with mentions now;
 * fix issue with calculation of `nft_mint_value`, `nft_mint_count`, `nft_sell_value` and `nft_sell_count` in [**account stat structure**](structures.md#account-stat);
 * fix issue with burning DAO coins that could affect resulting amounts;
-* add [**post.story.list**](post.md#post.story.list) endpoint and start parsing story by [**Overdeso**](overdeso-protocol.md#submit\_post) protocol since block height #101830.
+* add [**post.story.list**](post.md#post.story.list) endpoint and start parsing story by [**Overdeso**](overdeso-protocol.md#submit\_post) protocol since block height #102040;
+* we index emotional likes and post poll logic by [**Overdeso**](overdeso-protocol.md#concept) protocol since block height #102040;
+* added `poll` key to post response structure that contains list of options if the post has poll.
 
 ### January, 30 2022 (api2)
 
