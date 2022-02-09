@@ -87,6 +87,14 @@ Coming soon.
 | `supply`    | Total circulation of creator coins in nanos                |
 | `watermark` | Maximum circulation of creator coins in nanos for all time |
 
+### Account: dao
+
+| Parameter     | Description                           |
+| ------------- | ------------------------------------- |
+| `disabled`    | If the dao is disabled by transaction |
+| `restriction` | Restriction status of this dao        |
+| `supply`      | Total supply                          |
+
 ### Account: profile
 
 | Parameter       | Description                                                                                          |
@@ -139,6 +147,8 @@ Coming soon.
 | `reward_value`              | How many DESO are made as reward in nanos                                    |
 | `sender_coin_count`         | How many times account sent creator coins                                    |
 | `sender_coin_value`         | Sent value in DESO nanos on coin transfers                                   |
+| `dao_holder_count`          | How many different DAO coins account holds                                   |
+| `dao_holding_count`         | How many different accounts holding this profile DAO coin                    |
 | `sender_connection_count`   | Total outgoing connections                                                   |
 | `sender_connection_value`   | Total value of outgoing connections                                          |
 | `sender_diamond_count`      | How many diamonds send (counted in sum of levels)                            |
@@ -178,32 +188,38 @@ Coming soon.
 
 ### Post: post
 
-| Parameter                                        | Description                                                                         |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| `depth`                                          | How deep this post is in comments flow                                              |
-| `has_image`                                      | If the post has any images uploaded                                                 |
-| `has_media`                                      | If the post has any media attached                                                  |
-| `has_video`                                      | If the post has any video attached                                                  |
-| `hash`                                           | Post hash in hex of transaction                                                     |
-| `is_hidden`                                      | If the post is hidden or not                                                        |
-| `is_nft`                                         | If the post represents NFT                                                          |
-| `is_quoted`                                      | If this is a quoted post with comment                                               |
-| `lang`                                           | Detected language for post text                                                     |
-| `media`                                          |                                                                                     |
-| **``**[**`nft`**](structures.md#undefined)**``** | Information about NFT parameters if this post is NFT                                |
-| `submitted_at`                                   | Timestamp of post submission (based on transction field so do not trust much on it) |
-| `text`                                           | Text of the post                                                                    |
+| Parameter                                        | Description                                                                                                         |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `depth`                                          | How deep this post is in comments flow                                                                              |
+| `has_image`                                      | If the post has any images uploaded                                                                                 |
+| `has_media`                                      | If the post has any media attached                                                                                  |
+| `has_video`                                      | If the post has any video attached                                                                                  |
+| `hash`                                           | Post hash in hex of transaction                                                                                     |
+| `is_hidden`                                      | If the post is hidden or not                                                                                        |
+| `is_nft`                                         | If the post represents NFT                                                                                          |
+| `is_quoted`                                      | If this is a quoted post with comment                                                                               |
+| `lang`                                           | Detected language for post text                                                                                     |
+| `media`                                          |                                                                                                                     |
+| `poll`                                           | If this post is poll we have array of options here as plain list and each elemnt contains \[option, count of votes] |
+| **``**[**`nft`**](structures.md#undefined)**``** | Information about NFT parameters if this post is NFT                                                                |
+| `submitted_at`                                   | Timestamp of post submission (based on transction field so do not trust much on it)                                 |
+| `text`                                           | Text of the post                                                                                                    |
 
 ### Post: nft
 
-| Parameter          | Description                                                    |
-| ------------------ | -------------------------------------------------------------- |
-| `is_selling`       | If there any NFT for selling now                               |
-| `has_unlockable`   | If the post had unlockable text                                |
-| `nft_count`        | How many NFTs this post minted                                 |
-| `nft_burned_count` | Burned NFTs count                                              |
-| `creator_royalty`  | Creator royalty for related NFTs to this post in points (x100) |
-| `coin_royalty`     | Coin royalty to related NFTs to this post in points (x100)     |
+| Parameter                    | Description                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------- |
+| `is_selling`                 | If there any NFT for selling now                                              |
+| `has_unlockable`             | If the post had unlockable text                                               |
+| `nft_count`                  | How many NFTs this post minted                                                |
+| `nft_burned_count`           | Burned NFTs count                                                             |
+| `creator_royalty`            | Creator royalty for related NFTs to this post in points (x100)                |
+| `coin_royalty`               | Coin royalty to related NFTs to this post in points (x100)                    |
+| `min_bid`                    | Min bid for NFT in nanos                                                      |
+| `is_buy_now`                 | If this post was minted with buy now price                                    |
+| `buy_now_price`              | Buy now price in nanos                                                        |
+| `additional_creator_royalty` | Map with additional royalties for creator as pair of {pubkey: points}         |
+| `additional_coin_royalty`    | Map with additional royalties to coin of creators as pair of {pubkey: points} |
 
 ### Post: stat
 
@@ -218,10 +234,11 @@ Coming soon.
 
 ### Post: state
 
-| Parameter       | Description                                                |
-| --------------- | ---------------------------------------------------------- |
-| `is_liked`      | If the reader liked the post                               |
-| `diamond_level` | Level of diamonds given to this post. No diamonds means 0. |
+| Parameter       | Description                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| `is_liked`      | If the reader liked the post                                                                           |
+| `diamond_level` | Level of diamonds given to this post. No diamonds means 0.                                             |
+| `poll_option`   | If user voted we have index of voted option otherwise -1 if no option selected by current viewing user |
 
 ### Hashtag
 

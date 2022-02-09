@@ -4,7 +4,15 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### February, 7 2022 (api1)
+### February, 09 2022 (api1)
+
+* onchain polls and votes are indexing now;
+* added state for poll vote to [**post structure**](structures.md#post) response;
+* update [**Overdeso protocol**](overdeso-protocol.md#basic\_transfer) description according to polls changes;
+* fix issues with mentions in notifications;
+* new method [**post.vote.list**](post.md#post.vote.list).
+
+### February, 07 2022 (api1)
 
 * changed sorting of comments in [**post.comment.list**](post.md#post.comment.list) method (asc now);
 * added `timestamp` and `emoji` to response of method [**post.like.list**](post.md#post.like.list);

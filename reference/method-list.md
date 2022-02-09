@@ -59,6 +59,7 @@ description: Full method list groupped by namespaces.
 * [post.share.list](post.md#post.share.list)
 * [post.like.list](post.md#post.like.list)
 * [post.diamond.list](post.md#post.diamond.list)
+* [post.vote.list](post.md#post.vote.list)
 * [post.stat.list](post.md#post.stat.list)
 * [post.rank.list](post.md#post.rank.list)
 

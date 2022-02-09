@@ -1271,6 +1271,75 @@ If no diamonds found returned empty array list there was no error.
 {% endtab %}
 {% endtabs %}
 
+
+
+### post.vote.list
+
+Get vote options for post that represents poll
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch</td></tr><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+
+#### Response
+
+The method returned voting for poll in chronological order for post or for account.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.vote.list", "params": {"account":"epicfail666", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "option_index": 3,
+                "timestamp": 1644437510,
+                "post": {
+                    "depth": 0,
+                    "is_quoted": false,
+                    "text": "One more poll with 4 options",
+                    "lang": "en",
+                    "has_media": false,
+                    "has_image": false,
+                    "has_video": false,
+                    "media": null,
+                    "is_hidden": false,
+                    "is_nft": false,
+                    "submitted_at": 1644437510,
+                    "poll": [
+                        [
+                            "option 1",
+                            0
+                        ],
+                        [
+                            "option 12",
+                            0
+                        ],
+                        [
+                            "option 113",
+                            0
+                        ],
+                        [
+                            "option 14",
+                            1
+                        ]
+                    ]
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### post.stat.list
 
 Get post historical statistics
