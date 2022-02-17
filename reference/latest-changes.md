@@ -4,6 +4,13 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### February, 17 2022 (api1 / upcoming)
+
+* new method [**post.highlight.list**](post.md#post.highlight.list);
+* new method [**account.highlight.list**](account.md#account.highlight.list);
+* add basic error checking on [**transaction.submit**](transaction.md#transaction.submit) method;
+* \+++
+
 ### February, 09 2022 (api1)
 
 * onchain polls and votes are indexing now;

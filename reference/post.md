@@ -609,6 +609,385 @@ curl -s --data '[{"method":"post.list", "params": {"account": "krassenstein", "o
 {% endtab %}
 {% endtabs %}
 
+### post.highlight.list
+
+Get highlighted posts to show up to attract attention to users who are most engagement by its posts.
+
+#### Request params
+
+This method does not require any params.
+
+#### Response
+
+Returns list of 5 posts that are highlighted
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.highlight.list"]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "follow me \n\nthanks 😊",
+                "lang": null,
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645093204,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645093231,
+                    "like_count": 8,
+                    "diamond_count": 4,
+                    "diamond_value": 5050000,
+                    "repost_count": 3,
+                    "quote_count": 0,
+                    "comment_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": null,
+                "hash": "db02ed455759fab6432834d2b5dd44468601d3387fdca7cdbe0bd8db2e1d8ad6",
+                "account": {
+                    "height": 15015,
+                    "pubkey": "BC1YLh3EUCrzfndGvA2AMnCYbrXzKr3xautJiMoxdGUsQfX3vaaRDWv",
+                    "balance": 6479037679,
+                    "timestamp": 1618299687,
+                    "profile": {
+                        "timestamp": 1618455961,
+                        "is_hidden": false,
+                        "height": 15554,
+                        "username": "rhubarb",
+                        "description": "basically just red celery",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gj4s1nnSR1T",
+                        "reward_points": 9969,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 8432353311,
+                        "locked": 623908534,
+                        "watermark": 27241328748,
+                        "price": 221969564
+                    },
+                    "dao": {
+                        "disabled": false,
+                        "restriction": 0,
+                        "supply": 0
+                    }
+                }
+            },
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "Found several hashtags people are using to post interesting content on DeSo.\n\n#nature - https://www.openprosper.com/hashtag/nature\n#science - https://www.openprosper.com/hashtag/science\n#crypto - https://www.openprosper.com/hashtag/crypto\n\nAttaching a post by @BlazingSword with #nature\n",
+                "lang": "en",
+                "has_media": true,
+                "has_image": true,
+                "has_video": false,
+                "media": {
+                    "image_urls": [
+                        "https://images.deso.org/4308a07bc8271728440ca1ac6d18f8441561a5d2b1169c41713886fbe31fb617.webp"
+                    ]
+                },
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645093734,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645093742,
+                    "like_count": 2,
+                    "diamond_count": 3,
+                    "diamond_value": 5000000,
+                    "repost_count": 1,
+                    "quote_count": 0,
+                    "comment_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": [
+                    {
+                        "image": "https://openprosper-assets.s3.amazonaws.com/images/openprosper-og.jpg",
+                        "description": "Advanced DeSo creator insights and analytics. Get DeSo creator coin price, coin holders, wallet, founder reward, and social interaction insights and analytics on OpenProsper.",
+                        "title": "DeSo Creator Insights &amp;amp; Analytics | OpenProsper",
+                        "url": "https://www.openprosper.com/hashtag/nature"
+                    },
+                    {
+                        "image": "https://openprosper-assets.s3.amazonaws.com/images/openprosper-og.jpg",
+                        "description": "Advanced DeSo creator insights and analytics. Get DeSo creator coin price, coin holders, wallet, founder reward, and social interaction insights and analytics on OpenProsper.",
+                        "title": "DeSo Creator Insights &amp;amp; Analytics | OpenProsper",
+                        "url": "https://www.openprosper.com/hashtag/science"
+                    },
+                    {
+                        "image": "https://openprosper-assets.s3.amazonaws.com/images/openprosper-og.jpg",
+                        "description": "Advanced DeSo creator insights and analytics. Get DeSo creator coin price, coin holders, wallet, founder reward, and social interaction insights and analytics on OpenProsper.",
+                        "title": "DeSo Creator Insights &amp;amp; Analytics | OpenProsper",
+                        "url": "https://www.openprosper.com/hashtag/crypto"
+                    }
+                ],
+                "hash": "896ab8d15196d4ac9ebc2f941f17119f1a58f72dcd7b25803dc14d7ef4364198",
+                "account": {
+                    "height": 11676,
+                    "pubkey": "BC1YLgQkRFM1P3qvW5HQ47cTCikyfB464o4oEbqRkcqJohVs3jfUPib",
+                    "balance": 211615195745,
+                    "timestamp": 1617293580,
+                    "profile": {
+                        "timestamp": 1617500092,
+                        "is_hidden": false,
+                        "height": 12370,
+                        "username": "salilsethi",
+                        "description": "Creator of @OpenProsper \n\nSee my stats: https://www.openprosper.com/u/salilsethi\n\nFollow to get data-driven creator insights.\n\nMIT and McKinsey alum.",
+                        "avatar_url": "http://media.overdeso.lo/avatar/jZzJBwfK6HF",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 40236014873,
+                        "locked": 65139635985,
+                        "watermark": 56419041768,
+                        "price": 4856816166
+                    },
+                    "dao": null
+                }
+            },
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": " ",
+                "lang": null,
+                "has_media": true,
+                "has_image": false,
+                "has_video": true,
+                "media": {
+                    "embed_video_url": "https://w.soundcloud.com/player/?url=https://soundcloud.com/itsjustjohn/are-you-that-somebody-flip?hide_related=true&show_comments=false"
+                },
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645092259,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645092592,
+                    "like_count": 4,
+                    "diamond_count": 3,
+                    "diamond_value": 150000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 1,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": null,
+                "hash": "b19043da6a3b48828467b4a15b8d9998623355cf44fefe2298411f6e1d3e97fb",
+                "account": {
+                    "height": 15015,
+                    "pubkey": "BC1YLh3EUCrzfndGvA2AMnCYbrXzKr3xautJiMoxdGUsQfX3vaaRDWv",
+                    "balance": 6479037679,
+                    "timestamp": 1618299687,
+                    "profile": {
+                        "timestamp": 1618455961,
+                        "is_hidden": false,
+                        "height": 15554,
+                        "username": "rhubarb",
+                        "description": "basically just red celery",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gj4s1nnSR1T",
+                        "reward_points": 9969,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 8432353311,
+                        "locked": 623908534,
+                        "watermark": 27241328748,
+                        "price": 221969564
+                    },
+                    "dao": {
+                        "disabled": false,
+                        "restriction": 0,
+                        "supply": 0
+                    }
+                }
+            },
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "¡Que el sol salga para todos en este nuevo día y los guíe hacia el camino de la felicidad y el éxito! 😉🤍",
+                "lang": null,
+                "has_media": true,
+                "has_image": true,
+                "has_video": false,
+                "media": {
+                    "image_urls": [
+                        "https://images.deso.org/034144c3de166be4845c9006936f0180fa2b5e692c00f00b758500eb08940a48.webp"
+                    ]
+                },
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645090946,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645090998,
+                    "like_count": 5,
+                    "diamond_count": 3,
+                    "diamond_value": 150000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 1,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": null,
+                "hash": "4a3ad7575c7f9b4d1333a1b654c29e46798dda07930a73dc5245cf48d3c82027",
+                "account": {
+                    "height": 90038,
+                    "pubkey": "BC1YLhe7a9pyL7aTb1z1QjugG23tDPuzqbxgsek2LTooT1Xw9rqkcaa",
+                    "balance": 25276895,
+                    "timestamp": 1640559426,
+                    "profile": {
+                        "timestamp": 1640560719,
+                        "is_hidden": false,
+                        "height": 90039,
+                        "username": "marheleosal",
+                        "description": "Un día a la vez...\nBirthBlock # 90040 \n26 de diciembre de 2021",
+                        "avatar_url": "http://media.overdeso.lo/avatar/cDMtRPr1Htu",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 7843300850,
+                        "locked": 482499628,
+                        "watermark": 7843300850,
+                        "price": 184552276
+                    },
+                    "dao": null
+                }
+            },
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "True 🤣",
+                "lang": null,
+                "has_media": true,
+                "has_image": true,
+                "has_video": false,
+                "media": {
+                    "image_urls": [
+                        "https://images.deso.org/79efcc7ad27c3d8f5d57c65f7dfe4908752e4e697d1a8a20da92c36d13d15345.webp"
+                    ]
+                },
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645090946,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645091131,
+                    "like_count": 6,
+                    "diamond_count": 3,
+                    "diamond_value": 150000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 2,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": null,
+                "hash": "56c4759d8e86ae4814e1c3e3c5de9c97ab297d7e98e78fc57ba7fa879a52ab14",
+                "account": {
+                    "height": 32655,
+                    "pubkey": "BC1YLheTDZQEJye7tHhFq4gBwbHgxCM9qXvEEEaEFNn3sYysVy6F7MT",
+                    "balance": 95300111,
+                    "timestamp": 1623222964,
+                    "profile": {
+                        "timestamp": 1623222964,
+                        "is_hidden": false,
+                        "height": 32654,
+                        "username": "DejanBugi",
+                        "description": "Founder of @ItalianChef\n\nLet's spread the magic smell and taste of food. 👌\nElctr. Eng. which passion is cooking(+2y prof.experience abroad)\n✅ @verifiedprofile ➡ bit.ly/3pQVohl",
+                        "avatar_url": "http://media.overdeso.lo/avatar/WrtAb5Ekgph",
+                        "reward_points": 900,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 6402376656,
+                        "locked": 262436274,
+                        "watermark": 7424621601,
+                        "price": 122971350
+                    },
+                    "dao": null
+                }
+            },
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "Institutional investors are concentrating 51% of their money in equities. This is the highest level since the dot-com bubble burst",
+                "lang": null,
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1645093428,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1645093493,
+                    "like_count": 2,
+                    "diamond_count": 2,
+                    "diamond_value": 100000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 1,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0
+                },
+                "links": null,
+                "hash": "239b2c0ca9d94bab7cffa951c3ba2e87f3fc160d93bce1bc85318db8eef3de56",
+                "account": {
+                    "height": 76699,
+                    "pubkey": "BC1YLhAcB16WSVWeqMuTyRUiRHEQmhm83dcK6YXAwDuF6ipkcdwJMmj",
+                    "balance": 350880261,
+                    "timestamp": 1636527094,
+                    "profile": {
+                        "timestamp": 1636684136,
+                        "is_hidden": false,
+                        "height": 77228,
+                        "username": "KINGMETA",
+                        "description": "",
+                        "avatar_url": "http://media.overdeso.lo/avatar/RqjPdrfhiL1",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 2599457845,
+                        "locked": 17565013,
+                        "watermark": 5142417499,
+                        "price": 20271551
+                    },
+                    "dao": null
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### post.story.list
 
 Get recent stories
