@@ -4,12 +4,28 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### February, 17 2022 (api1 / upcoming)
+### Upcoming (api2)
+
+* new method [**account.autocomplete**](account.md#account.autocomplete) that will replace old one account.search;
+* method **account.search** deprecated;
+* \++
+
+### February, 21 2022 (api1)
+
+* fix an issue with [**post.comment.list**](post.md#post.comment.list) method when it was returning posts also for a requested account;
+* massive update to mempool logic that makes it much more stable and ready to be pre-release version;
+* added `hash` to [**post.like.list**](post.md#post.like.list) response;
+* added `hash` to [**post.diamond.list**](post.md#post.diamond.list) response;
+* new method [**transaction.status**](transaction.md#transaction.status) for getting connect status for transaction;
+* added `is_reposted` to post state;
+* new method [**account.ping**](account.md#account.ping) for notification of reader state account status;
+* new method [**account.online.list**](account.md#account.online.list) that returns account that online.
+
+### February, 17 2022 (api1)
 
 * new method [**post.highlight.list**](post.md#post.highlight.list);
 * new method [**account.highlight.list**](account.md#account.highlight.list);
-* add basic error checking on [**transaction.submit**](transaction.md#transaction.submit) method;
-* \+++
+* add basic error checking on [**transaction.submit**](transaction.md#transaction.submit) method.
 
 ### February, 09 2022 (api1)
 

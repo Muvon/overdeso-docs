@@ -249,3 +249,38 @@ curl -s --data '[{"method":"transaction.submit", "params": {"raw": "02d8dd25b5dd
 ```
 {% endtab %}
 {% endtabs %}
+
+### transaction.status
+
+Get status of transaction by its id
+
+#### Request
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td></td><td>true</td><td>Base58Check transaction id starting with 3J…</td></tr></tbody></table>
+
+#### Response
+
+Returns basic info about transaction. If its connected and if its in block already or mempool.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl --data '[{"method":"transaction.status", "params": {"id":"3JuETVBKjuSk6VzZy6MsiYn4h8JZnK1cWmrDzHwMQBj4QqEY9tL4YJ"}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "is_mempool": false,
+            "is_connected": true,
+            "block_height": 8999
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}

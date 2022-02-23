@@ -236,6 +236,37 @@ curl -s -H 'X-Reader-Account: diamondhands' --data '[{"method":"account.me"}]' h
 {% endtab %}
 {% endtabs %}
 
+### account.ping
+
+Send ping notification to server for current reader account that is active and receive pong.
+
+#### Request params
+
+This method has no request params.
+
+#### Response
+
+Just string value of "pong" returned on success
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s -H 'X-Reader-Account: diamondhands' --data '[{"method":"account.ping"}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        "pong"
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### account.list
 
 Get list of accounts sorted by created timestamp (newly created first)
@@ -2159,13 +2190,155 @@ curl -s --data '[{"method":"account.rank.list", "params": {"type":"locked", "off
 {% endtab %}
 {% endtabs %}
 
-### account.search
+### account.online.list
 
-Search account using username prefix
+Get online accounts by latest transaction and by [**account.ping**](account.md#account.ping) endpoint notification.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>username</td><td></td><td>true</td><td>Username prefix to find</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. You can pass timestamps here to fetch online for latest 5 minutes only or for another time period. Maximum possible – 1 day.Re</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+
+#### Response
+
+List of account that are online in requested time frame.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s -data '[{"method":"account.online.list", "params": {"limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 1,
+            "list": [
+                {
+                    "height": 94599,
+                    "pubkey": "BC1YLitLy31oB6cWqBhusyvA1xwTC7pLG1FnHARiERFK6tGMP6w3Cit",
+                    "balance": 912690,
+                    "timestamp": 1641926884,
+                    "profile": {
+                        "timestamp": 1641926884,
+                        "is_hidden": false,
+                        "height": 94598,
+                        "username": "EpicFail666",
+                        "description": "вуыскшзешщт 1234",
+                        "avatar_url": "http://media.overdeso.lo/avatar/aNa6HQ2oGmX",
+                        "reward_points": 10000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 0,
+                        "locked": 0,
+                        "watermark": 0,
+                        "price": 0
+                    },
+                    "dao": {
+                        "disabled": false,
+                        "restriction": 0,
+                        "supply": "1d16daf5600"
+                    },
+                    "stat": {
+                        "last_stat_ts": 1645435312,
+                        "utxo_count": 14,
+                        "level_points": 93,
+                        "holder_count": 0,
+                        "holding_count": 4,
+                        "follower_count": 8,
+                        "following_count": 8,
+                        "coin_buy_count": 3,
+                        "coin_buy_value": 564627,
+                        "coin_sell_count": 0,
+                        "coin_sell_value": 0,
+                        "coin_gain": 0,
+                        "sender_coin_count": 0,
+                        "sender_coin_value": 0,
+                        "receiver_coin_count": 15,
+                        "receiver_coin_value": 441777,
+                        "reward_coins": 0,
+                        "reward_value": 0,
+                        "dao": "1d16daf5600",
+                        "dao_mint_count": 1,
+                        "dao_burn_count": 1,
+                        "dao_disable_count": 0,
+                        "dao_restrict_count": 2,
+                        "dao_holder_count": 1,
+                        "dao_holding_count": 1,
+                        "sender_dao_count": 0,
+                        "receiver_dao_count": 0,
+                        "sender_diamond_count": 29,
+                        "sender_diamond_value": 3750000,
+                        "receiver_diamond_count": 12,
+                        "receiver_diamond_value": 1000000,
+                        "post_count": 64,
+                        "repost_count": 6,
+                        "quote_count": 2,
+                        "comment_count": 160,
+                        "sender_post_like_count": 91,
+                        "receiver_post_like_count": 93,
+                        "nft_count": 0,
+                        "nft_royalty": 0,
+                        "nft_coin": 0,
+                        "nft_mint_count": 0,
+                        "nft_mint_value": 0,
+                        "nft_buy_count": 0,
+                        "nft_buy_value": 0,
+                        "nft_sell_count": 0,
+                        "nft_sell_value": 0,
+                        "nft_gain": 0,
+                        "sender_nft_bid_count": 0,
+                        "receiver_nft_bid_count": 0,
+                        "sender_message_count": 183,
+                        "recipient_message_count": 21,
+                        "sender_conversation_count": 2,
+                        "recipient_conversation_count": 0,
+                        "conversation_count": 2,
+                        "conversation_group_count": 0,
+                        "time_to_profile": 0,
+                        "time_to_self_buy": 0,
+                        "time_to_first_buy": 241811,
+                        "time_to_first_post": 3420918,
+                        "fee": 4753457,
+                        "burned": 1000058,
+                        "tx_count": 790,
+                        "transactor_tx_time": 1645435312,
+                        "transactor_tx_height": 106091,
+                        "transactor_tx_count": 708,
+                        "tx_23_count": 0,
+                        "tx_26_count": 0,
+                        "sender_seed_count": 0,
+                        "sender_seed_value": 0,
+                        "receiver_seed_count": 0,
+                        "receiver_seed_value": 0,
+                        "sender_connection_count": 466,
+                        "sender_connection_value": 16666463,
+                        "receiver_connection_count": 212,
+                        "receiver_connection_value": 23232610
+                    },
+                    "online": {
+                        "ts": 1645454628
+                    }
+                }
+            ]
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+### account.autocomplete
+
+Autocomplete account by its username or find existing account by pubkey
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Username prefix to find or account pubkey</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -2176,7 +2349,7 @@ The method returns list compact account structures if found any using username p
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s -data '[{"method":"account.search", "params": {"username":"do", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s -data '[{"method":"account.autocomplete", "params": {"username":"do", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json

@@ -21,11 +21,13 @@ description: Full method list groupped by namespaces.
 * [transaction.list](block.md#transaction.list)
 * [transaction.decode](transaction.md#transaction.decode)
 * [transaction.submit](transaction.md#transaction.submit)
+* [transaction.status](transaction.md#transaction.status)
 
 ### Account
 
 * [account.get](account.md#account.get)
 * [account.me](account.md#account.me)
+* [account.ping](account.md#account.ping)
 * [account.list](account.md#account.list)
 * [account.utxo.list](account.md#account.utxo.list)
 * [account.follow.get](account.md#account.follow.get)
@@ -33,9 +35,10 @@ description: Full method list groupped by namespaces.
 * [account.highlight.list](account.md#account.highlight.list)
 * [account.seed.list](account.md#account.seed.list)
 * [account.connection.list](account.md#account.connection.list)
-* [account.search](account.md#account.search)
+* [account.autocomplete](account.md#account.autocomplete)
 * [account.stat.list](account.md#account.stat.list)
 * [account.rank.list](account.md#account.rank.list)
+* [account.online.list](account.md#account.online.list)
 * [account.upload.url](account.md#account.upload.url)
 
 ### Coin

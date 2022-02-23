@@ -21,7 +21,7 @@ The method returns holding info for request pair of investor and creator;
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"account.holding.get", "params": {"type": "creator", "account":"diamondhands", "creator":"maebeam"}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"coin.holding.get", "params": {"type": "creator", "account":"diamondhands", "creator":"maebeam"}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
@@ -46,7 +46,7 @@ Get account creator coins / DAO holding or those who hold it.
 
 #### Request params <a href="#request-params" id="request-params"></a>
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>Can be one of: <code>creator</code> or <code>dao</code></td></tr><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>position</td><td></td><td>false</td><td>Can be holding or holder. First one is for fetching <code>holding</code> account and second one for fetching <code>holders</code> of an account.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>Can be one of: <code>creator</code> or <code>dao</code></td></tr><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>position</td><td></td><td>false</td><td>Can be holding or holder. First one is for fetching <code>holding</code> account and second one for fetching <code>holder</code> of an account.</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 
@@ -55,7 +55,7 @@ The method returns creator coin holdings for account or holder list for creator.
 {% tabs %}
 {% tab title="CURL" %}
 ```shell
-curl -s --data '[{"method":"account.holding.list", "params": {"type": "creator", "account":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+curl -s --data '[{"method":"coin.holding.list", "params": {"type": "creator", "account":"diamondhands", "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
 ```
 
 ```json
