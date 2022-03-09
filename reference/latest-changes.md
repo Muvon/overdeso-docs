@@ -4,11 +4,18 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### Upcoming (api2)
+### Upcoming (in progress)
+
+* (O,O)
+
+### March, 9 2022 (api1)
 
 * new method [**account.autocomplete**](account.md#account.autocomplete) that will replace old one account.search;
 * method **account.search** deprecated;
-* \++
+* we do not group [**notifications**](account.md#account.notification.list) by default now and you can group it on client side;
+* added `extra` to [**Account structure**](structures.md#account) response that represents [**Overdeso**](overdeso-protocol.md#update\_profile) protocol for updating profile;
+* ****[**UPDATE\_PROFILE**](overdeso-protocol.md#update\_profile) Overdeso protocol indexing is activated starting block height #109070;
+* added `cover` field to [**Overdeso**](overdeso-protocol.md#update\_profile) protocol on update profile.
 
 ### February, 21 2022 (api1)
 

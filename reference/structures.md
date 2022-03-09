@@ -67,16 +67,17 @@ Coming soon.
 
 ### Account
 
-| Parameter                                                  | Description                                                                                      |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `balance`                                                  | Current balance of account                                                                       |
-| `height`                                                   | Block height of account first seen (first transaction on it)                                     |
-| `pubkey`                                                   | Public key of account (BC1...)                                                                   |
-| `timestamp`                                                | Timestamp of account creation                                                                    |
-| ``[**`coin`**](structures.md#undefined)**``**              | Creator coin information for account if have                                                     |
-| **``**[**`profile`**](structures.md#account-profile)**``** | Profile information if account has profile created                                               |
-| **``**[**`stat`**](structures.md#undefined)**``**          | Current counters for account                                                                     |
-| **``**[**`state`**](structures.md#undefined)**``**         | Current reader state. It's presented only in case passing account pubkey or username in a header |
+| Parameter                                                  | Description                                                                                                                       |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `balance`                                                  | Current balance of account                                                                                                        |
+| `height`                                                   | Block height of account first seen (first transaction on it)                                                                      |
+| `pubkey`                                                   | Public key of account (BC1...)                                                                                                    |
+| `timestamp`                                                | Timestamp of account creation                                                                                                     |
+| ``[**`coin`**](structures.md#undefined)**``**              | Creator coin information for account if have                                                                                      |
+| **``**[**`profile`**](structures.md#account-profile)**``** | Profile information if account has profile created                                                                                |
+| **``**[**`stat`**](structures.md#undefined)**``**          | Current counters for account                                                                                                      |
+| **``**[**`state`**](structures.md#undefined)**``**         | Current reader state. It's presented only in case passing account pubkey or username in a header                                  |
+| `extra`                                                    | The field represents data from [**UPDATE\_PROFILE**](overdeso-protocol.md#update\_profile) that were set using Overdeso protocol. |
 
 ### Account: coin
 
