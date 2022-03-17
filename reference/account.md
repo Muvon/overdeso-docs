@@ -1594,21 +1594,29 @@ Get account notifications for username or public key.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>type_id</td><td></td><td>false</td><td>Filter only wanter notification type</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Username if requested account has profile</td></tr><tr><td>type_id</td><td></td><td>false</td><td>Filter only wanter notification type</td></tr><tr><td>group</td><td></td><td>false</td><td>Should we group notifications or not, default true</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Type ID map
 
-|          |   |
-| -------- | - |
-| Transfer | 0 |
-| Follow   | 1 |
-| Like     | 2 |
-| Comment  | 3 |
-| Coin     | 4 |
-| Diamond  | 5 |
-| Mention  | 6 |
-| Repost   | 7 |
-| DAO      | 8 |
+|                |    |
+| -------------- | -- |
+| Transfer       | 0  |
+| Follow         | 1  |
+| Unfollow       | 2  |
+| Like           | 3  |
+| Unlike         | 4  |
+| Comment        | 5  |
+| Coin: buy      | 6  |
+| Coin: sell     | 7  |
+| Coin: transfer | 8  |
+| Diamond        | 9  |
+| Mention        | 10 |
+| Repost         | 11 |
+| Quote          | 12 |
+| DAO: transfer  | 13 |
+| DAO: burn      | 14 |
+| NFT: transfer  | 15 |
+| NFT: burn      | 16 |
 
 #### Response
 
@@ -1633,186 +1641,73 @@ curl -s --data '[{"method":"account.notification.list", "params": {"account":"kr
     [
         null,
         {
-            "count": 5,
+            "count": 16,
             "list": [
                 {
-                    "type_id": 2,
+                    "type_id": 3,
                     "data": [
                         {
                             "transactor": {
-                                "height": 68438,
-                                "pubkey": "BC1YLic8jUPXsVmFiEASjeJyRdkxMZGEbRHToZcoGx8zw3syc1K9A2Q",
-                                "balance": 2656076290,
-                                "timestamp": 1634039774,
+                                "height": 112156,
+                                "pubkey": "BC1YLhrzyfEZMpVQVEh8TEbjBqvCTbNytKLUETBsriaM7KZvAVUJgnR",
+                                "balance": 32233751,
+                                "timestamp": 1647268668,
                                 "profile": {
-                                    "timestamp": 1634861319,
+                                    "timestamp": 1647268668,
                                     "is_hidden": false,
-                                    "height": 71201,
-                                    "username": "stockler",
-                                    "description": "Just a dev trying drop anxiety when going to sleep and maintain my sanity when wake up.\n\nhttps://github.com/stockler\n\nTwitter: https://twitter.com/RafaelStockler1",
-                                    "avatar_url": "http://media.overdeso.lo/avatar/UgaRoyPjrNU",
-                                    "reward_points": 314,
+                                    "height": 112155,
+                                    "username": "Moodydan29",
+                                    "description": "British 🇬🇧| Adventurer | Photographer\nLandscape and Wildlife\nCEO @ev_wiz \nCurrently:\nSony A7Riii ",
+                                    "avatar_url": "http://media.overdeso.lo/avatar/VBgSrQTRYWH",
+                                    "reward_points": 1000,
                                     "stake_points": 12500
                                 },
                                 "coin": {
-                                    "supply": 9355542024,
-                                    "locked": 837265937,
-                                    "watermark": 10783319273,
-                                    "price": 89494113
+                                    "supply": 7139535353,
+                                    "locked": 363923465,
+                                    "watermark": 7172802630,
+                                    "price": 152918985
                                 },
+                                "dao": null,
+                                "extra": null,
                                 "stat": {
-                                    "last_stat_ts": 1642431173,
-                                    "utxo_count": 251,
-                                    "level_points": 9,
-                                    "holder_count": 13,
-                                    "holding_count": 95,
-                                    "follower_count": 280,
-                                    "following_count": 706,
-                                    "coin_buy_count": 144,
-                                    "coin_buy_value": 1055495471,
-                                    "coin_sell_count": 42,
-                                    "coin_sell_value": 401816847,
-                                    "coin_gain": 43077853,
-                                    "sender_coin_count": 0,
-                                    "sender_coin_value": 0,
-                                    "receiver_coin_count": 69,
-                                    "receiver_coin_value": 37086709,
-                                    "reward_coins": 0,
-                                    "reward_value": 194104415,
-                                    "sender_diamond_count": 61,
-                                    "sender_diamond_value": 3050000,
-                                    "receiver_diamond_count": 281,
-                                    "receiver_diamond_value": 141850000,
-                                    "post_count": 44,
-                                    "repost_count": 236,
-                                    "quote_count": 106,
-                                    "comment_count": 258,
-                                    "sender_post_like_count": 3180,
-                                    "receiver_post_like_count": 867,
-                                    "nft_count": 0,
-                                    "nft_royalty": 2529411,
-                                    "nft_coin": 2529411,
-                                    "nft_mint_count": 1,
-                                    "nft_mint_value": 20235295,
-                                    "nft_buy_count": 1,
-                                    "nft_buy_value": 121536,
-                                    "nft_sell_count": 0,
-                                    "nft_sell_value": 0,
-                                    "nft_gain": 20235295,
-                                    "sender_nft_bid_count": 1,
-                                    "receiver_nft_bid_count": 3,
-                                    "sender_message_count": 59,
-                                    "recipient_message_count": 35,
-                                    "sender_conversation_count": 8,
-                                    "recipient_conversation_count": 4,
-                                    "conversation_count": 12,
-                                    "time_to_profile": 821545,
-                                    "time_to_self_buy": 3165164,
-                                    "time_to_first_buy": 8300964,
-                                    "time_to_first_post": 8393254,
-                                    "fee": 1210419,
-                                    "burned": 1285832,
-                                    "tx_count": 5732,
-                                    "transactor_tx_time": 1642433098,
-                                    "transactor_tx_height": 96250,
-                                    "transactor_tx_count": 4962,
-                                    "sender_seed_count": 0,
-                                    "sender_seed_value": 0,
-                                    "receiver_seed_count": 1,
-                                    "receiver_seed_value": 41716666,
-                                    "sender_connection_count": 4475,
-                                    "sender_connection_value": 1046891878,
-                                    "receiver_connection_count": 1567,
-                                    "receiver_connection_value": 4045893431
-                                }
-                            },
-                            "post": {
-                                "depth": 0,
-                                "is_quoted": false,
-                                "text": "Deso Day 296\n- Tornados have us a bit flustered.\n- New Node stats, thanks to @OpenProsper, show how well @Desocialworld @Tunel and @Cloutfeed are doing.\n- @HazRodriguez explains @Tunel's success\n- BusinessInsider Publishes article by @Tobyhazelwood about Deso and NFTs\n- Also mentioned in this video: @tijn @NFTz @whatsmygas @whoamI @Nader\n\nSponsored by: @NFTtech\n\nPosted via @cloutfeed",
-                                "lang": "en",
-                                "has_media": true,
-                                "has_image": false,
-                                "has_video": true,
-                                "media": {
-                                    "embed_video_url": "https://www.youtube.com/embed/Oo0eAOXq0NY"
-                                },
-                                "is_hidden": false,
-                                "is_nft": false,
-                                "submitted_at": 1642363813,
-                                "nft": null,
-                                "stat": {
-                                    "last_stat_ts": 1642432541,
-                                    "like_count": 45,
-                                    "diamond_count": 36,
-                                    "diamond_value": 111500000,
-                                    "repost_count": 12,
-                                    "quote_count": 4,
-                                    "comment_count": 13,
-                                    "nft_bid_count": 0,
-                                    "nft_trade_count": 0,
-                                    "nft_burned_count": 0
-                                }
-                            },
-                            "is_unlike": false
-                        }
-                    ],
-                    "timestamp": 1642433099
-                },
-                {
-                    "type_id": 4,
-                    "data": [
-                        {
-                            "transactor": {
-                                "height": 95349,
-                                "pubkey": "BC1YLinyu9KkuQaywPJhCBYnGrpPeeA4fVQH8sPUw1Yf1ZZEYj9jyTF",
-                                "balance": 1287505917,
-                                "timestamp": 1642164864,
-                                "profile": {
-                                    "timestamp": 1642164864,
-                                    "is_hidden": false,
-                                    "height": 95348,
-                                    "username": "Bemyportraitmuse",
-                                    "description": "Professional photographer/mentor/NFT artist\n\nPortfolio/instagram @bemyportraitmuse\n\nThank you for visiting my page, I'll be glad to meet you!",
-                                    "avatar_url": "http://media.overdeso.lo/avatar/VMRKS1UZ2U4",
-                                    "reward_points": 2000,
-                                    "stake_points": 12500
-                                },
-                                "coin": {
-                                    "supply": 6853227509,
-                                    "locked": 321873823,
-                                    "watermark": 6853227509,
-                                    "price": 46966749
-                                },
-                                "stat": {
-                                    "last_stat_ts": 1642431613,
-                                    "utxo_count": 197,
-                                    "level_points": 348,
-                                    "holder_count": 7,
-                                    "holding_count": 9,
-                                    "follower_count": 22,
-                                    "following_count": 30,
-                                    "coin_buy_count": 9,
-                                    "coin_buy_value": 348467057,
+                                    "last_stat_ts": 1647272287,
+                                    "utxo_count": 1,
+                                    "level_points": 210,
+                                    "holder_count": 4,
+                                    "holding_count": 2,
+                                    "follower_count": 3,
+                                    "following_count": 2,
+                                    "coin_buy_count": 2,
+                                    "coin_buy_value": 231711352,
                                     "coin_sell_count": 0,
                                     "coin_sell_value": 0,
-                                    "coin_gain": -113606455,
-                                    "sender_coin_count": 1,
-                                    "sender_coin_value": 113606455,
-                                    "receiver_coin_count": 4,
-                                    "receiver_coin_value": 112287,
+                                    "coin_gain": 0,
+                                    "sender_coin_count": 0,
+                                    "sender_coin_value": 0,
+                                    "receiver_coin_count": 0,
+                                    "receiver_coin_value": 0,
                                     "reward_coins": 0,
-                                    "reward_value": 44324332,
-                                    "sender_diamond_count": 7,
-                                    "sender_diamond_value": 750000,
-                                    "receiver_diamond_count": 38,
-                                    "receiver_diamond_value": 3100000,
-                                    "post_count": 6,
-                                    "repost_count": 1,
-                                    "quote_count": 4,
-                                    "comment_count": 15,
-                                    "sender_post_like_count": 59,
-                                    "receiver_post_like_count": 72,
+                                    "reward_value": 22615871,
+                                    "dao": 0,
+                                    "dao_mint_count": 0,
+                                    "dao_burn_count": 0,
+                                    "dao_disable_count": 0,
+                                    "dao_restrict_count": 0,
+                                    "dao_holder_count": 0,
+                                    "dao_holding_count": 0,
+                                    "sender_dao_count": 0,
+                                    "receiver_dao_count": 0,
+                                    "sender_diamond_count": 0,
+                                    "sender_diamond_value": 0,
+                                    "receiver_diamond_count": 2,
+                                    "receiver_diamond_value": 450000,
+                                    "post_count": 3,
+                                    "repost_count": 0,
+                                    "quote_count": 0,
+                                    "comment_count": 0,
+                                    "sender_post_like_count": 10,
+                                    "receiver_post_like_count": 7,
                                     "nft_count": 0,
                                     "nft_royalty": 0,
                                     "nft_coin": 0,
@@ -1830,35 +1725,203 @@ curl -s --data '[{"method":"account.notification.list", "params": {"account":"kr
                                     "sender_conversation_count": 0,
                                     "recipient_conversation_count": 0,
                                     "conversation_count": 0,
+                                    "conversation_group_count": 0,
                                     "time_to_profile": 0,
-                                    "time_to_self_buy": 79901,
-                                    "time_to_first_buy": 268199,
-                                    "time_to_first_post": 263263,
-                                    "fee": 49974,
-                                    "burned": 1084849,
-                                    "tx_count": 250,
-                                    "transactor_tx_time": 1642433063,
-                                    "transactor_tx_height": 96250,
-                                    "transactor_tx_count": 145,
+                                    "time_to_self_buy": 4211,
+                                    "time_to_first_buy": 4403,
+                                    "time_to_first_post": 3619,
+                                    "fee": 81350,
+                                    "burned": 3023172,
+                                    "tx_count": 328,
+                                    "transactor_tx_time": 1647275058,
+                                    "transactor_tx_height": 112177,
+                                    "transactor_tx_count": 315,
+                                    "tx_23_count": 0,
+                                    "tx_26_count": 0,
                                     "sender_seed_count": 0,
                                     "sender_seed_value": 0,
                                     "receiver_seed_count": 0,
                                     "receiver_seed_value": 0,
-                                    "sender_connection_count": 89,
-                                    "sender_connection_value": 141824571,
-                                    "receiver_connection_count": 177,
-                                    "receiver_connection_value": 622910197
+                                    "sender_connection_count": 2,
+                                    "sender_connection_value": 0,
+                                    "receiver_connection_count": 4,
+                                    "receiver_connection_value": 1025000
                                 }
                             },
-                            "coin": {
-                                "operation": "buy",
-                                "gain": 0,
-                                "value": 14206563,
-                                "coins": 580343
+                            "entity": {
+                                "depth": 0,
+                                "is_quoted": false,
+                                "text": "Deso Day 353 - #KrassensteinDaily\n- @DeSocialWorld releases ukrainesocial.eu to ensure Ukraine has a voice on the Internet.\n- The @DAODAO Tokenomics video is released by @nader.\n- @supernovas V1 is set to release today.\n- @desolist obtains desolist.com domain name from @tijn.\n- @mossified talks about why a big marketing push was never made for BitClout.\n- Top hashtags of the day: #ukraine #deso #photography #toptip #wordplay\n- Also mentioned in this video: @edokoevoet @nftz @jckly @darian_parrish @zordon @salilsethi @disruptepreneur @brootle @nataliart @shadeflowers @abashidze_photo @transhumanist @sarvente @anastasiakhoroshenko @jul1ko @vitalife @bafq @fantasticwoman @memes_machine @maryvictory @romashx @j_rebets @Ozadorozhnyak @cat_tyson @steppard93 @ukrainesocial @VishalGulia @crowd33 @znmead @cloutpunk @TheNobody @Liveoneself @seelz @ukrainesocial @Unicat @Chatstoday @MechellLord @MissKatiann @GJART @rhubarb @DrRob @Manetanedareason @Goldberry @Murkury @WilliamLaurent @BitMoms @SaintLlaines @XTincT  @ChaseSteely @Matreshka @Krassenstein @JayVague @IZY @illuMEMEnati @CLOUT_COCKS\n- Relevant hashtags: #DesoShow #DesoNews \n\nSponsored by: @NFTtech \n\nPosted via @cloutfeed",
+                                "lang": "en",
+                                "has_media": true,
+                                "has_image": false,
+                                "has_video": true,
+                                "media": {
+                                    "embed_video_url": "https://www.youtube.com/embed/NLTn_T54Ck8"
+                                },
+                                "is_hidden": false,
+                                "is_nft": false,
+                                "submitted_at": 1647266367,
+                                "nft": null,
+                                "stat": {
+                                    "last_stat_ts": 1647273924,
+                                    "like_count": 25,
+                                    "diamond_count": 19,
+                                    "diamond_value": 1300000,
+                                    "repost_count": 8,
+                                    "quote_count": 1,
+                                    "comment_count": 8,
+                                    "reply_count": 6,
+                                    "nft_bid_count": 0,
+                                    "nft_trade_count": 0,
+                                    "nft_burned_count": 0
+                                },
+                                "hash": "ba5cfa9fc85e026adacdd64317e8b20599f1ba950d006df789b0c07543aa03a4"
                             }
                         }
                     ],
-                    "timestamp": 1642433091
+                    "timestamp": 1647275043
+                },
+                {
+                    "type_id": 3,
+                    "data": [
+                        {
+                            "transactor": {
+                                "height": 11391,
+                                "pubkey": "BC1YLgcHBgCfnwRRQfsAZMjsCXMcyec2CTgiKHT1i3oKqMhER5zd3od",
+                                "balance": 19515112661,
+                                "timestamp": 1617215220,
+                                "profile": {
+                                    "timestamp": 1617216219,
+                                    "is_hidden": false,
+                                    "height": 11397,
+                                    "username": "ElrickErikose",
+                                    "description": "Photographer [Питер->NYC].\n\nSocial Media Exposure Manager @singleshotshow http://singleshotshow.com/elrick-erikose-social-media-exposure-manager\n\ninstagram.com/elrickerikose\n\n@cityphotolab cityphotolab.com/gal.htm instagram.com/cityphotolab\n\n@russianbitclout www.RussianBitclout.com\n@otherkin\n@caturday \n\nMy NFTs : https://polygram.cc/u/elrickerikose\nhttps://elrickerikose.nftz.zone/\n\nhttps://wun.vc/id/ElrickErikose\n\n\"BitClout is the future for the world with no future\" (c) @ElrickErikose\n\n✅ @verifiedprofile ➡ \nbit.ly/3kpknG5\n",
+                                    "avatar_url": "http://media.overdeso.lo/avatar/WXX1sQ7rYAg",
+                                    "reward_points": 500,
+                                    "stake_points": 12500
+                                },
+                                "coin": {
+                                    "supply": 21913576164,
+                                    "locked": 10568162321,
+                                    "watermark": 38947436466,
+                                    "price": 1446796720
+                                },
+                                "dao": {
+                                    "disabled": false,
+                                    "restriction": 0,
+                                    "supply": "174876e800"
+                                },
+                                "extra": null,
+                                "stat": {
+                                    "last_stat_ts": 1647272932,
+                                    "utxo_count": 246,
+                                    "level_points": 83,
+                                    "holder_count": 186,
+                                    "holding_count": 938,
+                                    "follower_count": 5422,
+                                    "following_count": 9601,
+                                    "coin_buy_count": 560,
+                                    "coin_buy_value": 13983454776,
+                                    "coin_sell_count": 21,
+                                    "coin_sell_value": 5540463728,
+                                    "coin_gain": 2544482916,
+                                    "sender_coin_count": 85,
+                                    "sender_coin_value": 549805045,
+                                    "receiver_coin_count": 5352,
+                                    "receiver_coin_value": 48401716664,
+                                    "reward_coins": 3888839653,
+                                    "reward_value": 9574533480,
+                                    "dao": "174876e800",
+                                    "dao_mint_count": 1,
+                                    "dao_burn_count": 0,
+                                    "dao_disable_count": 0,
+                                    "dao_restrict_count": 0,
+                                    "dao_holder_count": 1,
+                                    "dao_holding_count": 7,
+                                    "sender_dao_count": 0,
+                                    "receiver_dao_count": 6,
+                                    "sender_diamond_count": 140,
+                                    "sender_diamond_value": 93825084,
+                                    "receiver_diamond_count": 12549,
+                                    "receiver_diamond_value": 14792607614,
+                                    "post_count": 2060,
+                                    "repost_count": 17072,
+                                    "quote_count": 2023,
+                                    "comment_count": 10190,
+                                    "sender_post_like_count": 116306,
+                                    "receiver_post_like_count": 40254,
+                                    "nft_count": 0,
+                                    "nft_royalty": 149420473,
+                                    "nft_coin": 155122119,
+                                    "nft_mint_count": 42,
+                                    "nft_mint_value": 1246678749,
+                                    "nft_buy_count": 107,
+                                    "nft_buy_value": 2686868144,
+                                    "nft_sell_count": 0,
+                                    "nft_sell_value": 0,
+                                    "nft_gain": 1246678749,
+                                    "sender_nft_bid_count": 5,
+                                    "receiver_nft_bid_count": 43,
+                                    "sender_message_count": 541,
+                                    "recipient_message_count": 719,
+                                    "sender_conversation_count": 58,
+                                    "recipient_conversation_count": 188,
+                                    "conversation_count": 246,
+                                    "conversation_group_count": 0,
+                                    "time_to_profile": 999,
+                                    "time_to_self_buy": 4975837,
+                                    "time_to_first_buy": 28262070,
+                                    "time_to_first_post": 30058394,
+                                    "fee": 68612768,
+                                    "burned": 9642687,
+                                    "tx_count": 181161,
+                                    "transactor_tx_time": 1647274399,
+                                    "transactor_tx_height": 112177,
+                                    "transactor_tx_count": 160420,
+                                    "tx_23_count": 0,
+                                    "tx_26_count": 0,
+                                    "sender_seed_count": 1,
+                                    "sender_seed_value": 20000000,
+                                    "receiver_seed_count": 1,
+                                    "receiver_seed_value": 200000,
+                                    "sender_connection_count": 128783,
+                                    "sender_connection_value": 23625499447,
+                                    "receiver_connection_count": 56258,
+                                    "receiver_connection_value": 330875623801
+                                }
+                            },
+                            "entity": {
+                                "depth": 0,
+                                "is_quoted": false,
+                                "text": "A few things that I think the Core team needs to focus on moving forward:\n \n😎 Attract Media attention:\nDo this by showcasing your technology in ways that attract the media.  For instance when DAOs fully launch, create DAOs which help people (charitable DAOs), which are shocking and which are even slightly controversial.  We want the media to want to write about us, and the best way to do that is to create a story that interests people.\n \n🎉 Reward the Long-term Creators:\nIt's tricky because doing so could alienate those who are not rewarded, but if you relegate the task to others in some way or perhaps have a defined metric in doing so, you could make the current member base feel much more appreciated.  Appreciation goes a long way, and the majority of those who left DeSo in the past have done so because they feel ignored or underappreciated.  \n \n🧮 Wait For the Right Time:\nWe all know that DeSo launched in March before things were ready as the password leaked out to the public.  Imagine how successful this project would have been if it launched with 15 nodes, dozens of apps and less friction like we have now.  With the roll-out of DAOs and smart services it's important to make a bang all at once when we are 100% ready.  Showcase everything, do a major ad campaign, bring on board the media and launch multiple DeSo DAOs and smart services at once.  Timing is key.\n \n💩 Don't be afraid to admit past mistakes:\nThose who admit past mistakes are respected and trusted moving forward.  \n \n⛽️Don't pump the coin, pump the technology:\nThere is no need to pump $Deso.  Rather the core team should be pumping the technology and showcasing why this blockchain matters.  We've see this recently, which is good.\n\n\n\nPosted via @cloutfeed",
+                                "lang": "en",
+                                "has_media": false,
+                                "has_image": false,
+                                "has_video": false,
+                                "media": null,
+                                "is_hidden": false,
+                                "is_nft": false,
+                                "submitted_at": 1646936902,
+                                "nft": null,
+                                "stat": {
+                                    "last_stat_ts": 1647274372,
+                                    "like_count": 32,
+                                    "diamond_count": 14,
+                                    "diamond_value": 1100000,
+                                    "repost_count": 2,
+                                    "quote_count": 1,
+                                    "comment_count": 10,
+                                    "reply_count": 7,
+                                    "nft_bid_count": 0,
+                                    "nft_trade_count": 0,
+                                    "nft_burned_count": 0
+                                },
+                                "hash": "02372e4a23890991b3eeade07807bd83dcd35567bd5165b069d554b2a5e9673a"
+                            }
+                        }
+                    ],
+                    "timestamp": 1647274373
                 }
             ]
         }

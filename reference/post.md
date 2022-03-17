@@ -108,7 +108,7 @@ Return recent list of newly created posts without any reposts.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>false</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>has_media</td><td></td><td>false</td><td>Fetch posts that have media only</td></tr><tr><td>has_video</td><td></td><td>false</td><td>Fetch posts that have video only</td></tr><tr><td>has_image</td><td></td><td>false</td><td>Fetch posts that have image only attached to it</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>false</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>type</td><td></td><td>false</td><td>Filter posts by its type. Can be one of: <code>post</code>, <code>repost</code>, <code>quote</code>, <code>story</code>, <code>live</code>, <code>poll</code>.<br>It's not specified by default</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>has_media</td><td></td><td>false</td><td>Fetch posts that have media only</td></tr><tr><td>has_video</td><td></td><td>false</td><td>Fetch posts that have video only</td></tr><tr><td>has_image</td><td></td><td>false</td><td>Fetch posts that have image only attached to it</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -1021,6 +1021,42 @@ curl -s --data '[{"method":"post.story.list", "params": {"offset": 0, "limit": 2
 ```
 {% endtab %}
 {% endtabs %}
+
+### post.live.list
+
+Get recent live streams
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+
+#### Response
+
+Returns list of posts that marked as live for latest 3 days.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+curl -s --data '[{"method":"post.live.list", "params": {"offset": 0, "limit": 2}}]' https://api.overdeso.com/v1   | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "count": 0,
+            "list": []
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
+
 
 ### post.comment.list
 

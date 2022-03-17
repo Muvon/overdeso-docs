@@ -4,9 +4,23 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### Upcoming (in progress)
+### Upcoming (api2)
 
-* (O,O)
+*
+
+### March, 17 2022 (api2)
+
+* mempool is stable now! Bingo :) Finally we did it;
+* new [**account notification**](account.md#type-id-map) map for types;
+* added `group` param to [**account.notification.list**](account.md#account.notification.list) method;
+* ****[**account.notification.list**](account.md#account.notification.list) method has new response structure now and reflects currect state for reader account for its posts (likes, diamonds and so on);
+* new method [**post.live.list**](post.md#post.live.list) to get list of recent streams;
+* added `award` key [**Overdeso protocol**](overdeso-protocol.md#basic\_transfer) description that makes it possible to send custom donations or gifts related awards;
+* added missed `account` and `hash` to [**post.rank.list**](post.md#post.rank.list) method response;
+* require `JWT` token to be passed in header `X-Reader-JWT` when we use `X-Reader-Account` header of current viewer that allow us to protect from random reader account requests;
+* start indexing post with type `live` using[ **Overdeso protocol** ](overdeso-protocol.md#submit\_post)starting block height #112500;
+* added `currency` to [**UPDATE\_PROFILE**](overdeso-protocol.md#update\_profile) in Overdeso protocol;
+* added `type` param to [**post.list**](post.md#post.list) method that works with account only for now.
 
 ### March, 9 2022 (api1)
 
