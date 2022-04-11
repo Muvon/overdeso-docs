@@ -62,7 +62,7 @@ Base type for `enum` and `URL` is `string`.&#x20;
 
 #### BASIC\_TRANSFER
 
-<table><thead><tr><th>Index</th><th>Field name</th><th data-type="select">Field type</th><th>Description</th></tr></thead><tbody><tr><td><code>0</code></td><td><code>poll</code></td><td></td><td>Hash of post with voted poll in binary format</td></tr><tr><td><code>1</code></td><td><code>option</code></td><td></td><td>Index of option that we use to vote on. The vote is irreversible now.</td></tr><tr><td><code>2</code></td><td><code>award</code></td><td></td><td>Type of award. 0 – custom donation, >0 mapped gift valued by table</td></tr></tbody></table>
+<table><thead><tr><th>Index</th><th>Field name</th><th data-type="select">Field type</th><th>Description</th></tr></thead><tbody><tr><td><code>0</code></td><td><code>poll</code></td><td></td><td>Hash of post with voted poll in binary format</td></tr><tr><td><code>1</code></td><td><code>option</code></td><td></td><td>Index of option that we use to vote on. The vote is irreversible now.</td></tr><tr><td><code>2</code></td><td><code>award</code></td><td></td><td>Type of award. 0 – custom donation, >0 mapped gift valued by table.</td></tr></tbody></table>
 
 #### Something else?  (NOT YET USED)
 

@@ -1056,7 +1056,336 @@ curl -s --data '[{"method":"post.live.list", "params": {"offset": 0, "limit": 2}
 {% endtab %}
 {% endtabs %}
 
+### post.comment.get
 
+Fetch comment info with full path to the root post.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Comment hash in hex format to fetch</td></tr></tbody></table>
+
+#### Response
+
+The method returns the thread with it's replied related to the passed comment to original post.
+
+**author** – information about account who created that post.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+ curl -s --data '[{"method":"post.comment.get", "params": {"hash":"ae90ff2f644373c1dfc5d3acfa1c07164ab838003def4716e3888837549c1d7a"}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "depth": 0,
+                "is_quoted": false,
+                "text": "First @elonmusk calls for the decentralization of social, and the open-sourcing of feed algorithms.\n\nNow @jack is publicly supporting the decentralization of social identity and discovery.\n\nThis is the inflection point for DeSo. Why?🧵",
+                "lang": "en",
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1648929122,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1649603176,
+                    "like_count": 179,
+                    "diamond_count": 100,
+                    "diamond_value": 80950000,
+                    "repost_count": 22,
+                    "quote_count": 13,
+                    "comment_count": 53,
+                    "reply_count": 33,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0,
+                    "award_count": 0,
+                    "award_value": 0
+                },
+                "hash": "8cf912cbb112a354c048e28d794a78112598ada2d467aac801520f5d121b86bd",
+                "account": {
+                    "height": 1494,
+                    "pubkey": "BC1YLhyuDGeWVgHmh3UQEoKstda525T1LnonYWURBdpgWbFBfRuntP5",
+                    "balance": 6774326824,
+                    "timestamp": 1614605873,
+                    "last_seen": 1649649898,
+                    "profile": {
+                        "timestamp": 1614605873,
+                        "is_hidden": false,
+                        "height": 1493,
+                        "username": "nader",
+                        "description": "Creator of the DeSo blockchain, head of the DeSo Foundation (deso.org), and founder of @daodao.\n\n(D,D)",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gPjusuCXegC",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 98236459993,
+                        "locked": 948022571856,
+                        "watermark": 191168572431,
+                        "price": 28951246819
+                    },
+                    "dao": null,
+                    "extra": null
+                }
+            },
+            {
+                "depth": 1,
+                "is_quoted": false,
+                "text": "People are tired of five companies controlling all of the world's information\n\nPeople are tired of black-box feed algorithms that shadow-ban them overnight\n\nPeople are tired of being slaves to ads-driven profit-seeking corporations\n\nAnd DeSo is the answer",
+                "lang": "en",
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1648929122,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1649632379,
+                    "like_count": 60,
+                    "diamond_count": 28,
+                    "diamond_value": 6250000,
+                    "repost_count": 1,
+                    "quote_count": 8,
+                    "comment_count": 14,
+                    "reply_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0,
+                    "award_count": 0,
+                    "award_value": 0
+                },
+                "hash": "5daf82b57c4fff2fe9fc814c69e8f8b81baaf7be777156bb8fa15e1e5de61bab",
+                "account": {
+                    "height": 1494,
+                    "pubkey": "BC1YLhyuDGeWVgHmh3UQEoKstda525T1LnonYWURBdpgWbFBfRuntP5",
+                    "balance": 6774326824,
+                    "timestamp": 1614605873,
+                    "last_seen": 1649649898,
+                    "profile": {
+                        "timestamp": 1614605873,
+                        "is_hidden": false,
+                        "height": 1493,
+                        "username": "nader",
+                        "description": "Creator of the DeSo blockchain, head of the DeSo Foundation (deso.org), and founder of @daodao.\n\n(D,D)",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gPjusuCXegC",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 98236459993,
+                        "locked": 948022571856,
+                        "watermark": 191168572431,
+                        "price": 28951246819
+                    },
+                    "dao": null,
+                    "extra": null
+                }
+            },
+            {
+                "depth": 2,
+                "is_quoted": false,
+                "text": "With DeSo all content is stored on-chain, and all code is 100% open-source, even the feed algorithms.\n\nWhy is this \"open firehose\" important?\n\nBecause now there can be hundreds of apps, not five, and posts on one app can show up in all the others, which wasn't possible before.",
+                "lang": "en",
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1648929122,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1649574022,
+                    "like_count": 27,
+                    "diamond_count": 13,
+                    "diamond_value": 1000000,
+                    "repost_count": 1,
+                    "quote_count": 0,
+                    "comment_count": 9,
+                    "reply_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0,
+                    "award_count": 0,
+                    "award_value": 0
+                },
+                "hash": "89ac9d138d469a46d12e88c4981851e77c827c48486418ac0272546514575273",
+                "account": {
+                    "height": 1494,
+                    "pubkey": "BC1YLhyuDGeWVgHmh3UQEoKstda525T1LnonYWURBdpgWbFBfRuntP5",
+                    "balance": 6774326824,
+                    "timestamp": 1614605873,
+                    "last_seen": 1649649898,
+                    "profile": {
+                        "timestamp": 1614605873,
+                        "is_hidden": false,
+                        "height": 1493,
+                        "username": "nader",
+                        "description": "Creator of the DeSo blockchain, head of the DeSo Foundation (deso.org), and founder of @daodao.\n\n(D,D)",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gPjusuCXegC",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 98236459993,
+                        "locked": 948022571856,
+                        "watermark": 191168572431,
+                        "price": 28951246819
+                    },
+                    "dao": null,
+                    "extra": null
+                }
+            },
+            {
+                "depth": 3,
+                "is_quoted": false,
+                "text": "Don't like one app's curation?\n\nYou have *hundreds* of alternatives, including http://diamondapp.com, http://cloutfeedapp.com, http://supernovas.app, http://desocialworld.com, http://nftz.zone, http://polygram.cc, and more on http://desolist.cc.",
+                "lang": "en",
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1648929122,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1649094527,
+                    "like_count": 18,
+                    "diamond_count": 9,
+                    "diamond_value": 450000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 7,
+                    "reply_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0,
+                    "award_count": 0,
+                    "award_value": 0
+                },
+                "links": [
+                    {
+                        "title": "Welcome to Diamond",
+                        "description": "Don't settle for a like. Get diamonds and invest in creators like never before.",
+                        "image": "https://diamondapp.com/assets/diamond/camelcase_logo_og.jpg",
+                        "image:width": "1200",
+                        "image:height": "630",
+                        "image:type": "image/jpeg",
+                        "url": "http://diamondapp.com"
+                    },
+                    {
+                        "image": "http://cloutfeedapp.com/wp-content/uploads/2021/05/iPhone-11-Pro-Free-Premium-Mockup-PSD-2-min.png",
+                        "url": "http://cloutfeedapp.com"
+                    },
+                    {
+                        "title": "Supernovas",
+                        "description": "The decentralized social network for Web3. Buy and sell DeSo NFT's, invest in Creator Coins, and connect with others through feeds, posts, and direct messages.",
+                        "image": "https://supernovas.app/assets/img/regular-meta.png",
+                        "image:type": "image/jpeg",
+                        "url": "http://supernovas.app"
+                    }
+                ],
+                "hash": "8d3f9ffd9f325869b22e731aacdc1c46850f49fbe30204570394af79e440a963",
+                "account": {
+                    "height": 1494,
+                    "pubkey": "BC1YLhyuDGeWVgHmh3UQEoKstda525T1LnonYWURBdpgWbFBfRuntP5",
+                    "balance": 6774326824,
+                    "timestamp": 1614605873,
+                    "last_seen": 1649649898,
+                    "profile": {
+                        "timestamp": 1614605873,
+                        "is_hidden": false,
+                        "height": 1493,
+                        "username": "nader",
+                        "description": "Creator of the DeSo blockchain, head of the DeSo Foundation (deso.org), and founder of @daodao.\n\n(D,D)",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gPjusuCXegC",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 98236459993,
+                        "locked": 948022571856,
+                        "watermark": 191168572431,
+                        "price": 28951246819
+                    },
+                    "dao": null,
+                    "extra": null
+                }
+            },
+            {
+                "depth": 4,
+                "is_quoted": false,
+                "text": "Make just ONE profile on any app, and you now have an identity that is *portable* across all the others. The last profile you'll ever have to make.\n\nPost once, get reach from *everywhere*.\n\nAnd when content is open, apps compete to make you *happy*, not keep you scrolling forever",
+                "lang": "en",
+                "has_media": false,
+                "has_image": false,
+                "has_video": false,
+                "media": null,
+                "is_hidden": false,
+                "is_nft": false,
+                "submitted_at": 1648929122,
+                "nft": null,
+                "stat": {
+                    "last_stat_ts": 1649179196,
+                    "like_count": 22,
+                    "diamond_count": 10,
+                    "diamond_value": 500000,
+                    "repost_count": 0,
+                    "quote_count": 0,
+                    "comment_count": 6,
+                    "reply_count": 0,
+                    "nft_bid_count": 0,
+                    "nft_trade_count": 0,
+                    "nft_burned_count": 0,
+                    "award_count": 0,
+                    "award_value": 0
+                },
+                "hash": "ae90ff2f644373c1dfc5d3acfa1c07164ab838003def4716e3888837549c1d7a",
+                "account": {
+                    "height": 1494,
+                    "pubkey": "BC1YLhyuDGeWVgHmh3UQEoKstda525T1LnonYWURBdpgWbFBfRuntP5",
+                    "balance": 6774326824,
+                    "timestamp": 1614605873,
+                    "last_seen": 1649649898,
+                    "profile": {
+                        "timestamp": 1614605873,
+                        "is_hidden": false,
+                        "height": 1493,
+                        "username": "nader",
+                        "description": "Creator of the DeSo blockchain, head of the DeSo Foundation (deso.org), and founder of @daodao.\n\n(D,D)",
+                        "avatar_url": "http://media.overdeso.lo/avatar/gPjusuCXegC",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 98236459993,
+                        "locked": 948022571856,
+                        "watermark": 191168572431,
+                        "price": 28951246819
+                    },
+                    "dao": null,
+                    "extra": null
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
 
 ### post.comment.list
 
@@ -1686,7 +2015,122 @@ If no diamonds found returned empty array list there was no error.
 {% endtab %}
 {% endtabs %}
 
+### post.award.list
 
+Fetch award list for post hash or account as receiver or sender.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch. It has priority if its passed so we ignore account related fields then.</td></tr><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+
+#### Response
+
+Returns structure as list each on with keys:
+
+* **award** – contains level only of diamond;
+* **post** – related post information;
+* **sender** – information about sender account;
+* **receiver** – information about receiver account.
+
+If no diamonds found returned empty array list there was no error.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+    curl -s --data '[{"method":"post.award.list", "params": {"account": "donhardman", "offset": 0, "limit": 2}}]' https://api.overdeso.com/v1 | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        [
+            {
+                "award": {
+                    "timestamp": 1649609933,
+                    "level": 500000,
+                    "value": 500000
+                },
+                "post": {
+                    "depth": 0,
+                    "is_quoted": true,
+                    "text": "💎 Diamond it once, 🎁 gift it many times",
+                    "lang": null,
+                    "has_media": false,
+                    "has_image": false,
+                    "has_video": false,
+                    "media": null,
+                    "is_hidden": false,
+                    "is_nft": false,
+                    "submitted_at": 1649609731,
+                    "hash": "cf7e683807b173d23a91a482059e5c3df4dff480f7faf170ecabf3e5a81760a7"
+                },
+                "sender": {
+                    "height": 75338,
+                    "pubkey": "BC1YLhZzLUK3bC59sguWuazQpaT4611cr12VXQig4rgiThRDT4Wiq8R",
+                    "balance": 16445332670,
+                    "timestamp": 1636120919,
+                    "last_seen": 1649648088,
+                    "profile": {
+                        "timestamp": 1636120919,
+                        "is_hidden": false,
+                        "height": 75337,
+                        "username": "Overclout",
+                        "description": "The new social app on DeSo.\n\nBuilt with React and powered by @Overdeso.\n\nJoin the public beta!\n\noverclout.com ❤️ by @muvon | discord.gg/Z5wjwyR78d",
+                        "avatar_url": "http://media.overdeso.lo/avatar/XhCY887koKr",
+                        "reward_points": 1000,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 45486609265,
+                        "locked": 94113332049,
+                        "watermark": 46154026266,
+                        "price": 6207102022
+                    },
+                    "dao": null,
+                    "extra": {
+                        "cover": "https://images.deso.org/df7846acd6cac34f749452164bca6c367b394e92ed6a4771a393d3e5cc89cf2f.webp"
+                    }
+                },
+                "receiver": {
+                    "height": 11962,
+                    "pubkey": "BC1YLgteRL8SgzZLmPyx6hK1tt6XXtaE3m5qAy9GFhP3eGtXmjqEULB",
+                    "balance": 204536682,
+                    "timestamp": 1617379448,
+                    "last_seen": 1649651436,
+                    "profile": {
+                        "timestamp": 1617379717,
+                        "is_hidden": false,
+                        "height": 11964,
+                        "username": "donhardman",
+                        "description": "Free runner & Dev head\n\n@muvon founder",
+                        "avatar_url": "http://media.overdeso.lo/avatar/ftdtuWqA5St",
+                        "reward_points": 1021,
+                        "stake_points": 12500
+                    },
+                    "coin": {
+                        "supply": 30264888783,
+                        "locked": 27721560678,
+                        "watermark": 30332040189,
+                        "price": 2747893473
+                    },
+                    "dao": null,
+                    "extra": {
+                        "last_name": "Don",
+                        "birth_date": "1988-10-21",
+                        "github": "https://github.com/donhardman",
+                        "cover": "https://images.deso.org/b17038620978d8d687a184c44a993a042a060533447874bc846ff3b963f25885.webp"
+                    }
+                }
+            }
+        ]
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
 
 ### post.vote.list
 

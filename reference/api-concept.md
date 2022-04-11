@@ -13,15 +13,11 @@ The **URL** to send requests is – **https://api.overdeso.com/v1/**
 Where is **v1** is version of API. While we are still in development and early access mode its always v1.
 
 {% hint style="danger" %}
-**Attention!**  While we are in active development we offer 2 API endpoints: **api1** and **api2**. So basically it means that there are 2 URLs: **https://api1.overdeso.com/v1/** and **https://api2.overdeso.com/v1/.**
+**Attention!**  We are still in production preview and working on some changes that can break some flow. So read changes often and adapt with us ❤️
 
 We use it one by one on each update. For example, we deployed new version on api1. It becomes active. Next we work and prepare update with new docs and breaking changing and deploy to api2. So devs have time even in active development stage to update their apps and move to another endpoint without breaking things.&#x20;
 
-<mark style="color:orange;">**👉 Current doc version API: api1**</mark>&#x20;
-
-**P.S.** **api.overdeso.com** points to latest released update
-
-**P.P.S.** we deploy updates weekly on **Mondays**, but sometimes more often :)
+**P.S.** **api-staging.overdeso.com** points to latest draft version of upcoming release.
 {% endhint %}
 
 You can pass **X-Reader-Account** in header to get reader state in various of methods.

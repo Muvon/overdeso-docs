@@ -62,10 +62,12 @@ description: Full method list groupped by namespaces.
 * [post.highlight.list](post.md#post.highlight.list)
 * [post.story.list](post.md#post.story.list)
 * [post.live.list](post.md#post.live.list)
+* post.comment.get
 * [post.comment.list](post.md#post.comment.list)
 * [post.share.list](post.md#post.share.list)
 * [post.like.list](post.md#post.like.list)
 * [post.diamond.list](post.md#post.diamond.list)
+* [post.award.list](post.md#post.award.list)
 * [post.vote.list](post.md#post.vote.list)
 * [post.stat.list](post.md#post.stat.list)
 * [post.rank.list](post.md#post.rank.list)

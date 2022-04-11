@@ -4,9 +4,17 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
-### Upcoming (api2)
+### April 11, 2022
 
-*
+* new method [**post.comment.get**](post.md#post.comment.get) to fetch full path of requested comment hash;
+* add support of indexing new award [**notifications**](account.md#account.notification.list) (gifts and donations).
+
+### April 7, 2022
+
+* we are moving to production ready environment but still with potential fixes and in beta mode, so you can use **api.overdeso.com** as your main entrypoint for API calls and **api-staging.overdeso.com** as unstable endpoint for checking upcoming features that we will post here;
+* new `award` key in [**Overdeso protocol**](overdeso-protocol.md#basic\_transfer) that allow you to send on-chain custom donations and custom made awards as mapped gifts (starting block height: #119000);
+* production endpoint has failover, so you can be sure that it will be stable and responsive even in case one node is down (still work in progress for stability);
+* new method [**post.award.list**](post.md#post.award.list) to retrieve awards sent by Overdeso protocol.
 
 ### March, 17 2022 (api2)
 

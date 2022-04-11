@@ -238,7 +238,7 @@ curl -s -H 'X-Reader-Account: diamondhands' --data '[{"method":"account.me"}]' h
 
 ### account.ping
 
-Send ping notification to server for current reader account that is active and receive pong.
+end ping notification to server for current reader account that is active and receive pong.
 
 #### Request params
 
@@ -1598,25 +1598,27 @@ Get account notifications for username or public key.
 
 #### Type ID map
 
-|                |    |
-| -------------- | -- |
-| Transfer       | 0  |
-| Follow         | 1  |
-| Unfollow       | 2  |
-| Like           | 3  |
-| Unlike         | 4  |
-| Comment        | 5  |
-| Coin: buy      | 6  |
-| Coin: sell     | 7  |
-| Coin: transfer | 8  |
-| Diamond        | 9  |
-| Mention        | 10 |
-| Repost         | 11 |
-| Quote          | 12 |
-| DAO: transfer  | 13 |
-| DAO: burn      | 14 |
-| NFT: transfer  | 15 |
-| NFT: burn      | 16 |
+|                 |    |
+| --------------- | -- |
+| Transfer        | 0  |
+| Follow          | 1  |
+| Unfollow        | 2  |
+| Like            | 3  |
+| Unlike          | 4  |
+| Comment         | 5  |
+| Coin: buy       | 6  |
+| Coin: sell      | 7  |
+| Coin: transfer  | 8  |
+| Diamond         | 9  |
+| Mention         | 10 |
+| Repost          | 11 |
+| Quote           | 12 |
+| DAO: transfer   | 13 |
+| DAO: burn       | 14 |
+| NFT: transfer   | 15 |
+| NFT: burn       | 16 |
+| Award: gift     | 17 |
+| Award: donation | 18 |
 
 #### Response
 
