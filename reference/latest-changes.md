@@ -4,6 +4,11 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### April 19, 2022
+
+* structure of notifications for **Diamond**, **Award**, **Like** contains `root` post info if the notification belongs to the comment;
+* added current reader account `state` to **parent**, **root** and **repost** fields of [**post.get**](post.md#post.get) method.
+
 ### April 11, 2022
 
 * new method [**post.comment.get**](post.md#post.comment.get) to fetch full path of requested comment hash;
