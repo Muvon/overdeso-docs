@@ -102,13 +102,44 @@ The method returns post information and related comments to it if requested
 {% endtab %}
 {% endtabs %}
 
+### post.article.get
+
+Fetch HTML formatted article for post hash in case if this post is article.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch</td></tr></tbody></table>
+
+#### Response
+
+The method returns plain text of article in HTML format.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+ curl -s --data '[{"method":"post.article.get", "params": {"hash":"49c7e9b9dc4c11cb9ddf93d7b2519754ac3a9c17d7bb083d20ca33b0163a6b30"}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        "<div><div><div><div><h2>Heading 2</h2><p>i hope its paragraph and not a divdd</p><p>Nad its a list:</p><div><p></p><ul><li>list 1</li><li>list2</li><li>list3</li></ul><p></p></div><div><p>aand it's an image:</p><img src=\"https://images.deso.org/5bcdf081b3041513e71e863084075cdff8ea2c8c7bf542c8c0e00464b66f8f15.webp\"></div><div></div></div></div></div></div>"
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### post.list
 
 Return recent list of newly created posts without any reposts.
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>false</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>type</td><td></td><td>false</td><td>Filter posts by its type. Can be one of: <code>post</code>, <code>repost</code>, <code>quote</code>, <code>story</code>, <code>live</code>, <code>poll</code>.<br>It's not specified by default</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>has_media</td><td></td><td>false</td><td>Fetch posts that have media only</td></tr><tr><td>has_video</td><td></td><td>false</td><td>Fetch posts that have video only</td></tr><tr><td>has_image</td><td></td><td>false</td><td>Fetch posts that have image only attached to it</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>false</td><td>Account username or public key in base58 format or hex without prefix</td></tr><tr><td>type</td><td></td><td>false</td><td>Filter posts by its type. Can be one of: <code>post</code>, <code>repost</code>, <code>quote</code>, <code>story</code>, <code>live</code>, <code>poll</code>, <code>article</code>.<br>It's not specified by default in case account passed.<br>It has default value <code>post</code> for no acount specified requests.</td></tr><tr><td>lang</td><td></td><td>false</td><td>Languge code to fetch. Default is null so means any language</td></tr><tr><td>has_media</td><td></td><td>false</td><td>Fetch posts that have media only</td></tr><tr><td>has_video</td><td></td><td>false</td><td>Fetch posts that have video only</td></tr><tr><td>has_image</td><td></td><td>false</td><td>Fetch posts that have image only attached to it</td></tr><tr><td>offset</td><td></td><td>false</td><td></td></tr><tr><td>limit</td><td></td><td>false</td><td></td></tr></tbody></table>
 
 #### Response
 
@@ -2262,7 +2293,7 @@ Ranked post list
 
 #### Request params
 
-<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>diamond_value</code>. Allowed values: <code>diamond_value</code>, <code>like_count</code>,  <code>repost_count</code>,<code>comment_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td></td><td>true</td><td>What type of rankings we need to get. Default is <code>diamond_value</code>. Allowed values: <code>diamond_value</code>, <code>like_count</code>,  <code>repost_count</code>,<code>comment_count</code>,<code>reply_count</code>, <code>award_value</code>, <code>engage_count</code></td></tr><tr><td>sorting</td><td></td><td>false</td><td>One of: value or change.<br><code>value</code> – we sort by value for all time.<br><code>change</code> – we sort by daily change on request value rank.</td></tr><tr><td>range</td><td></td><td>false</td><td>Represents list with min max values or default []. First index - min, second one - max. In case you pass it you will get narrowed ranking in this range</td></tr><tr><td>offset</td><td></td><td>false</td><td>Offset to start. Default 0</td></tr><tr><td>limit</td><td></td><td>false</td><td>LImit of list to fetch. Default is 50</td></tr></tbody></table>
 
 #### Response
 

@@ -56,13 +56,14 @@ description: Full method list groupped by namespaces.
 ### Post
 
 * [post.get](post.md#post.get)
+* [post.article.get](post.md#post.article.get)
 * [post.list](post.md#post.list)
 * [post.hot.list](post.md#post.hot.list)
 * [post.follow.list](post.md#post.follow.list)
 * [post.highlight.list](post.md#post.highlight.list)
 * [post.story.list](post.md#post.story.list)
 * [post.live.list](post.md#post.live.list)
-* post.comment.get
+* [post.comment.get](post.md#post.comment.get)
 * [post.comment.list](post.md#post.comment.list)
 * [post.share.list](post.md#post.share.list)
 * [post.like.list](post.md#post.like.list)
@@ -90,4 +91,7 @@ description: Full method list groupped by namespaces.
 ### Tool
 
 * [tool.opengraph](tool.md#tool.opengraph)
+* [tool.article](tool.md#tool.article)
+
+
 

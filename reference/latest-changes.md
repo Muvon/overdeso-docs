@@ -4,6 +4,21 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### Upcoming, 2022
+
+*
+
+### April 23, 2022
+
+* new `reply_count` in [**post structure**](structures.md#post-stat) stat response;
+* new rankings for [**post.rank.list**](post.md#post.rank.list) method: `engage_count`, `award_value`;
+* updated mechanism level calculation to be more activity related;
+* fix issue with hashtags in case post is edited but hashtag is not assigned to it;
+* `type` accepts now `article` as value and also applied to recent posts in the [**post.list**](post.md#post.list) method;
+* new method [**post.article.get**](post.md#post.article.get) to fetch filtered HTML code for post hash article, if it has;
+* new method [**tool.article**](tool.md#tool.article) to prepare the article and filter harmful hashtags before it's pushed to blockchain;
+* extend [**Overdeso**](overdeso-protocol.md#submit\_post) protocol with articles.
+
 ### April 19, 2022
 
 * structure of notifications for **Diamond**, **Award**, **Like** contains `root` post info if the notification belongs to the comment;

@@ -226,6 +226,7 @@ Coming soon.
 
 | Parameter       | Description                                        |
 | --------------- | -------------------------------------------------- |
+| `reply_count`   | Original comments count with depth 1               |
 | `comment_count` | If the reader account following requested one      |
 | `diamond_count` | If the reader account is followed by requested one |
 | `diamond_value` | The value in DESO given in diamonds to this post   |
