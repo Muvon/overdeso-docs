@@ -133,6 +133,130 @@ The method returns plain text of article in HTML format.
 {% endtab %}
 {% endtabs %}
 
+### post.pin.get
+
+Fetch pinned post for requested account.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>account</td><td></td><td>true</td><td>Account username or public key in base58 format or hex without prefix</td></tr></tbody></table>
+
+#### Response
+
+This method returns the pinned post of requested account or empty structure if the account does not have it.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+ curl -s --data '[{"method":"post.pin.get", "params": {"account":"donhardman"}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+TODO
+```
+{% endtab %}
+{% endtabs %}
+
+### post.get
+
+Fetch post by its hash and optionally fetch related comments to it.
+
+#### Request params
+
+<table><thead><tr><th>Param</th><th data-type="select">Type</th><th data-type="checkbox">Required</th><th>Description</th></tr></thead><tbody><tr><td>hash</td><td></td><td>true</td><td>Post hash in hex format to fetch</td></tr></tbody></table>
+
+#### Response
+
+The method returns post information and related comments to it if requested
+
+**author** – information about account who created that post.
+
+**parent** - post structure of parent post if have.
+
+**root** - post structure of root post if have.
+
+**post** - information about requested post.
+
+#### Examples
+
+{% tabs %}
+{% tab title="CURL" %}
+```shell
+ curl -s --data '[{"method":"post.get", "params": {"hash":"75f16239b57de0531f9579f3817beb0a67515e4999947f293c112fb0260178e4"}}]' https://api.overdeso.com/v1  | python -m json.tool
+```
+
+```json
+[
+    [
+        null,
+        {
+            "depth": 0,
+            "is_quoted": false,
+            "text": "In retrospect, it was inevitable",
+            "lang": null,
+            "has_media": false,
+            "has_image": false,
+            "has_video": false,
+            "media": {
+                "image_urls": []
+            },
+            "is_hidden": false,
+            "is_nft": true,
+            "submitted_at": 1615574830,
+            "nft": {
+                "is_selling": 1,
+                "has_unlockable": 0,
+                "nft_count": 1,
+                "creator_royalty": 0,
+                "coin_royalty": 1500
+            },
+            "stat": {
+                "last_stat_ts": 1641223938,
+                "like_count": 311,
+                "diamond_count": 16721,
+                "diamond_value": 20644876649,
+                "repost_count": 36,
+                "quote_count": 29,
+                "comment_count": 87,
+                "nft_bid_count": 0,
+                "nft_trade_count": 0,
+                "nft_burned_count": 0
+            },
+            "hash": "75f16239b57de0531f9579f3817beb0a67515e4999947f293c112fb0260178e4",
+            "root": null,
+            "parent": null,
+            "repost": null,
+            "account": {
+                "height": 6042,
+                "pubkey": "BC1YLgU67opDhT9bTPsqvue9QmyJLDHRZrSj77cF3P4yYDndmad9Wmx",
+                "balance": 1202813160669,
+                "timestamp": 1615574505,
+                "profile": {
+                    "timestamp": 1615574830,
+                    "is_hidden": false,
+                    "height": 6043,
+                    "username": "diamondhands",
+                    "description": "💎🙌",
+                    "avatar_url": "https://overdeso.com/media/avatar/Xs8PzJRxZS1",
+                    "reward_points": 0,
+                    "stake_points": 12500
+                },
+                "coin": {
+                    "supply": 164216917444,
+                    "locked": 4578658488257,
+                    "watermark": 255810788786,
+                    "price": 27881771010
+                }
+            }
+        }
+    ]
+]
+```
+{% endtab %}
+{% endtabs %}
+
 ### post.list
 
 Return recent list of newly created posts without any reposts.

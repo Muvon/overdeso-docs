@@ -6,7 +6,10 @@ description: This page will describe changes that affect structures or any metho
 
 ### Upcoming, 2022
 
-* add new [**notification**](account.md#account.notification.list) type for polls;
+* added new [**notification**](account.md#account.notification.list) type for post polls votes;
+* start to index post pins since block height #124234;
+* added [**post.pin.get**](post.md#post.pin.get) endpoint;
+* added pinned post information to [**Overdeso protocol**](overdeso-protocol.md#submit\_post);
 *
 
 ### April 23, 2022
