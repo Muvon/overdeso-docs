@@ -1619,6 +1619,7 @@ Get account notifications for username or public key.
 | NFT: burn       | 16 |
 | Award: gift     | 17 |
 | Award: donation | 18 |
+| Post poll vote  | 19 |
 
 #### Response
 
