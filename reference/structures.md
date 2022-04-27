@@ -191,7 +191,7 @@ Coming soon.
 
 | Parameter                                        | Description                                                                                                         |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
-| `type`                                           | Type of the entry: `post`, `repost`, `quote`, `comment`, `nft`, `story`, `poll`, `live`, `article`.                 |
+| `type`                                           | Integer type of the post from [this map](structures.md#post-types-map)                                              |
 | `depth`                                          | How deep this post is in comments flow                                                                              |
 | `has_image`                                      | If the post has any images uploaded                                                                                 |
 | `has_media`                                      | If the post has any media attached                                                                                  |
@@ -242,6 +242,20 @@ Coming soon.
 | `is_liked`      | If the reader liked the post                                                                           |
 | `diamond_level` | Level of diamonds given to this post. No diamonds means 0.                                             |
 | `poll_option`   | If user voted we have index of voted option otherwise -1 if no option selected by current viewing user |
+
+### Post types map
+
+| Parameter | Description                                     |
+| --------- | ----------------------------------------------- |
+| `0`       | Simple post                                     |
+| `1`       | Plain repost                                    |
+| `2`       | Quoted repost                                   |
+| `3`       | Comment                                         |
+| `4`       | Minted NFT                                      |
+| `5`       | Story                                           |
+| `6`       | Poll                                            |
+| `7`       | Livestream or recorded video from livestreaming |
+| `8`       | HTML article                                    |
 
 ### Hashtag
 

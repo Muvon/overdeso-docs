@@ -6,7 +6,7 @@ description: This page will describe changes that affect structures or any metho
 
 ### Upcoming, 2022
 
-* added `type` to **post structure** response;
+* added `type` to [**post structure**](structures.md#post-post) response;
 *
 
 ### April 27, 2022
