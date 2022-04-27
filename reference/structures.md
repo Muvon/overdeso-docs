@@ -191,6 +191,7 @@ Coming soon.
 
 | Parameter                                        | Description                                                                                                         |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| `type`                                           | Type of the entry: `post`, `repost`, `quote`, `comment`, `nft`, `story`, `poll`, `live`, `article`.                 |
 | `depth`                                          | How deep this post is in comments flow                                                                              |
 | `has_image`                                      | If the post has any images uploaded                                                                                 |
 | `has_media`                                      | If the post has any media attached                                                                                  |

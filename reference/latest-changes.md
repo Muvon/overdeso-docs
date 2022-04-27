@@ -4,6 +4,11 @@ description: This page will describe changes that affect structures or any metho
 
 # 📅 Latest changes
 
+### Upcoming, 2022
+
+* added `type` to **post structure** response;
+*
+
 ### April 27, 2022
 
 * added new [**notification**](account.md#account.notification.list) type for post polls votes;
