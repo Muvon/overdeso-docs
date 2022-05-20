@@ -6,8 +6,15 @@ description: This page will describe changes that affect structures or any metho
 
 ### Upcoming, 2022
 
+* internal optimization for avatar images storage;
+* more to come
+
+### May 20, 2022
+
 * added `type` to [**post structure**](structures.md#post-post) response;
-*
+* added support for the hard fork that enables DAO trading onchain;
+* `avatar_url` is null when we do not have avatar for account now;
+* added `hash` field of `root` to [**post.list**](post.md#post.list) method.
 
 ### April 27, 2022
 
